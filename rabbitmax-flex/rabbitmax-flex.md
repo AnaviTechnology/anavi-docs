@@ -174,4 +174,8 @@ sudo apt-get install -y git i2c-tools lirc
 | 1.0     | First prototype                                              |
 | 1.1     | Piezo buzzer and button changed, potentiometer added         |
 
+## See Also
+
+For more information please visit [rabbitmax.com](http://rabbitmax.com/) and our [GitHub repositories](https://github.com/RabbitMax). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/RabbitMax-1632492473734364/), [Twitter](https://twitter.com/rabbitmaxcom) or [email](mailto:info@rabbitmax.com).
+
 ---
