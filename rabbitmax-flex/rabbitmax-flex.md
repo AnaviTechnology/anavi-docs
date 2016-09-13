@@ -6,6 +6,8 @@
 
 # DISCLAIMER
 
+© 2016 RabbitMax®, logo and combinations thereof, are registered trademarks of Leon Anavi. Other product names may be trademarks of others and the rights belong to their respective owners.
+
 The information in this document is provided in connection with RabbitMax products. No license, express or implied
 or otherwise, to any intellectual property right is granted by this document or in connection with the sale of RabbitMax products.
 
