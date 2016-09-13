@@ -65,19 +65,89 @@ RabbitMax Flex is **NOT** compatible with the earlier 26-pin models of Raspberry
 
 RabbitMax Flex is a Raspberry Pi HAT suitable for existing Raspberry Pi customers interested in home automation, software development and Internet of Things. The board is appropriate for embedded programming enthusiasts, GNU/Linux gadget fans, students as well as web and/or mobile app developers. The main usage of the board is embedded software development without the urge of understanding perfectly the hardware.
 
-## Board version
+## Board Version
 
 Revision 1.1 of RabbitMax Flex was used while writing this document. It is possible that it is outdated so it is always recommended to check the latest sources from the GitHub page of the board.
 
-# CHAPTER 2: Setting Up RabbitMax Flex
+# CHAPTER 2: Getting Started
+
+## Electrostatic Warning
+
+RabbitMax Flex is shipped in a protective antistatic bag. The HAT as well as the Raspberry Pi must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
+
+## Requirements
+
+## Supported Peripherals
+
+### Sensors
+
+### LCD Display Modules
+
+## Assembly
+
+Ensure that you Raspberry Pi is compatible with RabbitMax Flex. Power off your Raspberry Pi. Gently mount RabbitMax Flex on the 40 pin header of your Raspberry Pi. Optionally, you may also assemple two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port. That's all, now you are ready to go!
+
+## Powering RabbitMax Flex
+
+RabbitMax Flex is Raspberry Pi HAT therefore it is powered through Raspberry Pi. It is recommended to use the [official Raspberry Pi Power Supply](https://www.raspberrypi.org/products/universal-power-supply/) or another 2.5A USB power supply from reputable retailer.
 
 ---
 
 # CHAPTER 3: Software
 
+## Installation
+
+In order to work correctly, RabbitMax Flex HAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started. After booting microSD card with Raspbian, open a terminal and execute the following commands:
+
+* Ensure your APT package list is up-to-date:
+
+```
+sudo apt-get update
+```
+
+* Upgrade packages
+
+```
+sudo apt-get upgrade
+```
+
+* Install additional applications, libraries and other tools needed by RabbitMax Fles
+
+```
+sudo apt-get install -y git i2c-tools lirc
+```
+
+### Enable I2C
+
+### Enable infrared (IR)
+
+## Examples
+
+### Relay
+
+### Piezo Buzzer
+
+### Button
+
+### RGB LED
+
+### LCD Display Module
+
+### Sensors
+
+#### Temperature Sensor (BMP180)
+
+#### Humidity Sensor (HTU21D)
+
+#### Light Sensor (BH1750)
+
+## LIRC
+
+## Debugging
+
 ---
 
-# CHAPTER 4: RabbitMax IoT GNU/Linux distribution
+# CHAPTER 4: RabbitMax IoT GNU/Linux Distribution
 
 ---
 
