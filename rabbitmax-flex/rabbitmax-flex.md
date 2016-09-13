@@ -161,4 +161,17 @@ sudo apt-get install -y git i2c-tools lirc
 
 # CHAPTER 7: Revision History
 
+## Document Revision
+
+| Date             | Changes                | Modified pages  |
+| ---------------- |:----------------------:| ---------------:|
+| 14 September 2016| Initial manual release | All             |
+
+## RabbitMax Flex HAT Revision
+
+| Revision| Notable changes                                              |
+| ------- |:------------------------------------------------------------:|
+| 1.0     | First prototype                                              |
+| 1.1     | Piezo buzzer and button changed, potentiometer added         |
+
 ---
