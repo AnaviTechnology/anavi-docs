@@ -81,7 +81,48 @@ RabbitMax Flex is shipped in a protective antistatic bag. The HAT as well as the
 
 ### Sensors
 
+#### Temperature Sensor
+
+The official temperature sensor for RabbitMax Flex is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
+
+Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on RabbitMax Flex as follows:
+
+| BMP180   | RabbitMax Flex |
+| -------- |:-------------- |
+| VIN      | 3.3V           |
+| GND      | GND            |
+| SCL      | SCL            |
+| SDA      | SDA            |
+
+#### Humidity Sensor
+
+The official humidity temperature for RabbitMax Flex is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
+
+Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on RabbitMax Flex as follows:
+
+| HTU21    | RabbitMax Flex |
+| -------- |:-------------- |
+| VIN      | 3.3V           |
+| GND      | GND            |
+| SCL      | SCL            |
+| SDA      | SDA            |
+
+#### Light Sensor
+
+The official light I2C sensor for RabbitMax Flex is BH1750.
+
+Using 4 Dupont jumper wires connect BH1750 to one of the 5 I2C slots on RabbitMax Flex as follows:
+
+| BH1750   | RabbitMax Flex |
+| -------- |:-------------- |
+| VCC      | 3.3V           |
+| GND      | GND            |
+| SCL      | SCL            |
+| SDA      | SDA            |
+
 ### LCD Display Modules
+
+RabbitMax Flex supports monochrome 1602 character LDC alphanumeric display screen with 16 characters on two rows. Plug the display in the 16 female header pins above the logo of RabbitMax Flex. Use a screwdriver to adjust the brightness of the backlight of the display through the potentiometer.
 
 ## Assembly
 
