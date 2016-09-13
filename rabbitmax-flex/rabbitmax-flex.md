@@ -157,6 +157,22 @@ sudo apt-get install -y git i2c-tools lirc
 
 # CHAPTER 6: Frequently Asked Questions (FAQ)
 
+#### May I use RabbitMax Flex with other operating systems?
+
+Yes, you can use RabbitMax Flex with other GNU/Linux distributions and even other operating systems but some porting effords might be required.
+
+#### May I use other I2C sensors with RabbitMax Flex?
+
+Yes, you can use other I2C sensors with RabbitMax Flex but you should take care for their drivers and software support.
+
+#### May I use non-I2C sensors with RabbitMax Flex?
+
+No.
+
+#### Is RabbitMax Flex software free and open source?
+
+Yes, the official RabbitMax Flex software is free and open source. The examples are available under MIT license and the rest is available under GPLv3. Please contact us if you are working on a commercial product and you would like to use the software under alternative commercial license.
+
 ---
 
 # CHAPTER 7: Revision History
