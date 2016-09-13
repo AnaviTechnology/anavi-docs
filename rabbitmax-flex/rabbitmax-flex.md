@@ -1,5 +1,9 @@
 # RabbitMax Flex
 
+**Open source Raspberry Pi HAT for Internet of Things (IoT)**
+
+---
+
 # DISCLAIMER
 
 The information in this document is provided in connection with RabbitMax products. No license, express or implied
