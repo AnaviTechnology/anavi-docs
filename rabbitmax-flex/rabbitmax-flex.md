@@ -184,6 +184,8 @@ sudo apt-get install -y git i2c-tools lirc
 
 ## LIRC
 
+## Device Tree Overlays
+
 ## Debugging
 
 ---
