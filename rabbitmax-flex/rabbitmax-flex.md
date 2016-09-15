@@ -206,6 +206,24 @@ sudo apt-get install -y git i2c-tools lirc
 
 # CHAPTER 5: Schematics
 
+## Pinout
+
+The components of RabbitMax Flex utilize the following pins on Raspberry Pi:
+
+| Component    | Pins                  |
+| ------------ |:--------------------- |
+| I2C          | 3, 5                  |
+| EEPROM       | 27, 28                |
+| Relay        | 31                    |
+| Button       | 23                    |
+| Piezo buzzer | 29                    |
+| RGB LED      | 33, 35, 37            |
+| LCD display  | 7, 40, 13, 15, 19, 21 |
+| IR LED       | 11                    |
+| IR receiver  | 12                    |
+
+## I2C
+
 The sensors that can be connected to RabbitMax Flex communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labeled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore RabbitMax Flex includes two 4.7kohm resistors labeled as R9 and R10. If for one reason or another you need to disable the I2C pullup resistors remove R9 and R10.
 
 ---
