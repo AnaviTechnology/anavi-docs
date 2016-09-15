@@ -206,6 +206,8 @@ sudo apt-get install -y git i2c-tools lirc
 
 # CHAPTER 5: Schematics
 
+The sensors that can be connected to RabbitMax Flex communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labeled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore RabbitMax Flex includes two 4.7kohm resistors labeled as R9 and R10. If for one reason or another you need to disable the I2C pullup resistors remove R9 and R10.
+
 ---
 
 # CHAPTER 6: Frequently Asked Questions (FAQ)
