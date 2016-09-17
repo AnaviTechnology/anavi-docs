@@ -32,7 +32,7 @@ There is no warranty for the design materials and the components used to create 
 
 ## Introduction
 
-RabbitMax Flex is an open source hardware Raspberry Pi HAT for Internet of Things (IoT). RabbitMax Flex was started as a hobby project by Leon Anavi in 2016. It is suitable for do it yourself (DIY) weather station, automated desk assistant or rapid prototyping Internet of Things (IoT).
+RabbitMax Flex is an open source hardware Raspberry Pi HAT for Internet of Things (IoT). RabbitMax Flex was started as a hobby project by Leon Anavi in 2016. It is suitable for do it yourself (DIY) weather station, automated desk assistant or rapid prototyping of Internet of Things (IoT).
 
 RabbitMax Flex is designed with the free and open source electronics design automation suite KiCAD. No soldering is required. You can assemble RabbitMax Flex to your Raspberry Pi with your bare hands.
 
