@@ -226,6 +226,31 @@ The components of RabbitMax Flex utilize the following pins on Raspberry Pi:
 
 The sensors that can be connected to RabbitMax Flex communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labeled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore RabbitMax Flex includes two 4.7kohm resistors labeled as R9 and R10. If for one reason or another you need to disable the I2C pullup resistors remove R9 and R10.
 
+## LCD Module
+
+1602 LCD character display module can be attached to RabbitMax Flex. The HAT supports modules with 16 characters on 2 rows which are compatible with the Hitachi HD44780 LCD controller. The LCD module requires 8 data lines to provide data to bits 0-7  but it can be also set to a 4 bit mode which allows sending data in two chunks. Each chuck is 4 bits. The 4 bit mode is convenient as it reduces the number of used GPIO pins on Raspberry Pi. RabbitMax Flex uses the following wiring for the connector for 1602 LCD modules:
+
+| LCD  | Function             | Raspberry Pi Pin |
+| ---- |:-------------------- |:---------------- |
+| 1    | GND                  | 6
+| 2    | 5V                   | 2
+| 3    | Contrast             | 6
+| 4    | RS                   | 7
+| 5    | RW                   | 6
+| 6    | E                    | 40
+| 7    | Data 0               | 13
+| 8    | Data 1               | 15
+| 9    | Data 2               | 19
+| 10   | Data 3               | 21
+| 11   | Data 4               | -
+| 12   | Data 5               | -
+| 13   | Data 6               | -
+| 14   | Data 7               | -
+| 15   | 5V via potentiometer | 2
+| 16   | GND                  | 6
+
+LED backlight of the LCD display module can be manually adjusted through the potentiometer POT1 using a screwdriver.
+
 ---
 
 # CHAPTER 6: Frequently Asked Questions (FAQ)
