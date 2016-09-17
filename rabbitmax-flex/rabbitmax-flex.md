@@ -136,7 +136,15 @@ RabbitMax Flex supports monochrome 1602 character LDC alphanumeric display scree
 
 ## Assembly
 
-Ensure that you Raspberry Pi is compatible with RabbitMax Flex. Power off your Raspberry Pi. Gently mount RabbitMax Flex on the 40 pin header of your Raspberry Pi. Optionally, you may also assemple two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port. That's all, now you are ready to go!
+You can assemble RabbitMax Flex and mount it on your Raspberry Pi with your bare hands following the steps below:
+
+* Ensure that you Raspberry Pi is compatible with RabbitMax Flex.
+* Power off your Raspberry Pi.
+* Gently mount RabbitMax Flex on the 40 pin header of your Raspberry Pi.
+* Add sensors and LCD display module to your RabbitMax Flex.
+* Optionally, you may also assemple two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port.
+* Optionally, adjust the LED backlight of the LCD display module using a screwdriver.
+* That's all, now you are ready to go!
 
 ## Powering RabbitMax Flex
 
