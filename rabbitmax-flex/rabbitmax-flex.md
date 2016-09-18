@@ -204,6 +204,34 @@ sudo apt-get install -y git i2c-tools lirc
 
 ## Device Tree Overlays
 
+Device Tree (DT) in Linux is a description of the hardware in a system. The DT overlay adds a number of optional elements. 
+
+The EEPROM of RabbitMax Flex contains DT overlay with description of the periheral devices on the HAT. After adding RabbitMax to your Raspberry Pi and booting it you  should have some new filesystem nodes at */proc/device-tree/hat*:
+
+```
+pi@raspberrypi:~ $ ls -l /proc/device-tree/hat/
+total 0
+-r--r--r-- 1 root root  4 Sep 18 23:29 name
+-r--r--r-- 1 root root 15 Sep 18 23:27 product
+-r--r--r-- 1 root root  7 Sep 18 23:27 product_id
+-r--r--r-- 1 root root  7 Sep 18 23:27 product_ver
+-r--r--r-- 1 root root 37 Sep 18 23:29 uuid
+-r--r--r-- 1 root root 24 Sep 18 23:27 vendor
+```
+
+The infomation provided in these filesystem nodes helps you to indentify RabbitMax Flex vendor, version, product name, etc. For example:
+
+```
+pi@raspberrypi:~ $ cat /proc/device-tree/hat/product
+RabbitMax Flex
+
+pi@raspberrypi:~ $ cat /proc/device-tree/hat/vendor
+RabbitMax by Leon Anavi
+```
+
+More information about device trees, overlays and parameters are available at [the official Raspberry Pi documentation](https://www.raspberrypi.org/documentation/configuration/device-tree.md).
+
+
 ## Debugging
 
 ---
