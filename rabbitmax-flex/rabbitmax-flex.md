@@ -246,17 +246,17 @@ More information about device trees, overlays and parameters are available at [t
 
 The components of RabbitMax Flex utilize the following pins on Raspberry Pi:
 
-| Component    | Pins                  |
-| ------------ |:--------------------- |
-| I2C          | 3, 5                  |
-| EEPROM       | 27, 28                |
-| Relay        | 31                    |
-| Button       | 23                    |
-| Piezo buzzer | 29                    |
-| RGB LED      | 33, 35, 37            |
-| LCD display  | 7, 40, 13, 15, 19, 21 |
-| IR LED       | 11                    |
-| IR receiver  | 12                    |
+| Component    | Pins                            |
+| ------------ |:------------------------------- |
+| I2C          | 3, 5                            |
+| EEPROM       | 27, 28                          |
+| Relay        | 31                              |
+| Button       | 23                              |
+| Piezo buzzer | 29                              |
+| RGB LED      | 33 (blue), 35 (green), 37 (red) |
+| LCD display  | 7, 13, 15, 19, 21, 40           |
+| IR LED       | 11                              |
+| IR receiver  | 12                              |
 
 ## I2C
 
