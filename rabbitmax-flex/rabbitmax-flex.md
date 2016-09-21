@@ -170,7 +170,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-* Install additional applications, libraries and other tools needed by RabbitMax Fles
+* Install additional applications, libraries and other tools needed by RabbitMax Flex
 
 ```
 sudo apt-get install -y git i2c-tools lirc
@@ -181,6 +181,34 @@ sudo apt-get install -y git i2c-tools lirc
 ### Enable infrared (IR)
 
 ## Examples
+
+Sample applications written in Python and the C programming language are provided for RabbitMax Raspberry Pi HAT under MIT license in GitHub. All examples have been tested on Raspbian.
+
+Open a terminal and execute the follow the steps by step instructions to install all dependencies and to get the source code:
+
+* Install dependencies:
+
+```
+sudo apt-get update
+sudo apt-get install -y git git-core vim python-dev python-rpi.gpio
+```
+
+* Install the GPIO interface library for Raspberry Pi called [wiringPi](http://wiringpi.com/):
+
+```
+cd ~
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build
+```
+
+* Download the example for RabbitMax Flex Raspberry Pi HAT
+
+```
+cd ~
+git clone https://github.com/RabbitMax/rabbitmax-examples.git
+cd rabbitmax-examples
+```
 
 ### Relay
 
