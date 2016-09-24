@@ -36,7 +36,7 @@ RabbitMax Flex is an open source hardware Raspberry Pi HAT for Internet of Thing
 
 RabbitMax Flex is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble RabbitMax Flex to your Raspberry Pi with your bare hands.
 
-RabbitMax is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided. RabbitMax Flex also supports its own RabbitMax IoT GNU/Linux distribution which is based on the Yocto Project and Openembedded and features open source daemon for communicating with other Internet ot Things (IoT) through the lightweight machine-to-machine connectivity protocol MQTT.
+RabbitMax is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided. RabbitMax Flex also supports its own RabbitMax IoT GNU/Linux distribution which is based on the Yocto Project and Openembedded and features open source daemon for communicating with other Internet of Things (IoT) through the lightweight machine-to-machine connectivity protocol MQTT.
 
 ## Features
 
@@ -142,7 +142,7 @@ You can assemble RabbitMax Flex and mount it on your Raspberry Pi with your bare
 * Power off your Raspberry Pi.
 * Gently mount RabbitMax Flex on the 40 pin header of your Raspberry Pi.
 * Add sensors and LCD display module to your RabbitMax Flex.
-* Optionally, you may also assemple two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port.
+* Optionally, you may also assemble two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port.
 * Optionally, adjust the LED backlight of the LCD display module using a screwdriver.
 * That's all, now you are ready to go!
 
@@ -234,7 +234,7 @@ cd rabbitmax-examples
 
 Device Tree (DT) in Linux is a description of the hardware in a system. The DT overlay adds a number of optional elements. 
 
-The EEPROM of RabbitMax Flex contains DT overlay with description of the periheral devices on the HAT. After adding RabbitMax to your Raspberry Pi and booting it you  should have some new filesystem nodes at */proc/device-tree/hat*:
+The EEPROM of RabbitMax Flex contains DT overlay with description of the peripheral devices on the HAT. After adding RabbitMax to your Raspberry Pi and booting it you  should have some new filesystem nodes at */proc/device-tree/hat*:
 
 ```
 pi@raspberrypi:~ $ ls -l /proc/device-tree/hat/
@@ -247,7 +247,7 @@ total 0
 -r--r--r-- 1 root root 24 Sep 18 23:27 vendor
 ```
 
-The infomation provided in these filesystem nodes helps you to indentify RabbitMax Flex vendor, version, product name, etc. For example:
+The information provided in these filesystem nodes helps you to identify RabbitMax Flex vendor, version, product name, etc. For example:
 
 ```
 pi@raspberrypi:~ $ cat /proc/device-tree/hat/product
@@ -288,7 +288,7 @@ The components of RabbitMax Flex utilize the following pins on Raspberry Pi:
 
 ## I2C
 
-The sensors that can be connected to RabbitMax Flex communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labeled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore RabbitMax Flex includes two 4.7kohm resistors labeled as R9 and R10. If for one reason or another you need to disable the I2C pullup resistors remove R9 and R10.
+The sensors that can be connected to RabbitMax Flex communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labelled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore RabbitMax Flex includes two 4.7kohm resistors labelled as R9 and R10. If for one reason or another you need to disable the I2C pullup resistors remove R9 and R10.
 
 ## LCD Module
 
@@ -321,7 +321,7 @@ LED backlight of the LCD display module can be manually adjusted through the pot
 
 #### May I use RabbitMax Flex with other operating systems?
 
-Yes, you can use RabbitMax Flex with other GNU/Linux distributions and even other operating systems but some porting effords might be required.
+Yes, you can use RabbitMax Flex with other GNU/Linux distributions and even other operating systems but some porting efforts might be required.
 
 #### May I use other I2C sensors with RabbitMax Flex?
 
