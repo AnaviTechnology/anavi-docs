@@ -242,6 +242,23 @@ sudo python relay.py
 
 ### Button
 
+There are two examples for handling the button on RabbitMax Flex. The first  example is written in the C programming language. Execute the commands below to build and run it:
+
+```
+cd ~/rabbitmax-examples/flex/button/c/
+make
+sudo ./button
+```
+
+The second example is written in Python. Execute the following commands to run it:
+
+```
+cd ~/rabbitmax-examples/flex/button/python/
+sudo python button.py
+```
+
+After launching each example press the button on RabbitMax Flex and release it after at least a second and the following message will be printed on the screen "Button released!".
+
 ### RGB LED
 
 ### LCD Display Module
