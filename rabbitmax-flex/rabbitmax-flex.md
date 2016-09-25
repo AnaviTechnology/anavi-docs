@@ -89,7 +89,16 @@ Additionally you may attach USB mouse, keyboard, HDMI monitor or addition periph
 
 ## Supported Peripherals
 
+RabbitMax Flex Raspberry Pi HAT has a relay, a button, a piezo buzzer, a RGB LED, an infrared receiver and an infrared transmitter. Up to 5 I2C sensors and a 1602 character LCD display module can be also easily attached to the HAT.
+
 ### Sensors
+
+Rhe officially supported sensors by RabbitMax Flex are:
+* Temperature and barometric pressure (BMP180)
+* Temperature and humidity (HTU21)
+* Light (BH1750)
+
+You may also attach any other I2C sensors but you will have to take care of their software integration.
 
 #### Temperature Sensor
 
