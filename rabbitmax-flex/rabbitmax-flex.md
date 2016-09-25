@@ -221,6 +221,23 @@ cd rabbitmax-examples
 
 ### Relay
 
+There are a couple of examples how to control the relay on RabbitMax Flex Raspberry Pi HAT. Both examples have exactly the same behaviour but are written in different programming languages. The examples turn on the relay and turn it of after 3 seconds.
+
+The first example is written in the C programming language and uses the popular library wiring Pi. Execute the commands below to build and run the example.
+
+```
+cd ~/rabbitmax-examples/flex/relay/c/
+make
+sudo ./relay
+```
+
+The second example is written in Python. Type the following command to run it:
+
+```
+cd ~/rabbitmax-examples/flex/relay/python/
+sudo python relay.py
+```
+
 ### Piezo Buzzer
 
 ### Button
