@@ -261,6 +261,24 @@ After launching each example press the button on RabbitMax Flex and release it a
 
 ### RGB LED
 
+There are two examples that demonstrate the usage of the RGB LED on RabbitMax Flex Raspberry Pi HAT. The first example is written in the C programming language and depends on library wiringPi. Execute the commands below to built and run it:
+
+```
+cd ~/rabbitmax-examples/flex/rgb-led/c/
+make
+sudo ./rgb-led
+```
+
+The second example is written in Python. Type in the following commands to run it:
+
+```
+cd ~/rabbitmax-examples/flex/rgb-led/python/
+sudo python rgb-led.py
+```
+
+After launching each one of the examples the RGB LED will start blinking in three different colors: red, green and blue. Press Ctrl+C to terminate the example.
+
+
 ### LCD Display Module
 
 ### Sensors
