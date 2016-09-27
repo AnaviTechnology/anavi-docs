@@ -55,11 +55,11 @@ RabbitMax Flex Raspberry Pi HAT includes:
 
 RabbitMax Flex is compatible with the following Raspberry Pi version and models:
 
-* Raspberry Pi 3 
-* Raspberry Pi 2 
-* Raspberry Pi 0
-* Raspberry Pi Model B+
-* Raspberry Pi Model A+
+* [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+* [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
+* [Raspberry Pi 0](https://www.raspberrypi.org/products/pi-zero/)
+* [Raspberry Pi Model B+](https://www.raspberrypi.org/products/model-b-plus/)
+* [Raspberry Pi Model A+](https://www.raspberrypi.org/products/model-a-plus/)
 
 RabbitMax Flex is **NOT** compatible with the earlier 26-pin models of Raspberry Pi 1 Model B & A's.
 
@@ -85,15 +85,15 @@ In order to setup RabbitMax Flex the following items are required:
 * microSD card with compatible image
 * USB power supply
 
-Additionally you may attach USB mouse, keyboard, HDMI monitor or addition peripheral devices to your Raspberry Pi.
+Additionally you may attach USB mouse, keyboard, HDMI monitor or addition peripheral devices to your Raspberry Pi. It is recommended to use 2.5A (2500mA) power supply.
 
 ## Supported Peripherals
 
-RabbitMax Flex Raspberry Pi HAT has a relay, a button, a piezo buzzer, a RGB LED, an infrared receiver and an infrared transmitter. Up to 5 I2C sensors and a 1602 character LCD display module can be also easily attached to the HAT.
+RabbitMax Flex Raspberry Pi HAT has a relay, a button, a piezoelectric speaker (buzzer), a RGB LED, an infrared receiver and an infrared transmitter. Up to 5 I2C sensors and a 1602 character LCD display module can be also easily attached to the HAT.
 
 ### Sensors
 
-Rhe officially supported sensors by RabbitMax Flex are:
+The officially supported sensors by RabbitMax Flex are:
 * Temperature and barometric pressure (BMP180)
 * Temperature and humidity (HTU21)
 * Light (BH1750)
@@ -165,7 +165,7 @@ RabbitMax Flex is Raspberry Pi HAT therefore it is powered through Raspberry Pi.
 
 ## Installation
 
-In order to work correctly, RabbitMax Flex HAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started. After booting microSD card with Raspbian, open a terminal and execute the following commands:
+In order to work correctly, RabbitMax Flex HAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started. After booting microSD card with **Raspbian**, open a terminal and follow the steps below:
 
 * Ensure your APT package list is up-to-date:
 
@@ -187,11 +187,44 @@ sudo apt-get install -y git i2c-tools lirc
 
 ### Enable I2C
 
-### Enable infrared (IR)
+Follow the steps below to enable I2C which is required by the sensors for RabbitMax Flex
+
+* Open a terminal or login remotely via SSH to your Raspberry Pi and type in the following command:
+
+```
+sudo raspi-config
+```
+
+* Select **Advanced Options > I2C** and enable it.
+
+* Reboot the board.
+
+
+### Enable Infrared (IR)
+
+### Enable Serial Debugging
+
+Follow the steps below to enable serial debugging through USB to serial cable:
+
+* Open a terminal or login remotely via SSH to your Raspberry Pi and type in the following command:
+
+```
+sudo raspi-config
+```
+
+* Select **Advanced Options > Serial** and enable it.
+
+* Reboot the board.
+
+* Plug the USB to serial cable and connect your Raspberry Pi to your PC. The **RX** line of the cable should go to **TX** line of **UART1** on RabbitMax Flex. The **TX** line of the cable should go to the **RX** line of **UART1** on RabbitMax Flex. The **GND** wire should go to the **GND** line of **UART1** on RabbitMax Flex.
+
+* Type in the following command on your computer if you are using GNU/Linux distribution to access RabbitMax Flex. Alternatively if your OS is Microsoft Windows use [putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+
+The recommended USB to serial cable for RabbitMax Flex is [Olimex USB-Serial-Cable-F](https://www.olimex.com/Products/Components/Cables/USB-Serial-Cable/USB-Serial-Cable-F/).
 
 ## Examples
 
-Sample applications written in Python and the C programming language are provided for RabbitMax Raspberry Pi HAT under MIT license in GitHub. All examples have been tested on Raspbian.
+Sample applications written in Python and the C programming language are provided for RabbitMax Raspberry Pi HAT under MIT license in GitHub. All examples have been tested on **Raspbian**.
 
 Open a terminal and execute the follow the steps by step instructions to install all dependencies and to get the source code:
 
@@ -301,7 +334,7 @@ sudo ./lcd
 
 ## Device Tree Overlays
 
-Device Tree (DT) in Linux is a description of the hardware in a system. The DT overlay adds a number of optional elements. 
+Device Tree (DT) in Linux is a description of the hardware in a system. The DT overlay adds a number of optional elements.
 
 The EEPROM of RabbitMax Flex contains DT overlay with description of the peripheral devices on the HAT. After adding RabbitMax to your Raspberry Pi and booting it you  should have some new filesystem nodes at */proc/device-tree/hat*:
 
@@ -327,9 +360,6 @@ RabbitMax by Leon Anavi
 ```
 
 More information about device trees, overlays and parameters are available at [the official Raspberry Pi documentation](https://www.raspberrypi.org/documentation/configuration/device-tree.md).
-
-
-## Debugging
 
 ---
 
