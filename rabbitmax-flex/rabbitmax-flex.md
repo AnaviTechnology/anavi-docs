@@ -281,6 +281,14 @@ After launching each one of the examples the RGB LED will start blinking in thre
 
 ### LCD Display Module
 
+Mount 1602 LCD display module to RabbitMax Flex. Execute the following commands to build and run sample application written in the C programming language to write text on the display:
+
+```
+cd ~/rabbitmax-examples/flex/lcd/c/
+make
+sudo ./lcd
+```
+
 ### Sensors
 
 #### Temperature Sensor (BMP180)
