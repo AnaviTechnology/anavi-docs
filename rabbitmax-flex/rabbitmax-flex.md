@@ -45,7 +45,7 @@ RabbitMax Flex Raspberry Pi HAT includes:
 * Relay
 * IR LED
 * IR photo sensor
-* Piezo buzzer
+* Piezoelectric speaker (buzzer)
 * Button
 * RGB LED
 * Slot for modular LCD character display
@@ -53,7 +53,7 @@ RabbitMax Flex Raspberry Pi HAT includes:
 
 ## Supported Raspberry Pi Versions and Models
 
-RabbitMax Flex is compatible with the following Raspberry Pi version and models:
+RabbitMax Flex is compatible with the following Raspberry Pi versions and models:
 
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
 * [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
@@ -173,16 +173,10 @@ In order to work correctly, RabbitMax Flex HAT requires an up-to-date kernel, I2
 sudo apt-get update
 ```
 
-* Upgrade packages
-
-```
-sudo apt-get upgrade
-```
-
 * Install additional applications, libraries and other tools needed by RabbitMax Flex
 
 ```
-sudo apt-get install -y git i2c-tools lirc
+sudo apt-get install -y git i2c-tools vim
 ```
 
 ### Enable I2C
@@ -199,10 +193,7 @@ sudo raspi-config
 
 * Reboot the board.
 
-
-### Enable Infrared (IR)
-
-### Enable Serial Debugging
+### Serial Debugging
 
 Follow the steps below to enable serial debugging through USB to serial cable:
 
@@ -441,7 +432,173 @@ RabbitMax Light Sensor
 Light: 43 Lux
 ```
 
-## LIRC
+## Infrared and LIRC
+
+RabbitMax Flex Raspberry Pi HAT has built-in infrared receiver and transmitter. [LIRC](http://www.lirc.org/) (Linux Infrared Remote Control) is popular open source application for sending and receiving data over infrared on GNU/Linux distributions. This chapter provides guidelines how to enable RabbitMax Flex infrared receiver and transmitter on **Raspbian** and to use LIRC.
+
+## Setting up LIRC
+
+Perform the steps below to enable the infrared receiver and transmitter:
+
+* Install LIRC
+
+```
+sudo apt-get update
+sudo apt-get install -y lirc
+```
+
+* Edit */etc/modules* and add the IR pins by adding the following line to the end of the file:
+
+```
+lirc_dev
+lirc_rpi gpio_in_pin=18 gpio_out_pin=17
+```
+* Configure */etc/lirc/hardware.conf* in a way to match:
+
+```
+# /etc/lirc/hardware.conf
+#
+# Arguments which will be used when launching lircd
+LIRCD_ARGS="--uinput"
+
+#Don't start lircmd even if there seems to be a good config file
+#START_LIRCMD=false
+
+#Don't start irexec, even if a good config file seems to exist.
+#START_IREXEC=false
+
+#Try to load appropriate kernel modules
+LOAD_MODULES=true
+
+# Run "lircd --driver=help" for a list of supported drivers.
+#DRIVER="UNCONFIGURED"
+DRIVER="default"
+# usually /dev/lirc0 is the correct setting for systems using udev
+DEVICE="/dev/lirc0"
+MODULES="lirc_rpi"
+
+# Default configuration files for your hardware if any
+LIRCD_CONF=""
+LIRCMD_CONF=""
+```
+
+* Edit */boot/config.txt* and configure kernel extensions by adding the following line to the end of the file:
+
+```
+dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17
+```
+
+* Reboot Raspberry Pi:
+
+```
+sudo shutdown -r 0
+```
+
+## Using IR Receiver
+
+Follow the steps below to verify that the IR receiver is working as expected:
+
+* Stop LIRC systemd service:
+
+```
+sudo systemctl stop lirc
+```
+
+* Start outputting raw data from the IR receiver
+
+```
+mode2 -d /dev/lirc0
+```
+
+* Point a remote control at the IR receiver on RabbitMax Flex and press its buttons. If the IR receive is configured successfully you will see similar output:
+
+```
+space 3662230
+pulse 2428
+space 594
+pulse 1201
+space 596
+pulse 1230
+space 595
+pulse 1209
+space 590
+pulse 1204
+```
+
+## Using IR LED
+
+Follow the steps below to create LIRC configuration file and test the infrared transmitter:
+
+* Stop LIRC systemd service
+
+```
+sudo systemctl stop lirc
+```
+
+* Type in the following command to create new LIRC control configuration file and follow the on screen instructions to scan a remote control:
+
+```
+irrecord -d /dev/lirc0 ~/lircd.conf
+```
+
+List all available names for buttons supported by LIRC:
+```
+irrecord --list-namespace
+```
+
+Example configuration output:
+```
+Now enter the names for the buttons.
+
+Please enter the name for the next button (press <ENTER> to finish recording)
+KEY_POWER
+
+Now hold down button "KEY_POWER".
+
+Please enter the name for the next button (press <ENTER> to finish recording)
+KEY_VOLUMEUP
+
+Now hold down button "KEY_VOLUMEUP".
+
+Please enter the name for the next button (press <ENTER> to finish recording)
+KEY_VOLUMEDOWN
+
+Now hold down button "KEY_VOLUMEDOWN".
+
+Please enter the name for the next button (press <ENTER> to finish recording)
+
+Successfully written config file.
+```
+
+* Backup the original LIRC configuration file:
+
+```
+sudo mv /etc/lirc/lircd.conf /etc/lirc/lircd-backup.conf
+```
+
+* Load the new configuration file:
+
+```
+sudo mv ~/lircd.conf /etc/lirc/lircd.conf
+```
+
+* Launch LIRC systemd service again:
+
+```
+sudo systemctl start lirc
+```
+
+* List all saved keys:
+
+```
+irsend LIST /home/pi/lircd.conf ""
+```
+
+* * Test the configuration file by sending recorded IR command, for example POWER (please note the exact command may vary for different LIRC configuration files, IR devices and IR remote controls):
+
+```
+irsend SEND_ONCE /home/pi/lircd.conf KEY_POWER
+```
 
 ## Device Tree Overlays
 
