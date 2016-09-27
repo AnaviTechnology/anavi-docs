@@ -715,9 +715,9 @@ Yes, the official RabbitMax Flex software is free and open source. The examples 
 
 ## Document Revision
 
-| Date             | Changes                | Modified pages  |
-| ---------------- |:----------------------:| :---------------|
-| 14 September 2016| Initial manual release | All             |
+| Date             | Changes                | Modified pages  | Author          |
+| ---------------- |:----------------------:| :---------------| :---------------|
+| 14 September 2016| Initial manual release | All             | Leon Anavi      |
 
 ## RabbitMax Flex HAT Revision
 
