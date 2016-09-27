@@ -254,7 +254,7 @@ cd rabbitmax-examples
 
 ### Relay
 
-There are a couple of examples how to control the relay on RabbitMax Flex Raspberry Pi HAT. Both examples have exactly the same behaviour but are written in different programming languages. The examples turn on the relay and turn it of after 3 seconds.
+There is [SONGLE SRD-05VDC-SL-C](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) relay on RabbitMax Flex Raspberry Pi HAT. Please refer to the [technical documentation](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) of the relay for its specification and wiring guidelines. Couple of examples how to control the relay are provided. Both examples have exactly the same behavior but are written in different programming languages. The examples turn on the relay and turn it of after 3 seconds.
 
 The first example is written in the C programming language and uses the popular library wiring Pi. Execute the commands below to build and run the example.
 
@@ -271,7 +271,34 @@ cd ~/rabbitmax-examples/flex/relay/python/
 sudo python relay.py
 ```
 
-### Piezo Buzzer
+### Buzzer
+
+There is a built-in piezoelectric speaker (buzzer) in RabbitMax Flex. Three examples are provided to demonstrate how to use it. Two of them are written in the C programming language and the third is written in Python.
+
+Type in the commands below to build and run the first example which is a simple beep application written in C:
+
+```
+cd ~/rabbitmax-examples/flex/buzzer/c/
+make
+sudo ./beep
+```
+
+Type in the commands below to build and run the second example which is written in C and plays sounds similar to the imperial march, Darth Vader's theme, from Star Wars:
+
+```
+cd ~/rabbitmax-examples/flex/buzzer/c/
+make starwars
+sudo ./starwars
+```
+
+Execute the command below to run the third example which is written in Python:
+
+```
+cd ~/rabbitmax-examples/flex/buzzer/python/
+sudo python beep.py
+```
+
+Press *Ctrl+C* to terminate any of the example.
 
 ### Button
 
@@ -309,12 +336,14 @@ cd ~/rabbitmax-examples/flex/rgb-led/python/
 sudo python rgb-led.py
 ```
 
-After launching each one of the examples the RGB LED will start blinking in three different colors: red, green and blue. Press Ctrl+C to terminate the example.
+After launching each one of the examples the RGB LED will start blinking in three different colors: red, green and blue. Press *Ctrl+C* to terminate the example.
 
 
 ### LCD Display Module
 
-Mount 1602 LCD display module to RabbitMax Flex. Execute the following commands to build and run sample application written in the C programming language to write text on the display:
+Mount 1602 LCD display module to RabbitMax Flex. Adjust the brightness of the back light of the LCD display module through the potentiometer using a screwdriver.
+
+Execute the following commands to build and run sample application written in the C programming language to write text on the display:
 
 ```
 cd ~/rabbitmax-examples/flex/lcd/c/
@@ -324,11 +353,93 @@ sudo ./lcd
 
 ### Sensors
 
+It is mandatory to enable **I2C** to use any of the sensors supported by RabbitMax Flex Raspberry Pi HAT.
+
 #### Temperature Sensor (BMP180)
+
+Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with RabbitMax Flex:
+
+* Connect BMP180 to any of the I2C slots on RabbitMax Flex using male to female Duport jumper wire.
+
+* Type in the following command and verify that the address of the sensor is listed:
+
+```
+sudo i2cdetect -y 1
+```
+
+* Type in the following commands to build and run the sample application that display temperature and barometric pressure:
+
+```
+cd ~/rabbitmax-examples/flex/sensor-temperature/c/
+make
+sudo ./rabbitmax-sensor-temperature
+```
+
+* Verify that the output is similar to (the exact values depend on the atmospheric condition):
+
+```
+pi@raspberrypi:~/rabbitmax-examples/flex/sensor-temperature/c $ sudo ./rabbitmax-sensor-temperature
+RabbitMax Temperature and Barometric Pressure Sensor
+Temperature	25.0 C
+Pressure	995.49 hPa
+```
 
 #### Humidity Sensor (HTU21D)
 
+Follow the steps below to use the HTU21D I2C temperature and humidity sensor with RabbitMax Flex:
+
+* Connect HTU21D to any of the I2C slots on RabbitMax Flex using male to female Duport jumper wire.
+
+* Type in the following command and verify that the address of the sensor is listed:
+
+```
+sudo i2cdetect -y 1
+```
+
+* Type in the following commands to build and run the sample application that display temperature and humidity:
+
+```
+cd ~/rabbitmax-examples/flex/sensor-humidity/c/
+make
+sudo ./rabbitmax-sensor-humidity
+```
+
+* Verify that the output is similar to (the exact values depend on the atmospheric condition):
+
+```
+pi@raspberrypi:~/rabbitmax-examples/flex/sensor-humidity/c $ sudo ./rabbitmax-sensor-humidity
+RabbitMax Humidity and Temperature Sensor
+24.54C
+37.78%rh
+```
+
 #### Light Sensor (BH1750)
+
+Follow the steps below to use the BH1750 I2C light sensor with RabbitMax Flex:
+
+* Connect BH1750 to any of the I2C slots on RabbitMax Flex using male to female Duport jumper wire.
+
+* Type in the following command and verify that the address of the sensor is listed:
+
+```
+sudo i2cdetect -y 1
+```
+
+* Type in the following commands to build and run the sample application that display luminous emittance:
+
+```
+cd ~/rabbitmax-examples/flex/sensor-light/c/
+make
+./rabbitmax-light-sensor
+```
+
+* Verify that the output is similar to (the exact values depend on the atmospheric condition):
+
+```
+pi@raspberrypi:~/rabbitmax-examples/flex/sensor-light/c $ ./rabbitmax-light-sensor
+RabbitMax Light Sensor
+Light: 43 Lux
+```
 
 ## LIRC
 
@@ -364,6 +475,13 @@ More information about device trees, overlays and parameters are available at [t
 ---
 
 # CHAPTER 4: RabbitMax IoT GNU/Linux Distribution
+
+RabbitMax IoT GNU/Linux distribution is still *under construction*. It is built using the **Yocto Project** and **OpenEmbedded** and features daemon that sends data from the sensors and receives messages through the lightweight machine-to-machine communication protocol **MQTT**. There is also a responsive HTML5 web interface developed with jQuery Mobile and **Node.js** API. For more details visit:
+
+* [rabbitmaxflexd](https://github.com/RabbitMax/rabbitmaxflexd)
+* [meta-rabbitmax](https://github.com/RabbitMax/meta-rabbitmax)
+* [rabbitmax-api](https://github.com/RabbitMax/rabbitmax-api)
+* [rabbitmax-ui](https://github.com/RabbitMax/rabbitmax-ui)
 
 ---
 
