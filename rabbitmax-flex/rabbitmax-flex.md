@@ -670,11 +670,11 @@ The sensors that can be connected to RabbitMax Flex communicate with a host micr
 
 | LCD  | Function             | Raspberry Pi Pin |
 | ---- |:-------------------- |:---------------- |
-| 1    | GND                  | 6
+| 1    | GND                  | 6 (GND)
 | 2    | 5V                   | 2
-| 3    | Contrast             | 6
+| 3    | Contrast             | 6 (GND)
 | 4    | RS                   | 7
-| 5    | RW                   | 6
+| 5    | RW                   | 6 (GND)
 | 6    | E                    | 40
 | 7    | Data 0               | 13
 | 8    | Data 1               | 15
@@ -685,7 +685,7 @@ The sensors that can be connected to RabbitMax Flex communicate with a host micr
 | 13   | Data 6               | -
 | 14   | Data 7               | -
 | 15   | 5V via potentiometer | 2
-| 16   | GND                  | 6
+| 16   | GND                  | 6 (GND)
 
 LED backlight of the LCD display module can be manually adjusted through the potentiometer POT1 using a screwdriver.
 
