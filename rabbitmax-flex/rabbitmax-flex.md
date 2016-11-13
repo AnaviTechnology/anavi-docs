@@ -245,7 +245,11 @@ cd rabbitmax-examples
 
 ### Relay
 
-There is [SONGLE SRD-05VDC-SL-C](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) relay on RabbitMax Flex Raspberry Pi HAT. Please refer to the [technical documentation](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) of the relay for its specification and wiring guidelines. Couple of examples how to control the relay are provided. Both examples have exactly the same behavior but are written in different programming languages. The examples turn on the relay and turn it of after 3 seconds.
+There is [SONGLE SRD-05VDC-SL-C](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) relay on RabbitMax Flex Raspberry Pi HAT. Please refer to the [technical documentation](http://rabbitmax.com/files/SONGLE-SRD-05VDC-SL-C.pdf) of the relay for its specification and wiring guidelines.
+
+**Please be aware that, although these relays are rated for high voltages, we recommend only using them to switch up to 12V. Electronics with mains voltage can be very dangerous - please consider this a strong recommendation that you should on no account use voltages higher than 12V. Do NOT use the relay output with AC mains!**
+
+Couple of examples how to control the relay are provided. Both examples have exactly the same behavior but are written in different programming languages. The examples turn on the relay and turn it of after 3 seconds.
 
 The first example is written in the C programming language and uses the popular library wiring Pi. Execute the commands below to build and run the example.
 
