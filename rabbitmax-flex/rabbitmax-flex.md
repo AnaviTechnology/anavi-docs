@@ -514,7 +514,7 @@ sudo systemctl stop lirc
 mode2 -d /dev/lirc0
 ```
 
-* Point a remote control at the IR receiver on RabbitMax Flex and press its buttons. If the IR receive is configured successfully you will see similar output:
+* Point a remote control at the IR receiver on RabbitMax Flex and press its buttons. If the IR receiver is configured successfully you will see similar output:
 
 ```
 space 3662230
