@@ -1,2 +1,2 @@
-# rabbitmax-docs
-Documents for RabbitMax products
+# anavi-docs
+Documents for ANAVI products
