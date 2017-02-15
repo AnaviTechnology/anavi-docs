@@ -36,7 +36,7 @@ ANAVI Infrared pHAT is an open source hardware Raspberry Pi add-on board with IR
 
 ANAVI Infrared pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Infrared pHAT to your Raspberry Pi with your bare hands.
 
-Anavi is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided. ANAVI Infrared pHAT also supports its own Anavi IoT GNU/Linux distribution which is based on the Yocto Project and Openembedded and features open source daemon for communicating with other Internet of Things (IoT) through the lightweight machine-to-machine connectivity protocol MQTT.
+Anavi is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided. ANAVI Infrared pHAT also supports its own ANAVI IoT GNU/Linux distribution which is based on the Yocto Project and Openembedded and features open source daemon for communicating with other Internet of Things (IoT) through the lightweight machine-to-machine connectivity protocol MQTT.
 
 ## Features
 
@@ -89,6 +89,7 @@ ANAVI Infrared pHAT Raspberry Pi HAT has an infrared receiver and an infrared tr
 ### Sensors
 
 The officially supported sensors by ANAVI Infrared pHAT are:
+
 * Temperature and barometric pressure (BMP180)
 * Temperature and humidity (HTU21)
 * Light (BH1750)
@@ -141,9 +142,8 @@ You can assemble ANAVI Infrared pHAT and mount it on your Raspberry Pi with your
 * Ensure that you Raspberry Pi is compatible with ANAVI Infrared pHAT.
 * Power off your Raspberry Pi.
 * Gently mount ANAVI Infrared pHAT on the 40 pin header of your Raspberry Pi.
-* Add sensors and LCD display module to your ANAVI Infrared pHAT.
-* Optionally, you may also assemble two brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated, in particular the HDMI port.
-* Optionally, adjust the LED backlight of the LCD display module using a screwdriver.
+* Add sensors to your ANAVI Infrared pHAT.
+* Optionally, you may also mount two or four brass M2.5 standoffs to keep your Pi HAT snug on your Raspberry Pi while also keeping the two boards separated.
 * That's all, now you are ready to go!
 
 ## Powering ANAVI Infrared pHAT
@@ -198,7 +198,7 @@ sudo raspi-config
 
 * Reboot the board.
 
-* Plug the USB to serial cable and connect your Raspberry Pi to your PC. The **RX** line of the cable should go to **TX** line of **UART1** on ANAVI Infrared pHAT. The **TX** line of the cable should go to the **RX** line of **UART1** on ANAVI Infrared pHAT. The **GND** wire should go to the **GND** line of **UART1** on ANAVI Infrared pHAT.
+* Plug the USB to serial cable and connect your Raspberry Pi to your PC. The **RX** line of the cable should go to **TX** line of **UART** on ANAVI Infrared pHAT. The **TX** line of the cable should go to the **RX** line of **UART** on ANAVI Infrared pHAT. The **GND** wire should go to the **GND** line of **UART** on ANAVI Infrared pHAT.
 
 * Type in the following command on your computer if you are using GNU/Linux distribution to access ANAVI Infrared pHAT. Alternatively if your OS is Microsoft Windows use [putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
@@ -501,12 +501,12 @@ The EEPROM of ANAVI Infrared pHAT contains DT overlay with description of the pe
 ```
 pi@raspberrypi:~ $ ls -l /proc/device-tree/hat/
 total 0
--r--r--r-- 1 root root  4 Sep 18 23:29 name
--r--r--r-- 1 root root 15 Sep 18 23:27 product
--r--r--r-- 1 root root  7 Sep 18 23:27 product_id
--r--r--r-- 1 root root  7 Sep 18 23:27 product_ver
--r--r--r-- 1 root root 37 Sep 18 23:29 uuid
--r--r--r-- 1 root root 24 Sep 18 23:27 vendor
+-r--r--r-- 1 root root  4 Feb 15 00:27 name
+-r--r--r-- 1 root root 20 Feb 15 00:27 product
+-r--r--r-- 1 root root  7 Feb 15 00:27 product_id
+-r--r--r-- 1 root root  7 Feb 15 00:27 product_ver
+-r--r--r-- 1 root root 37 Feb 15 00:27 uuid
+-r--r--r-- 1 root root  6 Feb 15 00:27 vendor
 ```
 
 The information provided in these filesystem nodes helps you to identify ANAVI Infrared pHAT vendor, version, product name, etc. For example:
@@ -516,14 +516,14 @@ pi@raspberrypi:~ $ cat /proc/device-tree/hat/product
 ANAVI Infrared pHAT
 
 pi@raspberrypi:~ $ cat /proc/device-tree/hat/vendor
-Anavi by Leon Anavi
+ANAVI
 ```
 
 More information about device trees, overlays and parameters are available at [the official Raspberry Pi documentation](https://www.raspberrypi.org/documentation/configuration/device-tree.md).
 
 ---
 
-# CHAPTER 4: Anavi IoT GNU/Linux Distribution
+# CHAPTER 4: ANAVI IoT GNU/Linux Distribution
 
 Anavi IoT GNU/Linux distribution is still *under construction*. It is built using the **Yocto Project** and **OpenEmbedded** and features daemon that sends data from the sensors and receives messages through the lightweight machine-to-machine communication protocol **MQTT**. There is also a responsive HTML5 web interface developed with jQuery Mobile and **Node.js** API. For more details visit:
 
