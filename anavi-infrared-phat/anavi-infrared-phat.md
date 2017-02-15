@@ -60,7 +60,7 @@ ANAVI Infrared pHAT is **NOT** compatible with the earlier 26-pin models of Rasp
 
 ## Target Market
 
-ANAVI Infrared pHAT is a Raspberry Pi HAT suitable for existing Raspberry Pi customers interested in home automation, software development and Internet of Things. The board is appropriate for embedded programming enthusiasts, GNU/Linux gadget fans, students as well as web and/or mobile app developers. The main usage of the board is embedded software development without the urge of understanding perfectly the hardware.
+ANAVI Infrared pHAT is a Raspberry Pi HAT suitable for existing Raspberry Pi customers interested in home automation, software development and Internet of Things. The board is appropriate for embedded programming enthusiasts, GNU/Linux gadget fans, students as well as web and/or mobile app developers. The main usage of the board is embedded software development and controlling IR devices without the urge of understanding perfectly the hardware.
 
 ## Board Version
 
