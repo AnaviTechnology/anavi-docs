@@ -32,11 +32,11 @@ There is no warranty for the design materials and the components used to create 
 
 ## Introduction
 
-ANAVI Infrared pHAT is an open source hardware Raspberry Pi add-on board with IR receiver, transmitter, UART and 3 I2C slots for sensors. ANAVI Infrared pHAT was started as a hobby project by Leon Anavi in January 2017. The project allows you to convert your Raspberry Pi into powerful remote control using the open source software LIRC.
+ANAVI Infrared pHAT is an open source hardware Raspberry Pi add-on board with IR receiver, transmitter, UART and 3 I2C slots for sensors. ANAVI Infrared pHAT was started as a hobby project by Leon Anavi in January 2017. The project allows you to convert your Raspberry Pi into a smart remote control using the open source software LIRC.
 
 ANAVI Infrared pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Infrared pHAT to your Raspberry Pi with your bare hands.
 
-Anavi is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided. ANAVI Infrared pHAT also supports its own ANAVI IoT GNU/Linux distribution which is based on the Yocto Project and Openembedded and features open source daemon for communicating with other Internet of Things (IoT) through the lightweight machine-to-machine connectivity protocol MQTT.
+Anavi is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided.
 
 ## Features
 
@@ -52,7 +52,8 @@ ANAVI Infrared pHAT is compatible with the following Raspberry Pi versions and m
 
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
 * [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
-* [Raspberry Pi 0](https://www.raspberrypi.org/products/pi-zero/)
+* [Raspberry Pi 0](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
+* [Raspberry Pi 0 W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
 * [Raspberry Pi Model B+](https://www.raspberrypi.org/products/model-b-plus/)
 * [Raspberry Pi Model A+](https://www.raspberrypi.org/products/model-a-plus/)
 
@@ -88,7 +89,7 @@ ANAVI Infrared pHAT Raspberry Pi HAT has an infrared receiver and an infrared tr
 
 ### Sensors
 
-The officially supported sensors by ANAVI Infrared pHAT are:
+The officially supported I2C sensor modules by ANAVI Infrared pHAT are:
 
 * Temperature and barometric pressure (BMP180)
 * Temperature and humidity (HTU21)
