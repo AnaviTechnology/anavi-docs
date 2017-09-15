@@ -181,7 +181,7 @@ Follow the steps below to enable I2C which is required by the sensors for ANAVI 
 sudo raspi-config
 ```
 
-* Select **Advanced Options > I2C** and enable it.
+* Select **Interfacing Options > I2C** and enable it.
 
 * Reboot the board.
 
@@ -195,7 +195,7 @@ Follow the steps below to enable serial debugging through USB to serial cable:
 sudo raspi-config
 ```
 
-* Select **Advanced Options > Serial** and enable it.
+* Select **Interfacing Options > Serial** and enable it.
 
 * Reboot the board.
 
