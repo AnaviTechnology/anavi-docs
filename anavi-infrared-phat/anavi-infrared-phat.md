@@ -346,7 +346,7 @@ sudo apt-get install -y lirc
 lirc_dev
 lirc_rpi gpio_in_pin=18 gpio_out_pin=17
 ```
-* Configure */etc/lirc/hardware.conf* in a way to match:
+* Create */etc/lirc/hardware.conf* add the following content:
 
 ```
 # /etc/lirc/hardware.conf
@@ -375,6 +375,13 @@ LIRCD_CONF=""
 LIRCMD_CONF=""
 ```
 
+* Edit */etc/lirc/lirc_options.conf* and make sure that driver and devices are set as:
+
+```
+driver          = default
+device          = /dev/lirc0
+```
+
 * Edit */boot/config.txt* and configure kernel extensions by adding the following line to the end of the file:
 
 ```
@@ -394,7 +401,7 @@ Follow the steps below to verify that the IR receiver is working as expected:
 * Stop LIRC systemd service:
 
 ```
-sudo systemctl stop lirc
+sudo systemctl stop lircd
 ```
 
 * Start outputting raw data from the IR receiver
@@ -425,7 +432,7 @@ Follow the steps below to create LIRC configuration file and test the infrared t
 * Stop LIRC systemd service
 
 ```
-sudo systemctl stop lirc
+sudo systemctl stop lircd
 ```
 
 * Type in the following command to create new LIRC control configuration file and follow the on screen instructions to scan a remote control:
@@ -478,7 +485,7 @@ sudo mv ~/lircd.conf /etc/lirc/lircd.conf
 * Launch LIRC systemd service again:
 
 ```
-sudo systemctl start lirc
+sudo systemctl start lircd
 ```
 
 * List all saved keys:
