@@ -231,7 +231,7 @@ cd wiringPi
 
 ```
 cd ~
-git clone https://github.com/AnaviTech/anavi-examples.git
+git clone https://github.com/AnaviTechnology/anavi-examples.git
 cd anavi-examples
 ```
 
@@ -599,10 +599,10 @@ More information about device trees, overlays and parameters are available at [t
 
 Anavi IoT GNU/Linux distribution is still *under construction*. It is built using the **Yocto Project** and **OpenEmbedded** and features daemon that sends data from the sensors and receives messages through the lightweight machine-to-machine communication protocol **MQTT**. There is also a responsive HTML5 web interface developed with jQuery Mobile and **Node.js** API. For more details visit:
 
-* [anaviflexd](https://github.com/AnaviTech/anaviflexd)
-* [meta-anavi](https://github.com/AnaviTech/meta-anavi)
-* [anavi-api](https://github.com/AnaviTech/anavi-api)
-* [anavi-ui](https://github.com/AnaviTech/anavi-ui)
+* [anaviflexd](https://github.com/AnaviTechnology/anaviflexd)
+* [meta-anavi](https://github.com/AnaviTechnology/meta-anavi)
+* [anavi-api](https://github.com/AnaviTechnology/anavi-api)
+* [anavi-ui](https://github.com/AnaviTechnology/anavi-ui)
 
 ---
 
@@ -667,6 +667,6 @@ Yes, the official ANAVI Infrared pHAT software is free and open source. The exam
 
 ## See Also
 
-For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTech). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTech/), [Twitter](https://twitter.com/AnaviTech) or [email](mailto:info@anavi.technology).
+For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTech/), [Twitter](https://twitter.com/AnaviTech) or [email](mailto:info@anavi.technology).
 
 ---
