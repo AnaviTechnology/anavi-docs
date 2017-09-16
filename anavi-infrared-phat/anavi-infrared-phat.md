@@ -435,20 +435,74 @@ Follow the steps below to create LIRC configuration file and test the infrared t
 sudo systemctl stop lircd
 ```
 
+* List all available names for buttons supported by LIRC:
+
+```
+irrecord --list-namespace
+```
+
 * Type in the following command to create new LIRC control configuration file and follow the on screen instructions to scan a remote control:
 
 ```
 irrecord -d /dev/lirc0 ~/lircd.conf
 ```
 
-List all available names for buttons supported by LIRC:
+Example configuration output with name hifi:
 ```
-irrecord --list-namespace
-```
+Using driver default on device /dev/lirc0
 
-Example configuration output:
-```
-Now enter the names for the buttons.
+irrecord -  application for recording IR-codes for usage with lirc
+Copyright (C) 1998,1999 Christoph Bartelmus(lirc@bartelmus.de)
+
+This program will record the signals from your remote control
+and create a config file for lircd.
+
+A proper config file for lircd is maybe the most vital part of this
+package, so you should invest some time to create a working config
+file. Although I put a good deal of effort in this program it is often
+not possible to automatically recognize all features of a remote
+control. Often short-comings of the receiver hardware make it nearly
+impossible. If you have problems to create a config file READ THE
+DOCUMENTATION at https://sf.net/p/lirc-remotes/wiki
+
+If there already is a remote control of the same brand available at
+http://sf.net/p/lirc-remotes you might want to try using such a
+remote as a template. The config files already contains all
+parameters of the protocol used by remotes of a certain brand and
+knowing these parameters makes the job of this program much
+easier. There are also template files for the most common protocols
+available. Templates can be downloaded using irdb-get(1). You use a
+template file by providing the path of the file as a command line
+parameter.
+
+Please take the time to finish the file as described in
+https://sourceforge.net/p/lirc-remotes/wiki/Checklist/ an send it
+to  <lirc@bartelmus.de> so it can be made available to others.
+
+Press RETURN to continue.
+
+Checking for ambient light  creating too much disturbances.
+Please don't press any buttons, just wait a few seconds...
+
+No significant noise (received 0 bytes)
+
+Enter name of remote (only ascii, no spaces) :hifi
+Using hifi.lircd.conf as output filename
+
+Now start pressing buttons on your remote control.
+
+It is very important that you press many different buttons randomly
+and hold them down for approximately one second. Each button should
+generate at least one dot but never more than ten dots of output.
+Don't stop pressing buttons until two lines of dots (2x80) have
+been generated.
+
+Press RETURN now to start recording.
+................................................................................
+Got gap (45034 us)}
+
+Please keep on pressing buttons like described above.
+...............................................................................
 
 Please enter the name for the next button (press <ENTER> to finish recording)
 KEY_POWER
@@ -456,18 +510,22 @@ KEY_POWER
 Now hold down button "KEY_POWER".
 
 Please enter the name for the next button (press <ENTER> to finish recording)
-KEY_VOLUMEUP
 
-Now hold down button "KEY_VOLUMEUP".
+Checking for toggle bit mask.
+Please press an arbitrary button repeatedly as fast as possible.
+Make sure you keep pressing the SAME button and that you DON'T HOLD
+the button down!.
+If you can't see any dots appear, wait a bit between button presses.
 
-Please enter the name for the next button (press <ENTER> to finish recording)
-KEY_VOLUMEDOWN
+Press RETURN to continue.
+..............................Cannot find any toggle mask.
+You have only recorded one button in a non-raw configuration file.
+This file doesn't really make much sense, you should record at
+least two or three buttons to get meaningful results. You can add
+more buttons next time you run irrecord.
 
-Now hold down button "KEY_VOLUMEDOWN".
 
-Please enter the name for the next button (press <ENTER> to finish recording)
-
-Successfully written config file.
+Successfully written config file hifi.lircd.conf
 ```
 
 * Backup the original LIRC configuration file:
@@ -476,10 +534,12 @@ Successfully written config file.
 sudo mv /etc/lirc/lircd.conf /etc/lirc/lircd-backup.conf
 ```
 
-* Load the new configuration file:
+* Load the new configuration file, for example:
+
+**NOTE: The name of configuration depends on the selected name of remote. Please adapt the command below depending on your name of remote!**
 
 ```
-sudo mv ~/lircd.conf /etc/lirc/lircd.conf
+sudo mv hifi.lircd.conf /etc/lirc/lircd.conf
 ```
 
 * Launch LIRC systemd service again:
@@ -488,16 +548,20 @@ sudo mv ~/lircd.conf /etc/lirc/lircd.conf
 sudo systemctl start lircd
 ```
 
-* List all saved keys:
+* List all saved keys, for example:
+
+**NOTE: Please adapt the command below depending on your name of remote!**
 
 ```
-irsend LIST /home/pi/lircd.conf ""
+irsend LIST hifi ""
 ```
 
 * * Test the configuration file by sending recorded IR command, for example POWER (please note the exact command may vary for different LIRC configuration files, IR devices and IR remote controls):
 
+**NOTE: Please adapt the command below depending on your name of remote!**
+
 ```
-irsend SEND_ONCE /home/pi/lircd.conf KEY_POWER
+irsend SEND_ONCE hifi KEY_POWER
 ```
 
 ## Device Tree Overlays
@@ -576,6 +640,10 @@ Yes, you can use other I2C sensors with ANAVI Infrared pHAT but you should take 
 
 No.
 
+#### Can I remotely control ANAVI Infrared pHAT from a web browser on my smartphone, tablet, or laptop?
+
+Yes, you may install popular open source software for home automation on your Raspberry Pi such as [Home Assistant](https://home-assistant.io/) or [OpenHAB 2](https://www.openhab.org/) and integrate ANAVI Infrared pHAT.
+
 #### Is ANAVI Infrared pHAT software free and open source?
 
 Yes, the official ANAVI Infrared pHAT software is free and open source. The examples are available under MIT license and the rest is available under GPLv3. Please contact us if you are working on a commercial product and you would like to use the software under alternative commercial license.
@@ -586,9 +654,10 @@ Yes, the official ANAVI Infrared pHAT software is free and open source. The exam
 
 ## Document Revision
 
-| Date             | Changes                | Modified pages  | Author          |
-| ---------------- |:----------------------:| :---------------| :---------------|
-| 15 February 2017 | Initial manual release | All             | Leon Anavi      |
+| Date              | Changes                     | Modified pages  | Author          |
+| ----------------- |:---------------------------:| :---------------| :---------------|
+| 15 February 2017  | Initial manual release      | All             | Leon Anavi      |
+| 16 September 2017 | Update for Raspbian Stretch | All             | Leon Anavi      |
 
 ## ANAVI Infrared pHAT Revision
 
