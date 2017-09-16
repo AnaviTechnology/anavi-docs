@@ -297,11 +297,11 @@ Anavi Humidity and Temperature Sensor
 37.78%rh
 ```
 
-#### Light Sensor (BH1750)
+#### BH1750 Light Sensor Module
 
 Follow the steps below to use the BH1750 I2C light sensor with ANAVI Infrared pHAT:
 
-* Connect BH1750 to any of the I2C slots on ANAVI Infrared pHAT using male to female Duport jumper wire.
+* Connect BH1750 to any of the I2C slots on ANAVI Infrared pHAT using male to female Dupont jumper wires.
 
 * Type in the following command and verify that the address of the sensor is listed:
 
@@ -312,17 +312,17 @@ sudo i2cdetect -y 1
 * Type in the following commands to build and run the sample application that display luminous emittance:
 
 ```
-cd ~/anavi-examples/flex/sensor-light/c/
+cd ~/anavi-examples/sensors/BH1750/c/
 make
-./rabbitmax-light-sensor
+./BH1750
 ```
 
 * Verify that the output is similar to (the exact values depend on the atmospheric condition):
 
 ```
-pi@raspberrypi:~/anavi-examples/flex/sensor-light/c $ ./rabbitmax-light-sensor
-Anavi Light Sensor
-Light: 43 Lux
+pi@raspberrypi:~/anavi-examples/sensors/BH1750/c $ ./BH1750
+BH1750 Sensor Module
+Light: 82 Lux
 ```
 
 ## Infrared and LIRC
