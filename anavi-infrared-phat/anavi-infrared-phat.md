@@ -254,18 +254,18 @@ sudo i2cdetect -y 1
 * Type in the following commands to build and run the sample application that display temperature and barometric pressure:
 
 ```
-cd ~/anavi-examples/flex/sensor-temperature/c/
+cd ~/anavi-examples/sensors/BMP180/c/
 make
-sudo ./rabbitmax-sensor-temperature
+./BMP180
 ```
 
 * Verify that the output is similar to (the exact values depend on the atmospheric condition):
 
 ```
-pi@raspberrypi:~/anavi-examples/flex/sensor-temperature/c $ sudo ./rabbitmax-sensor-temperature
-Anavi Temperature and Barometric Pressure Sensor
-Temperature	25.0 C
-Pressure	995.49 hPa
+pi@raspberrypi:~/anavi-examples/sensors/BMP180/c $ ./BMP180
+BMP180 Sensor Module
+Temperature	28.6 C
+Pressure	991.57 hPa
 ```
 
 #### Humidity Sensor (HTU21D)
@@ -283,18 +283,18 @@ sudo i2cdetect -y 1
 * Type in the following commands to build and run the sample application that display temperature and humidity:
 
 ```
-cd ~/anavi-examples/flex/sensor-humidity/c/
+cd ~/anavi-examples/sensors/HTU21D/c/
 make
-sudo ./rabbitmax-sensor-humidity
+./HTU21D
 ```
 
 * Verify that the output is similar to (the exact values depend on the atmospheric condition):
 
 ```
-pi@raspberrypi:~/anavi-examples/flex/sensor-humidity/c $ sudo ./rabbitmax-sensor-humidity
-Anavi Humidity and Temperature Sensor
-24.54C
-37.78%rh
+pi@raspberrypi:~/anavi-examples/sensors/HTU21D/c $ ./HTU21D
+HTU21D Sensor Module
+25.64C
+118.99%rh
 ```
 
 #### BH1750 Light Sensor Module
@@ -322,7 +322,7 @@ make
 ```
 pi@raspberrypi:~/anavi-examples/sensors/BH1750/c $ ./BH1750
 BH1750 Sensor Module
-Light: 82 Lux
+Light: 418 Lux
 ```
 
 ## Infrared and LIRC
