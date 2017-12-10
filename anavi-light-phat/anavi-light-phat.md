@@ -462,13 +462,14 @@ We were unable to source power supplies with universal plugs for US/EU/UK at an 
 
 | Date              | Changes                     | Modified pages  | Author          |
 | ----------------- |:---------------------------:| :---------------| :---------------|
-| 10 December 2017  | Initial manual release      | All             | Leon Anavi      |
+| 10 December 2017  | Initial        release      | All             | Leon Anavi      |
 
 ## ANAVI Light pHAT Revision
 
 | Revision| Notable changes                                              |
 | ------- |:-------------------------------------------------------------|
-| 1.0     | First version                                                |
+| 1.0     | Prototype                                                    |
+| 1.1     | Stable product                                               |
 
 ## See Also
 
