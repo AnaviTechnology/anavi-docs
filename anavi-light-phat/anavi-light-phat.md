@@ -102,22 +102,23 @@ ANAVI Light pHAT supports PIR motion sensor. The officially supported I2C sensor
 
 You may also attach any other I2C sensors but you will have to take care of their software integration.
 
-#### Temperature Sensor
+#### Light Sensor
 
-The official temperature sensor for ANAVI Light pHAT is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
+The official light I2C sensor for ANAVI Light pHAT is BH1750.
 
-Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
+Using 4 Dupont jumper wires connect BH1750 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
 
-| BMP180   | ANAVI Light pHAT |
+| BH1750   | ANAVI Light pHAT |
 | -------- |:-------------- |
-| VIN      | 3.3V           |
+| VCC      | 3.3V           |
 | GND      | GND            |
 | SCL      | SCL            |
 | SDA      | SDA            |
 
-#### Humidity Sensor
 
-The official humidity temperature for ANAVI Light pHAT is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
+#### Temperature & Humidity Sensor
+
+The official temperature and humidity sensor for ANAVI Light pHAT is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
 
 Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
 
@@ -130,13 +131,26 @@ Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Lig
 
 #### Light Sensor
 
-The official light I2C sensor for ANAVI Light pHAT is BH1750.
+The official I2C sensor for RGB color and gesture detection on ANAVI Ligth pHAT is APDS-9960.
 
-Using 4 Dupont jumper wires connect BH1750 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
+Using 4 Dupont jumper wires connect APDS-9960 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
 
-| BH1750   | ANAVI Light pHAT |
+| APDS-9960  | ANAVI Light pHAT |
+| ---------- |:-------------- |
+| VIN        | 3.3V           |
+| GND        | GND            |
+| SCL        | SCL            |
+| SDA        | SDA            |
+
+#### Temperature & Barometric Pressure Sensor
+
+The official temperature and barometric pressure sensor for ANAVI Light pHAT is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
+
+Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Light pHAT as follows:
+
+| BMP180   | ANAVI Light pHAT |
 | -------- |:-------------- |
-| VCC      | 3.3V           |
+| VIN      | 3.3V           |
 | GND      | GND            |
 | SCL      | SCL            |
 | SDA      | SDA            |
@@ -267,7 +281,7 @@ It is mandatory to enable **I2C** to use most of the sensors supported by ANAVI 
 
 #### PIR Motion Sensor
 
-#### Color and Gesture Recognition Sensor (APDS-9960) 
+#### Color and Gesture Recognition Sensor (APDS-9960)
 
 #### Temperature Sensor (BMP180)
 
