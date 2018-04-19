@@ -283,6 +283,55 @@ It is mandatory to enable **I2C** to use most of the sensors supported by ANAVI 
 
 #### Color and Gesture Recognition Sensor (APDS-9960)
 
+Follow the steps below to use the APDS-9960 I2C color and gesture recognition sensor with ANAVI Light pHAT:
+
+* Connect APDS-9960 to any of the I2C slots on ANAVI Light pHAT using male to female Duport jumper wire.
+
+* Type in the following command and verify that the address of the sensor is listed:
+
+```
+sudo i2cdetect -y 1
+```
+
+* Type in the following commands to build and run the sample application for detecting colors:
+
+```
+cd ~/anavi-examples/sensors/APDS-9960/c++/
+make color
+./color
+```
+
+* Verify that the output is similar to (the exact values depend on color of the lights around the sensor):
+
+```
+------------------------------------
+APDS-9960 - ColorSensor  
+------------------------------------
+Ambient: 108 Red: 44 Green: 34 Blue: 22
+Ambient: 109 Red: 45 Green: 34 Blue: 22
+Ambient: 121 Red: 49 Green: 38 Blue: 26
+```
+
+* Type in the following commands to build and run the sample application for detecting gestures:
+
+```
+cd ~/anavi-examples/sensors/APDS-9960/c++/
+make gesture
+./gesture
+```
+
+* Verify that the output is similar to (the exact values depend on color of the lights around the sensor):
+
+```
+------------------------------------
+ APDS-9960 - GestureTest  
+------------------------------------
+NEAR
+UP
+RIGHT
+UP
+```
+
 #### Temperature Sensor (BMP180)
 
 Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with ANAVI Light pHAT:
