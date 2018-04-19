@@ -281,6 +281,26 @@ It is mandatory to enable **I2C** to use most of the sensors supported by ANAVI 
 
 #### PIR Motion Sensor
 
+Follow the steps below to use the PIR motion sensor sensor with ANAVI Light pHAT:
+
+* Connect 5V, GND and OUT of the PIR motion sensor to ANAVI Light pHAT.
+
+* Adjust timing and sensitivity of the sensor through the hardware potentiometers on it.
+
+* Type in the following commands to run the sample Python application:
+
+```
+python ~/anavi-examples/sensors/PIR-sensor/python/motion.py
+```
+
+* Move your hand infront of the PIR motion sensor and verify that the movement is detected in the output, for example:
+
+```
+Motion detected:  1
+Motion detected:  2
+Motion detected:  3
+```
+
 #### Color and Gesture Recognition Sensor (APDS-9960)
 
 Follow the steps below to use the APDS-9960 I2C color and gesture recognition sensor with ANAVI Light pHAT:
