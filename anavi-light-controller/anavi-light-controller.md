@@ -155,13 +155,71 @@ ANAVI Light Controller requires 12V power supply for the RGB LED strip.
 
 ANAVI Light Controller has been tested using 12V power supplies from SUNNY Computer Technology Europe such as [SYS1530-1212-W2E](https://www.sunny-euro.com/en/products/sys1530-1212-w2e-europe-2-1x5-5x11-s-2wc-1-4m-4-5ft). The output current depends on the leght of the RGB LED strip and the number of LEDs in it. ANAVI Light Controller has been tested with power supplies with output current in the range from 1A to 5A. Using power supplies and RGB LED stip that requires higher output current than 5A is not recommended. Make sure that you are using a 12V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
 
+## Configure ANAVI Light Controller
+
+[Video tutorial for getting started with ANAVI Light Controller](https://www.youtube.com/watch?v=Y_81CuuGm0Y)
+
+Turn on ANAVI Light Controller by plugging an appropriate 12V power supply. As soon as the board is turned on for the very first time it will create a temporary WiFi access point. Connect to it from your computer, smartphone or tablet.
+
+The default software of ANAVI Light Controller has a captive portal which guides you through the configurations. As you see in the video you have to select your WiFi network and enter a password if it is not open.
+
+Our open source software relies on the machine to machine communication protocol MQTT to control the lights and to report data from the sensors. You can connect to your own MQTT broker or just leave the default configurations and connect to the public broker as shown in the video.
+
+It very important to copy the machine ID. Later it is needed to identify your device.
+
+When you are ready just click save. If you have entered valid credentials in a moment ANAVI Light Controller will connect to your WiFi network and the configured MQTT broker. This way the configuration is complete and ANAVI Light Controller will turn off its temporary WiFi access point. After that your device, for example smartphone as in the video, will automatically connect again to your WiFi network.
+
+To verify that ANAVI Light Controller is up and running open a modern web browser and visit demo.anavi.technology. Enter your machine ID. Check the advanced settings only if you are not using the default public MQTT broker. Click connect.
+
+From this web page you can turn on and off as well as to change the colors of the RGB LED strip.
+
+## Reset to Factory Defaults
+
+If you decide to change the settings of ANAVI Light Controller you need to reset the board and configure it again.
+
+To reset ANAVI Light Controller press the button and hold it for 10 seconds until the red light is blinking. After resetting the board there will be a steady red light that indicates that the temporary WiFi access point is on and you can proceed with the configuration again.
+
 ---
 
 # CHAPTER 3: Software Development
 
-## 
+## Default Firmware
 
-## Examples
+By default ANAVI Light Controller comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-light-controller-sw).
+
+## Flashing Custom Firmware
+
+Follow the steps below to compile and flash custom firmware on ANAVI Light Controller from Arduino IDE:
+
+1. To flash the firmware from Arduino IDE select Tools > Generic ESP8266 Module (Flash mode: DIO, Flash frequency: 40MHz, CPU frequency: 80MHz, Flash size: 512K, Debug port: Disabled, Debug level: None, Reset method: ck, Upload speed: 115200, Port: /dev/ttyUSB0). You might need to adjust the port if your USB to serial debug cable is connected on a different port.
+
+2.After that press load an Arduino sketch. [A simple blinking LED example is available at GitHub](https://github.com/AnaviTechnology/anavi-examples/blob/master/anavi-light-controller/anavi-blinking-led/anavi-blinking-led.ino)
+
+3. In Arudino IDE click Verify/Compile (Ctrl+R)
+
+4. Connect ANAVI Light Controller to the USB to serial debug board: GND to GND, TX cable to RX of ANAVI Light Controller and RX cable to TX of ANAVI Light Controller.
+
+5. In Arudino IDE click Upload (Ctrl+U)
+
+6. Press and **hold** SW1 on ANAVI Light Controller. Plug the 12V power supply in the jack of ANAVI Light Controller (without releasing SW1).
+
+7. In Arduino IDE verify that the upload has been started. Then you can release SW1 on ANAVI Light Controller (the upload will not be interrupted and it will continue once it has started).
+
+The output in Arduino IDE for successful flashing is:
+
+```
+Archiving built core (caching) in: /tmp/arduino_cache_954939/core/core_esp8266_esp8266_generic_CpuFrequency_80,FlashFreq_40,FlashMode_dio,UploadSpeed_115200,FlashSize_512K64,ResetMethod_ck,Debug_Disabled,DebugLevel_None_____1c2aa2b3da66da225b39c9bfab6531e5.a
+Sketch uses 224949 bytes (51%) of program storage space. Maximum is 434160 bytes.
+Global variables use 31756 bytes (38%) of dynamic memory, leaving 50164 bytes for local variables. Maximum is 81920 bytes.
+Uploading 229104 bytes from /tmp/arduino_build_904122/anavi-blinking-led.ino.bin to flash at 0x00000000
+................................................................................ [ 35% ]
+................................................................................ [ 71% ]
+................................................................                 [ 100% ]
+```
+
+If you have flashed the blinking LED example, D1 on ANAVI Light Controller with start blinking.
+
+**Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload starts.
 
 # CHAPTER 4: Home Assistant
 
