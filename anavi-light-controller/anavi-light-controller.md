@@ -248,6 +248,54 @@ The sensors that can be connected to ANAVI Light Controller communicate with a h
 
 # CHAPTER 6: Frequently Asked Questions (FAQ)
 
+
+#### Which 12 V RGB LED strip is included in the kits?
+
+All kits include a one meter 12 V RGB LED strip with 30 LEDs (size 5050), IP 20, and power consumption of 7.2W.
+
+#### What power supply do I need?
+
+You need a 12 V power supply with a standard 2.1x5.5 mm DC jack for your light strip. Select a power supply with sufficient output current and power depending on the length and specifications of your RGB LED strip.
+
+#### Is there a recommended 12 V power supply?
+
+ANAVI Light Controller has been tested using 12 V power supplies from SUNNY Computer Technology Europe such as [SYS1530-1212-W2E](https://www.sunny-euro.com/en/products/sys1530-1212-w2e-europe-2-1x5-5x11-s-2wc-1-4m-4-5ft).
+
+Make sure that you are using a 12 V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
+
+#### Why isn't a power supply included?
+
+We were unable to source power supplies with universal plugs for the US/EU/UK at an acceptable price and, further, power needs will vary based on application. Nowadays, 12 V power supplies with a 2.1x5.5 mm DC jack are a commodity item, so you should be able to easily find a suitable unit online or at your local electronics store.
+
+#### Can I remotely control ANAVI Light Controller from a web browser on my smartphone, tablet, or laptop?
+
+Yes, you can use our [demo website](http://demo.anavi.technology/) or easily integrate ANAVI Light Controller in your instance of the popular open source platform [Home Assistant](https://home-assistant.io/) as an MQTT JSON Light component.
+
+#### Is ANAVI Light Controller an open source project?
+
+Yes, ANAVI Light Controller is an open source hardware project powered and created with free and open source software. The hardware designs are available at [GitHub under CC BY-SA 4.0 license](https://github.com/AnaviTech/anavi-light-controller). All schematics, documents, and source code files are available at [our GitHub repositories](https://github.com/AnaviTech/).
+
+#### Is ANAVI Light Controller certified?
+
+Yes, ANAVI Light Controller revision 1.3 has been [certified by the Open Source Hardware Association under UID BG000005](http://certificate.oshwa.org/certification-directory/).
+
+#### Does ANAVI Light Controller use the ESP8266?
+
+Yes, ANAVI Light Controller is based on the ESP8266.
+
+#### Can I flash different firmware to ANAVI Light Controller?
+
+Yes, using a USB to serial cable, you can flash custom firmware built from your own source code.
+
+#### Is ANAVI Light Controller compatible with Arduino IDE?
+
+Yes, ANAVI Light Controller is compatible with Arduino IDE. You can easily upload your own Arduino sketches to the board.
+
+#### How can I get involved and help?
+
+Buy any of the available perks, get your hands on the ANAVI Light Controller, contribute to our GitHub repositories, and become part of our open source community!
+
+
 ---
 
 # CHAPTER 7: Revision History
