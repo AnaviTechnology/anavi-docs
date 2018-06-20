@@ -38,15 +38,15 @@ ANAVI Light Controller is fully compliant with the popular open source platform,
 
 ANAVI Light Controller is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Light Controller with your bare hands and a screwdriver to attach 12V RGB LED strip.
 
-## Features
+## Features & Specifications
 
-ANAVI Light Controller includes:
-
-* Terminal block for attaching 12 V RGB LED strip
-* Slots for up to three plug and play I2C sensor modules
-* Slot for PIR motion sensor
-* UART pins for debugging
-* EEPROM with board manufacturer information and a device tree fragment
+* **CPU:** Tensilica L106 32-bit processor
+* **Connectivity:** WiFi 802.11 b/g/n
+* **Input voltage:** 12 V
+* **Peripherals:** Terminal block for 12 V RGB LED strip, UART pins, button, three slots for sensors
+* **Compatibility:** Arduino IDE, Home Assistant, MQTT, and any modern web browser
+* **Certification:** Open Source Hardware Association (OSHWA) BG000005
+* **Dimensions:** 75 mm x 40 mm
 
 ## Target Market
 
