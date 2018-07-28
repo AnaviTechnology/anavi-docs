@@ -369,14 +369,16 @@ The components of ANAVI Play pHAT utilize the following pins on Raspberry Pi:
 | ------------ |:------------------------------- |
 | I2C          | 3, 5                            |
 | EEPROM       | 27, 28                          |
-| Button UP    | 11                              |
-| Button DOWN  | 11                              |
-| Button LEFT  | 11                              |
+| Button UP    | 15                              |
+| Button DOWN  | 13                              |
+| Button LEFT  | 7                               |
 | Button RIGHT | 11                              |
-| Button START | 11                              |
-| Button SELECT| 11                              |
-| Button A     | 11                              |
-| Button B     | 11                              |
+| Button START | 29                              |
+| Button SELECT| 31                              |
+| Button A     | 35                              |
+| Button B     | 37                              |
+
+For more details have a look at [the KiCad project which is available in GitHub](https://github.com/AnaviTechnology/anavi-play-phat).
 
 ## I2C
 
