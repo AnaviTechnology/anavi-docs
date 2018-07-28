@@ -342,7 +342,7 @@ More information about device trees, overlays and parameters are available at [t
 Python script has to be launched to ensure that ANAVI Play pHAT will work with the emulators provided in RetroPie. Follow the steps below to install and configure it:
 
 * Download [RetroPie](https://retropie.org.uk/) and flash it on microSD card
-* Boot RetroPie, login via SSH or open a terminal to execute the following commands:
+* Boot RetroPie, login as user **pi** via SSH or open a terminal to execute the following commands:
 ```
 sudo apt-get update
 sudo apt-get install -y python-pip
@@ -353,7 +353,7 @@ sudo pip install evdev
 cd ~
 git clone https://github.com/AnaviTechnology/anavi-examples.git
 ```
-* Open file rc.local with you favorite text editor, for example nano, append the follow line at the end **before** *exit 0*:
+* Open file **/etc/rc.local** (using sudo) with you favorite text editor, for example nano, append the follow line at the end **before** *exit 0*:
 ```
 sudo python /home/pi/anavi-examples/anavi-play-phat/anavi-play-gamepad.py &
 ```
