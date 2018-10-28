@@ -240,13 +240,13 @@ If you have flashed the blinking LED example, D1 on ANAVI Light Controller with 
 
 The components of ANAVI Light Controller relies on ESP8266 (ESP-12 module) and utilizes the following pins:
 
-| Component    | Pins                                   |
-| ------------------- |:------------------------------- |
-| I2C                 | 13, 14                          |
-| RGB LED connector   | 5, 6, 7                         |
-| Indication LED (D1) | 7                               |
-| Reset button (SW1)  | 12                              |
-| UART                | 15, 16                          |
+| Component           | Pins                            |  Arduino Pin ID |
+| ------------------- |:------------------------------- |-----------------|
+| I2C                 | 13, 14                          |                 |  
+| RGB LED connector   | 5, 6, 7                         | 12, 13, 14      | 
+| Indication LED (D1) | 7                               | 16              | 
+| Reset button (SW1)  | 12                              | 0               | 
+| UART                | 15, 16                          |                 | 
 
 ## I2C
 
