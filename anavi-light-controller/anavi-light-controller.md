@@ -187,6 +187,14 @@ To reset ANAVI Light Controller press the button and hold it for 10 seconds unti
 
 By default ANAVI Light Controller comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-light-controller-sw).
 
+## Setting up the Arduino IDE
+
+1. Install the Arduino IDE following the instuctions from from https://www.arduino.cc/en/Main/Software
+
+2. Add the ESP8266 board package: In File > Preferences input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
+
+3. In Tools > Board ... > Boards manager find and add the ESP8266 package. Now "Generic ESP8266" should be an option in the Tools > Boards menu.
+
 ## Flashing Custom Firmware
 
 Follow the steps below to compile and flash custom firmware on ANAVI Light Controller from Arduino IDE:
