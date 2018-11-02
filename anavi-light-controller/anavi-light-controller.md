@@ -187,6 +187,10 @@ To reset ANAVI Light Controller press the button and hold it for 10 seconds unti
 
 By default ANAVI Light Controller comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-light-controller-sw).
 
+## USB to UART Module
+
+For uploading firmware to ANAVI Light Controller you need USB to UART module. All kits include CP2102 which out of the box on GNU/Linux distributions. Drivers for MS Windows and Mac OS X are [available at silabs.com](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+
 ## Setting up the Arduino IDE
 
 1. Install the Arduino IDE following the instuctions from from https://www.arduino.cc/en/Main/Software
