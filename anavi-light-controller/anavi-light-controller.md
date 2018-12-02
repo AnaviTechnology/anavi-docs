@@ -173,6 +173,14 @@ To verify that ANAVI Light Controller is up and running open a modern web browse
 
 From this web page you can turn on and off as well as to change the colors of the RGB LED strip.
 
+The strip can also be controlled from the command line with a client such as [mosquitto_pub](https://mosquitto.org/man/mosquitto_pub-1.html). For example:
+
+    mosquitto_pub -h iot.eclipse.org -d -t "cmnd/####/color" -m '{"color":{ "r":0, "g":255, "b":0 }}'
+    mosquitto_pub -h iot.eclipse.org -d -t "cmnd/####/color" -m '{"brightness":128}'
+
+with '####' replaced with the machine ID and color and brightness values between 0 and 256.
+
+
 ## Reset to Factory Defaults
 
 If you decide to change the settings of ANAVI Light Controller you need to reset the board and configure it again.
