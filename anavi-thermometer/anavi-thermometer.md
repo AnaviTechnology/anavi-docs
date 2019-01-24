@@ -110,7 +110,7 @@ Using 4 Dupont jumper wires connect HTU21 to one of the 3 I2C slots on ANAVI The
 | SCL      | SCL            |
 | SDA      | SDA            |
 
-#### Light Sensor
+#### Color & Gesture Recognition Sensor
 
 The official I2C sensor for RGB color and gesture detection on ANAVI Ligth pHAT is APDS-9960.
 
@@ -127,7 +127,7 @@ Using 4 Dupont jumper wires connect APDS-9960 to one of the 3 I2C slots on ANAVI
 
 The official temperature and barometric pressure sensor for ANAVI Thermometer is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
 
-Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Thermometer as follows:
+Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
 | BMP180   | ANAVI Thermometer |
 | -------- |:-------------- |
@@ -264,7 +264,8 @@ The components of ANAVI Thermometer relies on ESP8266 (ESP-12 module) and utiliz
 | Component           | Pins                            |  Arduino Pin ID |
 | ------------------- |:------------------------------- |-----------------|
 | I2C                 | 13, 14                          |                 |  
-| RGB LED connector   | 5, 6, 7                         | 12, 13, 14      | 
+| DHT22/AM2302        | 11                              | 2               |
+| DS18B20             | 6                               | 12              |
 | Indication LED (D1) | 7                               | 16              | 
 | Reset button (SW1)  | 12                              | 0               | 
 | UART                | 15, 16                          |                 | 
@@ -287,7 +288,7 @@ We were unable to source power supplies with universal plugs for the US/EU/UK at
 
 #### Can I remotely control ANAVI Thermometer from a web browser on my smartphone, tablet, or laptop?
 
-Yes, you can use our [demo website](http://demo.anavi.technology/) or easily integrate ANAVI Thermometer in your instance of the popular open source platform [Home Assistant](https://home-assistant.io/) as an MQTT JSON Light component.
+Yes, you can use our [demo website](http://demo.anavi.technology/) or easily integrate ANAVI Thermometer in your instance of the popular open source platform [Home Assistant](https://home-assistant.io/) as an MQTT Sensor component.
 
 #### Is ANAVI Thermometer an open source project?
 
