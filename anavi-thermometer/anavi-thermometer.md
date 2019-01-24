@@ -226,6 +226,32 @@ If you have flashed the blinking LED example, D1 on ANAVI Thermometer with start
 
 # CHAPTER 4: Home Assistant
 
+[Home Assistant](https://home-assistant.io/) is a free and open-source home automation platform running on Python 3 with more than 1200 components for integration with popular Internet of Things.
+
+ANAVI Thermometer can be easily integrated in Home Assistant using the component [MQTT sensor](https://www.home-assistant.io/components/sensor.mqtt/). This component supports JSON in the payload of the MQTT messages. To use, in **configuration.yaml** specify MQTT broker and register the sensor with the correspoding MQTT topic, for example:
+
+* Configure MQTT broker:
+
+```
+mqtt:
+  broker: 127.0.0.1
+```
+
+* Register the MQTT sensor:
+
+```
+sensor:
+    - platform: mqtt
+      name: "Temperature"
+      unit_of_measurement: 'C'
+      state_topic: "home/room/temperature"
+      value_template: "{{value_json.temperature}}"
+    - platform: mqtt
+      name: "Humidity"
+      unit_of_measurement: '%'
+      state_topic: "home/room/humidity"
+      value_template: "{{value_json.humidity}}"
+```
 
 ---
 
