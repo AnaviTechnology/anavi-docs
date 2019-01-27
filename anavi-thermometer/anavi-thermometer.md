@@ -146,7 +146,7 @@ You can assemble ANAVI Thermometer with your bare hands and a screw driver follo
 
 ## Powering ANAVI Thermometer
 
-ANAVI Thermometer has been tested using various 5V power supplies and USB to microUSB cables. It is recommended to use 5V power supply with 1A or higher current output. Make sure that you are using a 12V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
+ANAVI Thermometer has been tested using various 5V power supplies and USB to microUSB cables. It is recommended to use 5V power supply with 1A or higher current output. Make sure that you are using a 5V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
 
 ## Configure ANAVI Thermometer
 
@@ -204,7 +204,7 @@ Follow the steps below to compile and flash custom firmware on ANAVI Thermometer
 
 5. In Arudino IDE click Upload (Ctrl+U)
 
-6. Press and **hold** SW1 on ANAVI Thermometer. Plug the 12V power supply in the jack of ANAVI Thermometer (without releasing SW1).
+6. Press and **hold** SW1 on ANAVI Thermometer. Plug the 5V power supply in the jack of ANAVI Thermometer (without releasing SW1).
 
 7. In Arduino IDE verify that the upload has been started. Then you can release SW1 on ANAVI Thermometer (the upload will not be interrupted and it will continue once it has started).
 
