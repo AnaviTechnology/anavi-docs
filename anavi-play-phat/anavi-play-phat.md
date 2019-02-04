@@ -100,7 +100,7 @@ You may also attach any other I2C sensors but you will have to take care of thei
 
 The official temperature sensor for ANAVI Play pHAT is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
 
-Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Play pHAT as follows:
+Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Play pHAT as follows:
 
 | BMP180   | ANAVI Play pHAT |
 | -------- |:-------------- |
@@ -113,7 +113,7 @@ Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Pl
 
 The official humidity temperature for ANAVI Play pHAT is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
 
-Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Play pHAT as follows:
+Using 4 Dupont jumper wires connect HTU21 to one of the 3 I2C slots on ANAVI Play pHAT as follows:
 
 | HTU21    | ANAVI Play pHAT |
 | -------- |:-------------- |
@@ -126,7 +126,7 @@ Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Pla
 
 The official light I2C sensor for ANAVI Play pHAT is BH1750.
 
-Using 4 Dupont jumper wires connect BH1750 to one of the 5 I2C slots on ANAVI Play pHAT as follows:
+Using 4 Dupont jumper wires connect BH1750 to one of the 3 I2C slots on ANAVI Play pHAT as follows:
 
 | BH1750   | ANAVI Play pHAT |
 | -------- |:-------------- |
