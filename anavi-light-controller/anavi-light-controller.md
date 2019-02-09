@@ -145,7 +145,7 @@ You can assemble ANAVI Light Controller with your bare hands and a screw driver 
 
 * Using a screw driver connect 12V RGB LED strip to the terminal blocks.
 * Add sensors to your ANAVI Light Controller.
-* Optionally, you may also assemble the simple acrylic case by removing the protective film and mounting all standoffs and screws. 
+* Optionally, you may also assemble the simple acrylic case by removing the protective film and mounting all standoffs and screws.
 * Insert the 2.1x.5.5 DC jack of the power supply in ANAVI Light Controller to turn on the board.
 
 ## Powering ANAVI Light Controller
@@ -201,11 +201,19 @@ For uploading firmware to ANAVI Light Controller you need USB to UART module. Al
 
 ## Setting up the Arduino IDE
 
-1. Install the Arduino IDE following the instuctions from from https://www.arduino.cc/en/Main/Software
+1. Install the Arduino IDE following the instructions from from https://www.arduino.cc/en/Main/Software
 
-2. Add the ESP8266 board package: In File > Preferences input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
+2. Add the ESP8266 board package: In **File > Preferences** input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
 
-3. In Tools > Board ... > Boards manager find and add the ESP8266 package. Now "Generic ESP8266" should be an option in the Tools > Boards menu.
+3. In **Tools > Board ... > Boards manager** find and add the **ESP8266** package. Now "Generic ESP8266" should be an option in the **Tools > Boards** menu.
+
+4. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
+
+* WiFiManager by tzapu
+* ArduinoJson by Benoit Blanchon
+* PubSubClient by Nick O'Leary
+* Adafruit HTU21DF Library by Adafruit
+* Adafruit APDS9960 Library by Adafruit
 
 ## Flashing Custom Firmware
 
@@ -255,10 +263,10 @@ The components of ANAVI Light Controller relies on ESP8266 (ESP-12 module) and u
 | Component           | Pins                            |  Arduino Pin ID |
 | ------------------- |:------------------------------- |-----------------|
 | I2C                 | 13, 14                          |                 |  
-| RGB LED connector   | 5, 6, 7                         | 12, 13, 14      | 
-| Indication LED (D1) | 7                               | 16              | 
-| Reset button (SW1)  | 12                              | 0               | 
-| UART                | 15, 16                          |                 | 
+| RGB LED connector   | 5, 6, 7                         | 12, 13, 14      |
+| Indication LED (D1) | 7                               | 16              |
+| Reset button (SW1)  | 12                              | 0               |
+| UART                | 15, 16                          |                 |
 
 ## I2C
 
