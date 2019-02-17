@@ -184,11 +184,26 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 
 ## Setting up the Arduino IDE
 
-1. Install the Arduino IDE following the instuctions from from https://www.arduino.cc/en/Main/Software
+1. Install the Arduino IDE following the instructions from from https://www.arduino.cc/en/Main/Software
 
-2. Add the ESP8266 board package: In File > Preferences input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
+2. Add the ESP8266 board package: In **File > Preferences** input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
 
-3. In Tools > Board ... > Boards manager find and add the ESP8266 package. Now "Generic ESP8266" should be an option in the Tools > Boards menu.
+3. In **Tools > Board ... > Boards manager** find and add the **ESP8266** package. Now "Generic ESP8266" should be an option in the **Tools > Boards** menu.
+
+4. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
+
+* WiFiManager by tzapu (version 0.12.0)
+* ArduinoJson by Benoit Blanchon (version 5.11.1)
+* PubSubClient by Nick O'Leary (version 2.6.0)
+* Adafruit HTU21DF Library by Adafruit (version 1.0.1)
+* Adafruit APDS9960 Library by Adafruit (version 1.0.5)
+* DHT sensor library by Adafruit (version 1.3.0)
+* U8g2 by oliver (version 2.23.18)
+* OneWire (version 2.3.4)
+* DallasTemperature (version 3.8.0)
+* Adafruit Unified Sensor by Adafruit (version 1.0.2)
+
+*Note: Issues might be experienced if using different versions of the libraries.*
 
 ## Flashing Custom Firmware
 
@@ -266,9 +281,9 @@ The components of ANAVI Thermometer relies on ESP8266 (ESP-12 module) and utiliz
 | I2C                 | 13, 14                          |                 |  
 | DHT22/AM2302        | 11                              | 2               |
 | DS18B20             | 6                               | 12              |
-| Indication LED (D1) | 7                               | 16              | 
-| Reset button (SW1)  | 12                              | 0               | 
-| UART                | 15, 16                          |                 | 
+| Indication LED (D1) | 7                               | 16              |
+| Reset button (SW1)  | 12                              | 0               |
+| UART                | 15, 16                          |                 |
 
 ## I2C
 
