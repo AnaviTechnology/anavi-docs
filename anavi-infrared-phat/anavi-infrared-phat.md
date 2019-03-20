@@ -24,7 +24,7 @@ The product described in this document is subject to continuous development and 
 
 This evaluation board/kit is intended for use for engineering development, demonstration, or evaluation purposes only and is not considered by Anavi to be a finished end-product fit for general consumer use. People handling the product must have electronics training and observe good engineering practice standards. As such, the goods being provided are not intended to be complete in terms of required design-, marketing-, and/or manufacturing-related protective considerations, including product safety and environmental measures typically found in end products that incorporate such semiconductor components or circuit boards.
 
-There is no warranty for the design materials and the components used to create ANAVI Infrared pHAT. There are considered suitable only for ANAVI Infrared pHAT.
+There is no warranty for the design materials and the components used to create ANAVI Infrared pHAT. They are considered suitable only for ANAVI Infrared pHAT.
 
 ---
 
@@ -101,7 +101,7 @@ You may also attach any other I2C sensors but you will have to take care of thei
 
 The official temperature sensor for ANAVI Infrared pHAT is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
 
-Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI Infrared pHAT as follows:
+Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Infrared pHAT as follows:
 
 | BMP180   | ANAVI Infrared pHAT |
 | -------- |:-------------- |
@@ -114,7 +114,7 @@ Using 4 Dupont jumper wires connect BMP180 to one of the 5 I2C slots on ANAVI In
 
 The official humidity temperature for ANAVI Infrared pHAT is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
 
-Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Infrared pHAT as follows:
+Using 4 Dupont jumper wires connect HTU21 to one of the 3 I2C slots on ANAVI Infrared pHAT as follows:
 
 | HTU21    | ANAVI Infrared pHAT |
 | -------- |:-------------- |
@@ -127,7 +127,7 @@ Using 4 Dupont jumper wires connect HTU21 to one of the 5 I2C slots on ANAVI Inf
 
 The official light I2C sensor for ANAVI Infrared pHAT is BH1750.
 
-Using 4 Dupont jumper wires connect BH1750 to one of the 5 I2C slots on ANAVI Infrared pHAT as follows:
+Using 4 Dupont jumper wires connect BH1750 to one of the 3 I2C slots on ANAVI Infrared pHAT as follows:
 
 | BH1750   | ANAVI Infrared pHAT |
 | -------- |:-------------- |
@@ -227,7 +227,7 @@ cd wiringPi
 ./build
 ```
 
-* Download the examples for ANAVI Infrared pHAT Raspberry Pi HAT
+* Download the examples for ANAVI Infrared pHAT
 
 ```
 cd ~
@@ -237,7 +237,7 @@ cd anavi-examples
 
 ### Sensors
 
-It is mandatory to enable **I2C** to use any of the sensors supported by ANAVI Infrared pHAT Raspberry Pi HAT.
+It is mandatory to enable **I2C** to use any of the sensors supported by ANAVI Infrared pHAT.
 
 #### Temperature Sensor (BMP180)
 
@@ -327,7 +327,7 @@ Light: 418 Lux
 
 ## Infrared and LIRC
 
-ANAVI Infrared pHAT Raspberry Pi HAT has built-in infrared receiver and transmitter. [LIRC](http://www.lirc.org/) (Linux Infrared Remote Control) is popular open source application for sending and receiving data over infrared on GNU/Linux distributions. This chapter provides guidelines how to enable ANAVI Infrared pHAT infrared receiver and transmitter on **Raspbian** and to use LIRC.
+ANAVI Infrared pHAT has built-in infrared receiver and transmitter. [LIRC](http://www.lirc.org/) (Linux Infrared Remote Control) is popular open source application for sending and receiving data over infrared on GNU/Linux distributions. This chapter provides guidelines how to enable ANAVI Infrared pHAT infrared receiver and transmitter on **Raspbian** and to use LIRC.
 
 ## Setting up LIRC
 
