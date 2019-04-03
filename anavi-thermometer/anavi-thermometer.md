@@ -190,7 +190,9 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 
 3. In **Tools > Board ... > Boards manager** find and add the **ESP8266** package. Now "Generic ESP8266" should be an option in the **Tools > Boards** menu.
 
-4. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
+4. In **Tools > Flash Size:** select **4M (1M SPIFFS)**
+
+5. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
 
 * WiFiManager by tzapu (version 0.12.0)
 * ArduinoJson by Benoit Blanchon (version 5.11.1)
