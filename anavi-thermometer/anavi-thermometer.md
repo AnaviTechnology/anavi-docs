@@ -221,9 +221,9 @@ Follow the steps below to compile and flash custom firmware on ANAVI Thermometer
 
 5. In Arudino IDE click Upload (Ctrl+U)
 
-6. Press and **hold** SW1 on ANAVI Thermometer. Plug the 5V power supply in the jack of ANAVI Thermometer (without releasing SW1).
+6. Press and **hold** the RESET button on ANAVI Thermometer. Plug the 5V power supply in the jack of ANAVI Thermometer (without releasing the RESET button).
 
-7. In Arduino IDE verify that the upload has been started. Then you can release SW1 on ANAVI Thermometer (the upload will not be interrupted and it will continue once it has started).
+7. In Arduino IDE verify that the upload has been started. Hold RESET until the upload completes.
 
 The output in Arduino IDE for successful flashing is:
 
@@ -239,7 +239,9 @@ Uploading 229104 bytes from /tmp/arduino_build_904122/anavi-blinking-led.ino.bin
 
 If you have flashed the blinking LED example, D1 on ANAVI Thermometer with start blinking.
 
-**Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload starts.
+Please have a look at [the YouTube video that shows the exact steps for compiling and uploading an Arduino sketch to ANAVI Thermometer](https://www.youtube.com/watch?v=HMIkPuz0ZJs).
+
+**Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload completes.
 
 # CHAPTER 4: Home Assistant
 
