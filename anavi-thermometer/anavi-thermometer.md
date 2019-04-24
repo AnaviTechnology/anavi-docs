@@ -196,7 +196,7 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 
 * WiFiManager by tzapu (version 0.12.0)
 * ArduinoJson by Benoit Blanchon (version 5.11.1)
-* PubSubClient by Nick O'Leary (version 2.6.0)
+* PubSubClient by Nick O'Leary (version 2.7.0)
 * Adafruit HTU21DF Library by Adafruit (version 1.0.1)
 * Adafruit APDS9960 Library by Adafruit (version 1.0.5)
 * DHT sensor library by Adafruit (version 1.3.4)
