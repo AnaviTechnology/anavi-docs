@@ -249,36 +249,47 @@ Recent versions of the official firmware also support OTA firmware updates by pu
 ## Check support
 If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands. 
 
-To do this, send an MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
+To do this, send a MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
 
 ```
-mosquitto_pub -h nuc1 -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/line1 -u [mqttuser] -P [mqttpass] -m "test"
+mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/line1 -u [mqttuser] -P [mqttpass] -m "test"
 ```
 
-When the first line of your ANAVI Thermometer display changes to "test", OTA updates should be supported.
-If not, please first update to a more recent firmware version.
+When this message causes the first line of your ANAVI Thermometer display to change to "test", OTA updates should be supported.
+If not (after double checking that you used the correct topic and deviceId), please first update to a more recent firmware version.
 
 (To reset the line again to the default display, just send an empty message to the same topic). 
 
 
-
 ## Build binary firmware image
 Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file. 
-Copy this file to a webserver, for example a server in your local network. 
+Copy this file to an HTTP webserver, for example a server in your local network. 
 
 ## Trigger update
-The devices listens to MQTT messages at topic "cmnd/[deviceid]/update" and expects messages to be in the format
+The devices listens to MQTT messages in topic "cmnd/[deviceid]/update" and expects messages to be in the format
+
+```
+{"file":"/[filePath]", "server": "[server IP or DNS name]"}
+```
+
+For example, if you put the file at http://192.168.100.46/anavi.bin: 
+
 ```
 {"file":"/anavi.bin", "server": "192.168.100.46"}
 ```
 
-If your server does not listen on port 80, you can provide the port: 
+If your server does not listen on port 80, you can provide the port, for example for  http://192.168.100.46:8080/anavi.bin: 
 
 ```
 {"file":"/anavi.bin", "server": "192.168.100.46", "port": 8080}
 ```
 
-***Note: To ensure successful update, please specify the file with leading slash '/'***
+Example for sending an update message using mosquitto_pub:
+
+```
+mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/update -u [mqttuser] -P [mqttpass] -m "{\"file\":\"anavi.bin\", \"server\":\"192.168.100.46\", \"port\":8080}
+```
+***Note: To ensure successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
 
 On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured. 
 
