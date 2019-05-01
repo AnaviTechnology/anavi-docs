@@ -243,6 +243,48 @@ Please have a look at [the YouTube video that shows the exact steps for compilin
 
 **Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload completes.
 
+# OTA Firmware Upgrade
+Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer. 
+
+## Check support
+If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands. 
+
+To do this, send an MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
+
+```
+mosquitto_pub -h nuc1 -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/line1 -u [mqttuser] -P [mqttpass] -m "test"
+```
+
+When the first line of your ANAVI Thermometer display changes to "test", OTA updates should be supported.
+If not, please first update to a more recent firmware version.
+
+(To reset the line again to the default display, just send an empty message to the same topic). 
+
+
+
+## Build binary firmware image
+Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file. 
+Copy this file to a webserver, for example a server in your local network. 
+
+## Trigger update
+The devices listens to MQTT messages at topic "cmnd/[deviceid]/update" and expects messages to be in the format
+```
+{"file":"/anavi.bin", "server": "192.168.100.46"}
+```
+
+If your server does not listen on port 80, you can provide the port: 
+
+```
+{"file":"/anavi.bin", "server": "192.168.100.46", "port": 8080}
+```
+
+***Note: To ensure successful update, please specify the file with leading slash '/'***
+
+On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured. 
+
+***Note: After the update, you may find that readings from the DHT22 sensor no longer work. In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
+
+
 # CHAPTER 4: Home Assistant
 
 [Home Assistant](https://home-assistant.io/) is a free and open-source home automation platform running on Python 3 with more than 1200 components for integration with popular Internet of Things.
