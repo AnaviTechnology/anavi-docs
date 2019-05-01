@@ -204,6 +204,8 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 * OneWire (version 2.3.4)
 * DallasTemperature (version 3.8.0)
 * Adafruit Unified Sensor by Adafruit (version 1.0.2)
+* Adafruit BMP085 Unified by Adafruit (version 1.0.0)
+
 
 *Note: Issues might be experienced if using different versions of the libraries.*
 
