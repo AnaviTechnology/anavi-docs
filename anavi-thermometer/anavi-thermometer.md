@@ -293,7 +293,7 @@ mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/u
 
 On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured. 
 
-***Note: After the update, you may find that readings from the DHT22 sensor no longer work. In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
+***Note: After the update, you may find that readings from the DHT22 sensor no longer work and temperature and humidity are shown as "0". In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
 
 
 # CHAPTER 4: Home Assistant
