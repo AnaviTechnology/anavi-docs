@@ -161,6 +161,8 @@ The default software of ANAVI Thermometer has a captive portal which guides you 
 
 Our open source software relies on the machine to machine communication protocol MQTT to report data from the sensors. You can connect to your own MQTT broker or just leave the default configurations and connect to the public broker as shown in the video.
 
+Recent versions of the firmware support [Home Assistant MQTT Discovery](https://www.home-assistant.io/docs/mqtt/discovery/) which makes it very convenient to add ANAVI Thermometer to Home Assistant.  For this to work, you need to enter the sensor name (such as "Master Bedroom") that will be used for this Thermometer on the setup screen.  See Chapter 4 for more details.
+
 Recent versions of the firmware support Over-the-Air upgrades of the software.  To enable this, you need to specify the IP address or DNS domain name of a web server that hosts the firmware. See Chapter 3 for more details.
 
 It very important to copy the machine ID. Later it is needed to identify your device.
@@ -360,6 +362,19 @@ sensor:
       state_topic: "home/room/humidity"
       value_template: "{{value_json.humidity}}"
 ```
+
+MQTT Discovery can simplify this process.  To use this, specify this in **configuration.yaml**:
+
+```
+mqtt:
+  broker: 127.0.0.1
+  discovery: true
+  discovery_prefix: homeassistant
+```
+
+Also, supply a **Sensor name for Home Assistant** on the captive portal page of the ANAVI Thermometer. Sensors will automatically be created for the temperature, humidity, and (if connected) the DS18B20 waterproof temperature sensor module.
+
+The other sensors do not yet support MQTT Discovery.
 
 ---
 
