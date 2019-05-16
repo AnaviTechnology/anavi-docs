@@ -45,6 +45,7 @@ ANAVI Thermometer is designed with the free and open source electronics design a
 * **Compatibility**: Arduino IDE, PlatformIO, Home Assistant, MQTT, and any modern web browser
 * **Certification**: Open Source Hardware Association (OSHWA) BG000017
 * **Dimensions**: 75 mm x 40 mm
+* **Upgradable**: The software can be upgraded, either using an USB to UART module, or (if configured) over-the-air
 
 ## Target Market
 
@@ -160,6 +161,8 @@ The default software of ANAVI Thermometer has a captive portal which guides you 
 
 Our open source software relies on the machine to machine communication protocol MQTT to report data from the sensors. You can connect to your own MQTT broker or just leave the default configurations and connect to the public broker as shown in the video.
 
+Recent versions of the firmware support Over-the-Air upgrades of the software.  To enable this, you need to specify the IP address or DNS domain name of a web server that hosts the firmware. See Chapter 3 for more details.
+
 It very important to copy the machine ID. Later it is needed to identify your device.
 
 When you are ready just click save. If you have entered valid credentials in a moment ANAVI Thermometer will connect to your WiFi network and the configured MQTT broker. This way the configuration is complete and ANAVI Thermometer will turn off its temporary WiFi access point. After that your device, for example smartphone as in the video, will automatically connect again to your WiFi network.
@@ -248,10 +251,12 @@ Please have a look at [the YouTube video that shows the exact steps for compilin
 **Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload completes.
 
 # OTA Firmware Upgrade
-Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer. 
+Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer.
 
 ## Check support
-If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands. 
+If the captive portal contained a "OTA server" field, your software supports OTA upgrades.
+
+If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands.
 
 To do this, send a MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
 
@@ -264,10 +269,14 @@ If not (after double checking that you used the correct topic and deviceId), ple
 
 (To reset the line again to the default display, just send an empty message to the same topic). 
 
+## Enabling OTA upgrades
+For security reasons, OTA upgrades are disabled by default. There are two ways to enable them: either enter an IP address or domain name on the captive portal screen (see Chapter 2), or edit the official source code and define OTA_SERVER as explained in the comment. (You can even do both, if you want the Thermometer to accept upgrades from two sources.)
+
+The web server can be located anywhere, but for improved security it is best if it is located on your local network, and no untrusted persons should be able to edit any files at all on the server. Don't host your firmware images on a shared server!
 
 ## Build binary firmware image
 Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file. 
-Copy this file to an HTTP webserver, for example a server in your local network. 
+Copy this file to the HTTP webserver you specified when you enabled OTA upgrades.
 
 ## Trigger update
 The devices listens to MQTT messages in topic "cmnd/[deviceid]/update" and expects messages to be in the format
@@ -298,6 +307,28 @@ mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/u
 On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured. 
 
 ***Note: After the update, you may find that readings from the DHT22 sensor no longer work and temperature and humidity are shown as "0". In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
+
+## Using signed builds
+
+If you do OTA upgrades, and especially if you do so over the Internet, you are strongly encouraged to use [Signed Updates](https://arduino-esp8266.readthedocs.io/en/2.5.0/ota_updates/readme.html#advanced-security-signed-updates). Follow the link to see all the details.
+
+If you are running the Arduino IDE on Linux or Mac it is very easy to enable automatic signing.  Just run these commands in the sketch directory:
+
+```
+openssl genrsa -out private.key 2048
+openssl rsa -in private.key -outform PEM -pubout -out public.key
+```
+
+Once this is done, builds will be automatically signed.  In addition to the .bin file, a .bin.signed file will also be created.  You should see messages similar to these when you compile your sketch:
+
+```
+Enabling binary signing
+Signed binary: /tmp/arduino_build_710055/sketch_apr03a.ino.bin.signed
+```
+
+The exact file name will change depending on your installation. Use the signed binary instead of the .bin file. Once you have upgraded your ANAVI Thermometer using a signed build, OTA upgrades will reject any attempt to use an unsigned build, a build signed using the wrong key, or a build that has been tampered with. (If necessary, you can still load an unsigned firmware using the USB to UART module, and then you will be able to use unsigned builds for OTA upgrades as well.)
+
+Be sure the back up the private.key file, and make sure nobody can get hold of it.
 
 ---
 
