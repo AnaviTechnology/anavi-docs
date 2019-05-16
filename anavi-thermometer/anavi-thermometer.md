@@ -54,6 +54,8 @@ ANAVI Thermometer is a certified open source hardware development board for cust
 
 Revision 1.0 of ANAVI Thermometer was used while writing this document. It is possible that it is outdated so it is always recommended to check the latest sources from the GitHub page of the board.
 
+---
+
 # CHAPTER 2: Getting Started
 
 ## Electrostatic Warning
@@ -297,6 +299,7 @@ On receipt of this message, ANAVI Thermometer will download the file from the sp
 
 ***Note: After the update, you may find that readings from the DHT22 sensor no longer work and temperature and humidity are shown as "0". In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
 
+---
 
 # CHAPTER 4: Home Assistant
 
