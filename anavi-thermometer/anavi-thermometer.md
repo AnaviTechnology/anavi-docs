@@ -175,7 +175,7 @@ To verify that ANAVI Thermometer is up and running open a modern web browser and
 
 If you decide to change the settings of ANAVI Thermometer you need to reset the board and configure it again.
 
-To reset ANAVI Thermometer press the button and hold it for 10 seconds until the red light is blinking. After resetting the board there will be a steady red light that indicates that the temporary WiFi access point is on and you can proceed with the configuration again.
+To reset ANAVI Thermometer press the button and hold it for approximately 6 seconds until the red light stops blinking. After resetting the board there will be a steady red light that indicates that the temporary WiFi access point is on and you can proceed with the configuration again. The reset button works once the ANAVI Thermometer has successfully connected to a WiFi network. If you are running a recent enough version of the firmware, it also works for 2 seconds after you power on the device (while the red LED is blinking quickly).
 
 ---
 
@@ -250,7 +250,7 @@ If you have flashed the blinking LED example, D1 on ANAVI Thermometer with start
 
 Please have a look at [the YouTube video that shows the exact steps for compiling and uploading an Arduino sketch to ANAVI Thermometer](https://www.youtube.com/watch?v=HMIkPuz0ZJs).
 
-**Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload completes.
+**Note:** you have to be quick between step 5 and 6. Remember to press and **hold** RESET until the upload completes.
 
 # OTA Firmware Upgrade
 Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer.
@@ -384,14 +384,14 @@ The other sensors do not yet support MQTT Discovery.
 
 The components of ANAVI Thermometer relies on ESP8266 (ESP-12 module) and utilizes the following pins:
 
-| Component           | Pins                            |  Arduino Pin ID |
-| ------------------- |:------------------------------- |-----------------|
-| I2C                 | 13, 14                          |                 |  
-| DHT22/AM2302        | 11                              | 2               |
-| DS18B20             | 6                               | 12              |
-| Indication LED (D1) | 7                               | 16              |
-| Reset button (SW1)  | 12                              | 0               |
-| UART                | 15, 16                          |                 |
+| Component            | Pins                           |  Arduino Pin ID |
+| -------------------- |:------------------------------ |-----------------|
+| I2C                  | 13, 14                         |                 |
+| DHT22/AM2302         | 11                             | 2               |
+| DS18B20              | 6                              | 12              |
+| Indication LED (D1)  | 7                              | 16              |
+| Reset button (RESET) | 12                             | 0               |
+| UART                 | 15, 16                         |                 |
 
 ## I2C
 
