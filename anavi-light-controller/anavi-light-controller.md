@@ -219,9 +219,21 @@ For uploading firmware to ANAVI Light Controller you need USB to UART module. Al
 
 Follow the steps below to compile and flash custom firmware on ANAVI Light Controller from Arduino IDE:
 
-1. To flash the firmware from Arduino IDE select Tools > Generic ESP8266 Module (Flash mode: DIO, Flash frequency: 40MHz, CPU frequency: 80MHz, Flash size: 512K, Debug port: Disabled, Debug level: None, Reset method: ck, Upload speed: 115200, Port: /dev/ttyUSB0). You might need to adjust the port if your USB to serial debug cable is connected on a different port.
+1. To flash the firmware from Arduino IDE select Tools > Generic ESP8266 Module
+and set the following parameters.
 
-2.After that press load an Arduino sketch. [A simple blinking LED example is available at GitHub](https://github.com/AnaviTechnology/anavi-examples/blob/master/anavi-light-controller/anavi-blinking-led/anavi-blinking-led.ino)
+  * **Flash mode**: DIO
+  * **Flash frequency**: 40MHz
+  * **CPU frequency**: 80MHz
+  * **Flash size**: 512K
+  * **Debug port**: Disabled
+  * **Debug level**: None
+  * **Reset method**: ck
+  * **Upload speed**: 115200
+  * **Port**: /dev/ttyUSB0  
+  You might need to adjust the port if your USB to serial debug cable is connected on a different port.
+
+2. After that press load an Arduino sketch. [A simple blinking LED example is available at GitHub](https://github.com/AnaviTechnology/anavi-examples/blob/master/anavi-light-controller/anavi-blinking-led/anavi-blinking-led.ino)
 
 3. In Arudino IDE click Verify/Compile (Ctrl+R)
 
