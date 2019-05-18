@@ -235,11 +235,11 @@ and set the following parameters.
 
 2. After that press load an Arduino sketch. [A simple blinking LED example is available at GitHub](https://github.com/AnaviTechnology/anavi-examples/blob/master/anavi-light-controller/anavi-blinking-led/anavi-blinking-led.ino)
 
-3. In Arudino IDE click Verify/Compile (Ctrl+R)
+3. In Arduino IDE click Verify/Compile (Ctrl+R)
 
 4. Connect ANAVI Light Controller to the USB to serial debug board: GND to GND, TX cable to RX of ANAVI Light Controller and RX cable to TX of ANAVI Light Controller.
 
-5. In Arudino IDE click Upload (Ctrl+U)
+5. In Arduino IDE click Upload (Ctrl+U)
 
 6. Press and **hold** SW1 on ANAVI Light Controller. Plug the 12V power supply in the jack of ANAVI Light Controller (without releasing SW1).
 
