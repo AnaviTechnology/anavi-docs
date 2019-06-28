@@ -263,6 +263,30 @@ If you have flashed the blinking LED example, D1 on ANAVI Light Controller with 
 
 # CHAPTER 4: Home Assistant
 
+[Home Assistant](https://home-assistant.io/) is a free and open-source home automation platform running on Python 3 with more than 1200 components for integration with popular Internet of Things.
+
+ANAVI Light Controller can be easily integrated in Home Assistant using the component [MQTT Light](https://www.home-assistant.io/components/light.mqtt/). This component supports JSON in the payload of the MQTT messages. To use it, in **configuration.yaml** specify MQTT broker and register the device with the corresponding MQTT topic, for example:
+
+* Configure MQTT broker:
+
+```
+mqtt:
+  broker: 127.0.0.1
+```
+
+* Register ANAVI Light Controller, remember to replace **device-id** with the actual md5 hash of your ANAVI Light Controller which is shown at initial setup and in the serial console output on boot:
+
+```
+light:
+  - platform: mqtt
+    schema: json
+    name: "ANAVI Light Controller"
+    state_topic: "stat/device-id/#"
+    command_topic: "cmnd/device-id/color"
+    brightness: true
+    rgb: true
+```
+
 
 ---
 
