@@ -246,10 +246,10 @@ Please have a look at [the YouTube video that shows the exact steps for compilin
 **Note:** you have to be quick between step 5 and 6. Remember to press and **hold** SW1 until the upload completes.
 
 # OTA Firmware Upgrade
-Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer. 
+Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer.
 
 ## Check support
-If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands. 
+If you are unsure if your current firmware supports OTA update, you can first check if your ANAVI Thermometer is already setup to receive MQTT commands.
 
 To do this, send a MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
 
@@ -260,12 +260,12 @@ mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/l
 When this message causes the first line of your ANAVI Thermometer display to change to "test", OTA updates should be supported.
 If not (after double checking that you used the correct topic and deviceId), please first update to a more recent firmware version.
 
-(To reset the line again to the default display, just send an empty message to the same topic). 
+(To reset the line again to the default display, just send an empty message to the same topic).
 
 
 ## Build binary firmware image
-Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file. 
-Copy this file to an HTTP webserver, for example a server in your local network. 
+Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file.
+Copy this file to an HTTP webserver, for example a server in your local network.
 
 ## Trigger update
 The devices listens to MQTT messages in topic "cmnd/[deviceid]/update" and expects messages to be in the format
@@ -274,13 +274,13 @@ The devices listens to MQTT messages in topic "cmnd/[deviceid]/update" and expec
 {"file":"/[filePath]", "server": "[server IP or DNS name]"}
 ```
 
-For example, if you put the file at http://192.168.100.46/anavi.bin: 
+For example, if you put the file at http://192.168.100.46/anavi.bin:
 
 ```
 {"file":"/anavi.bin", "server": "192.168.100.46"}
 ```
 
-If your server does not listen on port 80, you can provide the port, for example for  http://192.168.100.46:8080/anavi.bin: 
+If your server does not listen on port 80, you can provide the port, for example for  http://192.168.100.46:8080/anavi.bin:
 
 ```
 {"file":"/anavi.bin", "server": "192.168.100.46", "port": 8080}
@@ -293,7 +293,7 @@ mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/u
 ```
 ***Note: To ensure successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
 
-On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured. 
+On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured.
 
 ***Note: After the update, you may find that readings from the DHT22 sensor no longer work and temperature and humidity are shown as "0". In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
 
@@ -302,7 +302,7 @@ On receipt of this message, ANAVI Thermometer will download the file from the sp
 
 [Home Assistant](https://home-assistant.io/) is a free and open-source home automation platform running on Python 3 with more than 1200 components for integration with popular Internet of Things.
 
-ANAVI Thermometer can be easily integrated in Home Assistant using the component [MQTT sensor](https://www.home-assistant.io/components/sensor.mqtt/). This component supports JSON in the payload of the MQTT messages. To use, in **configuration.yaml** specify MQTT broker and register the sensor with the correspoding MQTT topic, for example:
+ANAVI Thermometer can be easily integrated in Home Assistant using the component [MQTT sensor](https://www.home-assistant.io/components/sensor.mqtt/). This component supports JSON in the payload of the MQTT messages. To use it, in **configuration.yaml** specify MQTT broker and register the sensor with the corresponding MQTT topic, for example:
 
 * Configure MQTT broker:
 
