@@ -679,6 +679,7 @@ Yes, the official ANAVI Infrared pHAT software is free and open source. The exam
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 15 February 2017  | Initial manual release      | All             | Leon Anavi      |
 | 16 September 2017 | Update for Raspbian Stretch | All             | Leon Anavi      |
+| 08 July 2019      | Update for Raspbian Buster  | All             | Leon Anavi      |
 
 ## ANAVI Infrared pHAT Revision
 
