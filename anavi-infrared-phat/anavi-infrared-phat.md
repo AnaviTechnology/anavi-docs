@@ -50,6 +50,7 @@ ANAVI Infrared pHAT Raspberry Pi HAT includes:
 
 ANAVI Infrared pHAT is compatible with the following Raspberry Pi versions and models:
 
+* [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
 * [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
 * [Raspberry Pi 0](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
@@ -329,63 +330,74 @@ Light: 418 Lux
 
 ANAVI Infrared pHAT has built-in infrared receiver and transmitter. [LIRC](http://www.lirc.org/) (Linux Infrared Remote Control) is popular open source application for sending and receiving data over infrared on GNU/Linux distributions. This chapter provides guidelines how to enable ANAVI Infrared pHAT infrared receiver and transmitter on **Raspbian** and to use LIRC.
 
+In 2019 lirc_rpi, the Linux kernel module provided with Raspbian before, was replaced with gpio-ir and gpio-ir-tx. This tutorial is updated for Raspbian Buster. If you need to setup ANAVI Infrared pHAT on an older version of Raspbian, for example from 2018-04-18, please [have a look at the **old** user's manual](http://anavi.technology/files/anavi-infrared-phat-2018.pdf).
+
 ## Setting up LIRC
 
-Perform the steps below to enable the infrared receiver and transmitter:
+Perform the steps below to build LIRC from source, to patch it and to enable the infrared receiver and transmitter on ANAVI Infrared pHAT:
 
-* Install LIRC
-
-```
-sudo apt-get update
-sudo apt-get install -y lirc
-```
-
-* Edit */etc/modules* and add the IR pins by adding the following line to the end of the file:
+* Install dependencies
 
 ```
-lirc_dev
-lirc_rpi gpio_in_pin=18 gpio_out_pin=17
-```
-* Create */etc/lirc/hardware.conf* add the following content:
-
-```
-# /etc/lirc/hardware.conf
-#
-# Arguments which will be used when launching lircd
-LIRCD_ARGS="--uinput"
-
-#Don't start lircmd even if there seems to be a good config file
-#START_LIRCMD=false
-
-#Don't start irexec, even if a good config file seems to exist.
-#START_IREXEC=false
-
-#Try to load appropriate kernel modules
-LOAD_MODULES=true
-
-# Run "lircd --driver=help" for a list of supported drivers.
-#DRIVER="UNCONFIGURED"
-DRIVER="default"
-# usually /dev/lirc0 is the correct setting for systems using udev
-DEVICE="/dev/lirc0"
-MODULES="lirc_rpi"
-
-# Default configuration files for your hardware if any
-LIRCD_CONF=""
-LIRCMD_CONF=""
+sudo su -c "grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' > /etc/apt/sources.list.d/deb-src.list"
+sudo apt update
+sudo apt install -y vim devscripts dh-exec doxygen expect libasound2-dev libftdi1-dev libsystemd-dev libudev-dev libusb-1.0-0-dev libusb-dev man2html-base portaudio19-dev socat xsltproc python3-yaml dh-python libx11-dev python3-dev python3-setuptools
 ```
 
-* Edit */etc/lirc/lirc_options.conf* and make sure that driver and devices are set as:
+* Download LIRC source code
+
+```
+mkdir ~/lirc-src
+cd ~/lirc-src
+apt source lirc
+```
+
+* Apply a patch to fix LIRC for Raspberry Pi
+
+```
+wget https://raw.githubusercontent.com/neuralassembly/raspi/master/lirc-gpio-ir-0.10.patch
+patch -p0 -i lirc-gpio-ir-0.10.patch
+cd lirc-0.10.1
+debuild -uc -us -b
+```
+
+* Install LIRC (built on the previous step)
+
+```
+cd ~/lirc-src
+sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
+```
+
+**NOTE:** the installation is expected to **fail** the first time when you run it. After applying changes to some configurations LIRC will be installed again in the next steps.
+
+* Deploy LIRC configurations:
+
+```
+sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
+sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
+```
+
+* Edit */etc/lirc/lirc_options.conf* and make sure that driver and device are set as:
 
 ```
 driver          = default
-device          = /dev/lirc0
+device          = /dev/lirc1
 ```
 
-* Edit */boot/config.txt* and configure kernel extensions by adding the following line to the end of the file:
+**NOTE:** Device **/dev/lirc1** is the receiver and device **/dev/lirc0** is the transmitter. Initially **/dev/lirc1** is used to scan a remote control. After that the configuration has to be updated to **/dev/lirc0** in order to send infrared commands.
+
+* Edit */boot/config.txt* (with sudo or as root) and configure kernel extensions by adding the following line to the end of the file:
 
 ```
-dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17
+dtoverlay=gpio-ir,gpio_pin=18
+dtoverlay=gpio-ir-tx,gpio_pin=17
+```
+
+* Run the LIRC installation again:
+
+```
+cd ~/lirc-src
+sudo apt install -y --allow-downgrades ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
 ```
 
 * Reboot Raspberry Pi:
@@ -407,7 +419,7 @@ sudo systemctl stop lircd
 * Start outputting raw data from the IR receiver
 
 ```
-mode2 -d /dev/lirc0
+mode2 -d /dev/lirc1
 ```
 
 * Point a remote control at the IR receiver on ANAVI Infrared pHAT and press its buttons. If the IR receiver is configured successfully you will see similar output:
@@ -444,12 +456,12 @@ irrecord --list-namespace
 * Type in the following command to create new LIRC control configuration file and follow the on screen instructions to scan a remote control:
 
 ```
-irrecord -d /dev/lirc0 ~/lircd.conf
+irrecord -d /dev/lirc1 ~/lircd.conf
 ```
 
 Example configuration output with name hifi:
 ```
-Using driver default on device /dev/lirc0
+Using driver default on device /dev/lirc1
 
 irrecord -  application for recording IR-codes for usage with lirc
 Copyright (C) 1998,1999 Christoph Bartelmus(lirc@bartelmus.de)
@@ -541,6 +553,15 @@ sudo mv /etc/lirc/lircd.conf /etc/lirc/lircd-backup.conf
 ```
 sudo mv hifi.lircd.conf /etc/lirc/lircd.conf
 ```
+
+* Switch LIRC configurations to the device for transmitting. Edit again */etc/lirc/lirc_options.conf* and make sure that driver and device are set as:
+
+```
+driver          = default
+device          = /dev/lirc0
+```
+
+**NOTE:** In this case the device is **/dev/lirc0**.
 
 * Launch LIRC systemd service again:
 
@@ -658,6 +679,7 @@ Yes, the official ANAVI Infrared pHAT software is free and open source. The exam
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 15 February 2017  | Initial manual release      | All             | Leon Anavi      |
 | 16 September 2017 | Update for Raspbian Stretch | All             | Leon Anavi      |
+| 08 July 2019      | Update for Raspbian Buster  | All             | Leon Anavi      |
 
 ## ANAVI Infrared pHAT Revision
 
