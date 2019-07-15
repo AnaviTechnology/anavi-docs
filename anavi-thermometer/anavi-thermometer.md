@@ -280,7 +280,7 @@ The web server can be located anywhere, but for improved security it is best if 
 
 ## Build binary firmware image
 
-Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file. 
+Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file.
 Copy this file to the HTTP webserver you specified when you enabled OTA upgrades.
 
 ## Trigger update
@@ -337,7 +337,11 @@ Be sure the back up the private.key file, and make sure nobody can get hold of i
 
 ---
 
-# CHAPTER 4: Home Assistant
+# CHAPTER 4: Home Automation Platforms
+
+This chapter provide guidelines how to connect ANAVI Thermometer to popular home automation platforms like Home Assistant, OpenHab 2, Thinkspeak, etc.
+
+## Home Assistant
 
 [Home Assistant](https://home-assistant.io/) is a free and open-source home automation platform running on Python 3 with more than 1200 components for integration with popular Internet of Things.
 
@@ -378,6 +382,58 @@ mqtt:
 Also, supply a **Sensor name for Home Assistant** on the captive portal page of the ANAVI Thermometer. Sensors will automatically be created for the temperature, humidity, and (if connected) the DS18B20 waterproof temperature sensor module.
 
 The other sensors do not yet support MQTT Discovery.
+
+## OpenHAB 2
+
+[OpenHAB](https://www.openhab.org/) is a popular free and open source home automation software. Major version 2 of OpenHAB is significantly different for version 1. It is written in the JAVA programming language using the Eclipse Smart Home framework. Version 2.4 of OpenHAB adds several [new MQTT features](https://www.openhab.org/blog/2018-12-16-mqtt-arrives-in-the-modern-openhab-2-x-architecture.html). [This YouTube video explains the exact steps how to integrate ANAVI Thermometer in OpenHAB 2](https://www.youtube.com/watch?v=tjuXcqKG1Kc).
+
+Follow the steps below to integrate ANAVI Thermometer in OpenHAB 2:
+
+### OpenHAB Step 1: Install MQTT Binding
+
+Open the **Paper UI** web interface of OpenHAB 2. Go to **Add-ons > Binding**. Find **MQTT Binding** and click **Install**
+
+### OpenHAB Step 2: Configure MQTT Broker
+
+Again in Paper UI of OpenHAB 2, go to **Configuration > Things**. Click the button to add a new thing. Select **MQTT Thing Binding**. After that click **ADD MANUALLY**. Click **MQTT Broker**. Enter the domain or the IP address of the MQTT broker, the port and any other needed credentials.
+
+After adding the MQTT Broker to OpenHAB go to **Configuration > Things** and verify that the broker appears as online. If it is not online double check the configuration and try again.
+
+### OpenHAB Step 3: Install JavaScript Transformations
+
+Go to **Add-ons > Transformations**. Find **JavaScript Transformation** and click **Install**
+
+### OpenHAB Step 4: Download JavaScript Files
+
+Download [**temperature.js** and **humidity.js** from GitHub](https://github.com/AnaviTechnology/anavi-examples/tree/master/openhab2/transform) and deploy both files in directory **$OPENHAB_CONF/transform**.
+
+For example, on Raspberry Pi with OpenHABian variable **$OPENHAB_CONF** is set to **/etc/openhab2** so the whole path is **/etc/openhab2/transform**:
+
+```
+cd $OPENHAB_CONF/transform
+wget https://raw.githubusercontent.com/AnaviTechnology/anavi-examples/master/openhab2/transform/temperature.js
+wget https://raw.githubusercontent.com/AnaviTechnology/anavi-examples/master/openhab2/transform/humidity.js
+```
+
+**Note**: If you prefer the temperature in Fahrenheit, set variable **celsius** to **false** in the first line of **temperature.js**. This way the JavaScript will automatically convert the temperature from Celsius to Fahrenheit when showing it in the user interfaces of OpenHAB.
+
+### OpenHAB Step 5: Add ANAVI Thermometer as MQTT Generic Thing
+
+In **Paper UI** web interface go to **Configuration > Things**. Click the button to add a new thing and select **MQTT Thing Binding**.
+
+On the next screen it is very important to click **ADD MANUALLY**. After that select **Generic MQTT Thing**. Set the name, for example to **ANAVI Thermometer**. Set the MQTT broker configured on step 2 for **Bridge Selection**.
+
+After creating the **Generic MQTT Thing**, open it and add two channels:
+
+* A channel with type **Text value**, label **Temperature** and **Incoming value transformation** set to **JS:temperature.js**. Set the **MQTT State Topic** to **<workgroup>/<machine id>/air/temperature** (replace **<workgroup>** and **<machine id>** with the actual values)
+
+* A channel with type **Text value**, label **Humidity** and **Incoming value transformation** set to **JS:humidity.js**. Set the **MQTT State Topic** to **<workgroup>/<machine id>/air/humidity** (replace **<workgroup>** and **<machine id>** with the actual values)
+
+**IMPORTANT NOTE:** In both topics replace **<workgroup>** and **<machine id>** with valid values! You have set **<workgroup>** during the initial configuration of ANAVI Thermometer, the default value is **workgroup**. The **<machine id>** is MD5 hash generated based on the ESP8266 chip ID of ANAVI Thermometer. The machine ID is displayed in the web interface during the initial configuration of ANAVI Thermometer. It is also printed it serial console output on each boot of ANAVI Thermometer therefore you can also see it through Arduino IDE.
+
+Finally, **Link channel** to the default profile of a new item. As [shown in the video](https://www.youtube.com/watch?v=tjuXcqKG1Kc) this has to be done for both the temperature and the humidity.
+
+If everything works fine you will see the temperature and the humidity reported from **ANAVI Thermometer** in the **Control** section of **Paper UI** as well as in the **Basic UI** of OpenHAB 2 (and newer).
 
 ---
 
