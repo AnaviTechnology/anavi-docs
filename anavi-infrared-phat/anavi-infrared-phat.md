@@ -585,6 +585,12 @@ irsend LIST hifi ""
 irsend SEND_ONCE hifi KEY_POWER
 ```
 
+**NOTE: Please keep in mind that in rare cases some devices might require codes to be sent in short bursts, for example:**
+
+```
+irsend send_once hifi KEY_POWER KEY_POWER KEY_POWER
+```
+
 ## Device Tree Overlays
 
 Device Tree (DT) in Linux is a description of the hardware in a system. The DT overlay adds a number of optional elements.
