@@ -202,7 +202,7 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 5. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
 
 * WiFiManager by tzapu (version 0.12.0)
-* ArduinoJson by Benoit Blanchon (version 5.11.1)
+* ArduinoJson by Benoit Blanchon (version 6.11.2)
 * PubSubClient by Nick O'Leary (version 2.7.0)
 * Adafruit HTU21DF Library by Adafruit (version 1.0.1)
 * Adafruit APDS9960 Library by Adafruit (version 1.0.5)
