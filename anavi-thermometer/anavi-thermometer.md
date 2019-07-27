@@ -49,7 +49,7 @@ ANAVI Thermometer is designed with the free and open source electronics design a
 
 ## Target Market
 
-ANAVI Thermometer is a certified open source hardware development board for customers interested in home automation, software development and Internet of Things. The option to attach a waterproof DS18B20 sensor makes it coconvenient for measuring temperature in fish tanks and liquids. The board is appropriate for embedded programming enthusiasts, open source supporters, students as well as web and/or mobile app developers. The main usage of the board is home automation.
+ANAVI Thermometer is a certified open source hardware development board for customers interested in home automation, software development and Internet of Things. The option to attach a waterproof DS18B20 sensor makes it convenient for measuring temperature in fish tanks and liquids. The board is appropriate for embedded programming enthusiasts, open source supporters, students as well as web and/or mobile app developers. The main usage of the board is home automation.
 
 ## Board Version
 
@@ -199,7 +199,7 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 
 4. In **Tools > Flash Size:** select **4M (1M SPIFFS)**
 
-5. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Light Controller:
+5. Go to **Sketch > Include Library > Manage Libraries...** and include the following dependencies of the default firmware for ANAVI Thermometer:
 
 * WiFiManager by tzapu (version 0.12.0)
 * ArduinoJson by Benoit Blanchon (version 6.11.2)
