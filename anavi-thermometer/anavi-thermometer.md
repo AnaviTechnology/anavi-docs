@@ -161,7 +161,7 @@ The default software of ANAVI Thermometer has a captive portal which guides you 
 
 Our open source software relies on the machine to machine communication protocol MQTT to report data from the sensors. You can connect to your own MQTT broker or just leave the default configurations and connect to the public broker as shown in the video.
 
-Recent versions of the firmware support [Home Assistant MQTT Discovery](https://www.home-assistant.io/docs/mqtt/discovery/) which makes it very convenient to add ANAVI Thermometer to Home Assistant.  For this to work, you need to enter the sensor name (such as "Master Bedroom") that will be used for this Thermometer on the setup screen.  See Chapter 4 for more details.
+Recent versions of the firmware support [Home Assistant MQTT Discovery](https://www.home-assistant.io/docs/mqtt/discovery/) which makes it very convenient to add ANAVI Thermometer to Home Assistant.  For this to work, you need to enter the sensor name (such as "Master Bedroom") that will be used for this Thermometer on the setup screen.  See Chapter 5 for more details.
 
 Recent versions of the firmware support Over-the-Air upgrades of the software.  To enable this, you need to specify the IP address or DNS domain name of a web server that hosts the firmware. See Chapter 3 for more details.
 
@@ -337,7 +337,28 @@ Be sure the back up the private.key file, and make sure nobody can get hold of i
 
 ---
 
-# CHAPTER 4: Home Automation Platforms
+# CHAPTER 4: Temperature scale: Celsius vs Fahrenheit
+
+The temperature scale of the default open source firmware of ANAVI Thermometer can be configured at the initial setup of the device. By default it is set to Celsius. Manually type in **fahrenheit** to change it.
+
+After the initial setup the temperature scale can be still changed with a single MQTT message with topic **cmnd/<machine-id>/tempformat** (where **<machine-id>** must be replaced with the
+unique value for your board) and a JSON payload:
+
+```
+{ "scale": "fahrenheit" }
+```
+
+To switch back to Celsius, send the same message and just edit the JSON payload by changing **fahrenheit** to **celsius**.
+
+For example, if using the mosquitto_pub application from a command-line terminal and machine id 11111111111111111111111111111111:
+
+```
+mosquitto_pub -h iot.eclipse.org -d -p 1883 -t
+"cmnd/11111111111111111111111111111111/tempformat" -m '{ "scale":
+"fahrenheit" }'
+```
+
+# CHAPTER 5: Home Automation Platforms
 
 This chapter provide guidelines how to connect ANAVI Thermometer to popular home automation platforms like Home Assistant, OpenHab 2, Thinkspeak, etc.
 
@@ -437,7 +458,7 @@ If everything works fine you will see the temperature and the humidity reported 
 
 ---
 
-# CHAPTER 5: Schematics
+# CHAPTER 6: Schematics
 
 ## Pinout
 
@@ -458,7 +479,7 @@ The sensors that can be connected to ANAVI Thermometer communicate with a host m
 
 ---
 
-# CHAPTER 6: Frequently Asked Questions (FAQ)
+# CHAPTER 7: Frequently Asked Questions (FAQ)
 
 #### What power supply do I need?
 
@@ -499,13 +520,14 @@ Buy any of the available perks, get your hands on the ANAVI Thermometer, contrib
 
 ---
 
-# CHAPTER 7: Revision History
+# CHAPTER 8: Revision History
 
 ## Document Revision
 
 | Date              | Changes                     | Modified pages  | Author          |
 | ----------------- |:---------------------------:| :---------------| :---------------|
-| 24 January 2019   | Initial        release      | All             | Leon Anavi      |
+| 24 January 2019   | Initial release             | All             | Leon Anavi      |
+| 6 August 2019     | Celsius vs Fahrenheit       | All             | Leon Anavi      |
 
 ## ANAVI Thermometer Revision
 
