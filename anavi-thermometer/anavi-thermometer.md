@@ -183,7 +183,7 @@ To reset ANAVI Thermometer press the button and hold it for approximately 6 seco
 
 ## Default Firmware
 
-By default ANAVI Thermometer comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-termometer-sw).
+By default ANAVI Thermometer comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-thermometer-sw).
 
 ## USB to UART Module
 
