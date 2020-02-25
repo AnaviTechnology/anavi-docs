@@ -69,9 +69,9 @@ ANAVI Miracle Controller is shipped in a protective bag. It must **NOT** be expo
 In order to setup ANAVI Miracle Controller the following items are required:
 
 * 1 or 2 addressable LED strips, supported by the popular FastLED Arduino library (with three wires), such as WS2812, WS2812b, WS2811, TM1804, etc.
-* 5V or 12V power supply matching the requirements of the LED strips. Set the pin jumper on ANAVI Miracle Controller according to the voltage of the power supply. Mismatching voltage will damage ANAVI Miracle Controller and/or the LED strips
+* 5V or 12V center positive power supply matching the requirements of the LED strips. Set the pin jumper on ANAVI Miracle Controller according to the voltage of the power supply. Mismatching voltage will damage ANAVI Miracle Controller and/or the LED strips
 
-It is recommended to use 2A (2000mA) or higher power supply.
+It is recommended to use 2A (2000mA) or higher power supply. For **example** for the 5V WS2812B LED strips included in the kits: [MEAN WELL GST18E05-P1J](https://www.meanwell-web.com/en-gb/ac-dc-industrial-wall-mount-adaptor-output-5vdc-at-gst18e05--p1j).
 
 ## Supported Peripherals
 
