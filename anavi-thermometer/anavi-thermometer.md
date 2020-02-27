@@ -446,11 +446,11 @@ On the next screen it is very important to click **ADD MANUALLY**. After that se
 
 After creating the **Generic MQTT Thing**, open it and add two channels:
 
-* A channel with type **Text value**, label **Temperature** and **Incoming value transformation** set to **JS:temperature.js**. Set the **MQTT State Topic** to **<workgroup>/<machine id>/air/temperature** (replace **<workgroup>** and **<machine id>** with the actual values)
+* A channel with type **Text value**, label **Temperature** and **Incoming value transformation** set to **JS:temperature.js**. Set the **MQTT State Topic** to **\<workgroup>/\<machine id>/air/temperature** (replace **\<workgroup>** and **\<machine id>** with the actual values)
 
-* A channel with type **Text value**, label **Humidity** and **Incoming value transformation** set to **JS:humidity.js**. Set the **MQTT State Topic** to **<workgroup>/<machine id>/air/humidity** (replace **<workgroup>** and **<machine id>** with the actual values)
+* A channel with type **Text value**, label **Humidity** and **Incoming value transformation** set to **JS:humidity.js**. Set the **MQTT State Topic** to **\<workgroup>/\<machine id>/air/humidity** (replace **\<workgroup>** and **\<machine id>** with the actual values)
 
-**IMPORTANT NOTE:** In both topics replace **<workgroup>** and **<machine id>** with valid values! You have set **<workgroup>** during the initial configuration of ANAVI Thermometer, the default value is **workgroup**. The **<machine id>** is MD5 hash generated based on the ESP8266 chip ID of ANAVI Thermometer. The machine ID is displayed in the web interface during the initial configuration of ANAVI Thermometer. It is also printed it serial console output on each boot of ANAVI Thermometer therefore you can also see it through Arduino IDE.
+**IMPORTANT NOTE:** In both topics replace **\<workgroup>** and **\<machine id>** with valid values! You have set **\<workgroup>** during the initial configuration of ANAVI Thermometer, the default value is **workgroup**. The **\<machine id>** is MD5 hash generated based on the ESP8266 chip ID of ANAVI Thermometer. The machine ID is displayed in the web interface during the initial configuration of ANAVI Thermometer. It is also printed it serial console output on each boot of ANAVI Thermometer therefore you can also see it through Arduino IDE.
 
 Finally, **Link channel** to the default profile of a new item. As [shown in the video](https://www.youtube.com/watch?v=tjuXcqKG1Kc) this has to be done for both the temperature and the humidity.
 
