@@ -195,7 +195,7 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 
 2. Add the ESP8266 board package: In **File > Preferences** input http://arduino.esp8266.com/stable/package_esp8266com_index.json into the Additional Board Manager URLs field.
 
-3. In **Tools > Board ... > Boards manager** find and add the **ESP8266** package. Now "Generic ESP8266" should be an option in the **Tools > Boards** menu.
+3. In **Tools > Board ... > Boards manager** find and add the **ESP8266** package. Now "Generic ESP8266" should be an option in the **Tools > Boards** menu. Select it.
 
 4. In **Tools > Flash Size:** select **4M (1M SPIFFS)**
 
