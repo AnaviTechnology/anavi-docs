@@ -216,16 +216,7 @@ Open a terminal and execute the follow the steps by step instructions to install
 
 ```
 sudo apt-get update
-sudo apt-get install -y git git-core vim python-dev python-rpi.gpio
-```
-
-* Install the GPIO interface library for Raspberry Pi called [wiringPi](http://wiringpi.com/):
-
-```
-cd ~
-git clone git://git.drogon.net/wiringPi
-cd wiringPi
-./build
+sudo apt-get install -y git git-core vim python-dev python-rpi.gpio  wiringpi i2c-tools
 ```
 
 * Download the examples for ANAVI Infrared pHAT
@@ -365,7 +356,7 @@ debuild -uc -us -b
 
 ```
 cd ~/lirc-src
-sudo apt install ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
+sudo apt install -y ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
 ```
 
 **NOTE:** the installation is expected to **fail** the first time when you run it. After applying changes to some configurations LIRC will be installed again in the next steps.
