@@ -139,6 +139,15 @@ Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Th
 | SCL      | SCL            |
 | SDA      | SDA            |
 
+
+#### Waterproof Temperature DS18B20 Sensor
+
+ANAVI Thermometer Advanced and Developer kits include a waterproof 1-wire DS18B20 sensor appropriate for measuring temperature in liquids. Attached the sensor to the designated terminal on ANAVI Thermometer. You can even connect multiple DS18B20 sensors to the terminal because each sensor has a unique 64-bit ID burned in at the factory to differentiate them. The typical color codes for the waterproof DS18B20 sensor are:
+
+* GND - black
+* Data - yellow
+* VCC - red
+
 ## Assembly
 
 You can assemble ANAVI Thermometer with your bare hands and a screw driver following the steps below:
