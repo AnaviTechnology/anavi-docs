@@ -375,7 +375,7 @@ driver          = default
 device          = /dev/lirc1
 ```
 
-**NOTE:** Device **/dev/lirc1** is the receiver and device **/dev/lirc0** is the transmitter. Initially **/dev/lirc1** is used to scan a remote control. After that the configuration has to be updated to **/dev/lirc0** in order to send infrared commands.
+**NOTE:** Device **/dev/lirc1** is the receiver and device **/dev/lirc0** is the transmitter. Initially **/dev/lirc1** is used to scan a remote control. After that the configuration has to be updated to **/dev/lirc0** and LIRC daemon must be restated with `sudo systemctl restart lircd` in order to send infrared commands.
 
 * Edit */boot/config.txt* (with sudo or as root) and configure kernel extensions by adding the following line to the end of the file:
 
