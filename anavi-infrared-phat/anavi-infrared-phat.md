@@ -356,19 +356,10 @@ debuild -uc -us -b
 
 ```
 cd ~/lirc-src
-sudo apt install -y ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
+sudo apt install -y ./liblirc0_0.10.1-6.2~deb10u1_armhf.deb ./liblircclient0_0.10.1-6.2~deb10u1_armhf.deb ./lirc_0.10.1-6.2~deb10u1_armhf.deb
 ```
 
-**NOTE:** the installation is expected to **fail** the first time when you run it. After applying changes to some configurations LIRC will be installed again in the next steps.
-
-* Deploy LIRC configurations:
-
-```
-sudo cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
-sudo cp /etc/lirc/lircd.conf.dist /etc/lirc/lircd.conf
-```
-
-* Edit */etc/lirc/lirc_options.conf* and make sure that driver and device are set as:
+* Edit `/etc/lirc/lirc_options.conf` and make sure that driver and device are set as:
 
 ```
 driver          = default
@@ -382,13 +373,6 @@ device          = /dev/lirc1
 ```
 dtoverlay=gpio-ir,gpio_pin=18
 dtoverlay=gpio-ir-tx,gpio_pin=17
-```
-
-* Run the LIRC installation again:
-
-```
-cd ~/lirc-src
-sudo apt install -y --allow-downgrades ./liblirc0_0.10.1-5.2_armhf.deb ./liblircclient0_0.10.1-5.2_armhf.deb ./lirc_0.10.1-5.2_armhf.deb
 ```
 
 * Reboot Raspberry Pi:
@@ -545,7 +529,7 @@ sudo mv /etc/lirc/lircd.conf /etc/lirc/lircd-backup.conf
 sudo mv hifi.lircd.conf /etc/lirc/lircd.conf
 ```
 
-* Switch LIRC configurations to the device for transmitting. Edit again */etc/lirc/lirc_options.conf* and make sure that driver and device are set as:
+* Switch LIRC configurations to the device for transmitting. Edit again `/etc/lirc/lirc_options.conf` and make sure that driver and device are set as:
 
 ```
 driver          = default
