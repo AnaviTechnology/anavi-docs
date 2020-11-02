@@ -182,7 +182,7 @@ To reset ANAVI Fume Extractor press the button and hold it for 10 seconds until 
 
 ## Default Firmware
 
-By default ANAVI Fume Extractor comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-fume-extactor-sw).
+By default ANAVI Fume Extractor comes with [this free and open source Arduino sketch](https://github.com/AnaviTechnology/anavi-fume-extractor-sw).
 
 ## USB to UART Module
 
