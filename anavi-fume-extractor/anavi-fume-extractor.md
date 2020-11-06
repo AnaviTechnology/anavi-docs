@@ -1,6 +1,6 @@
 # ANAVI Fume Extractor
 
-**An ESP8266-powered, open source, Wi-Fi dev board for smoke absorber**
+**The open source smart solder smoke absorber**
 
 ---
 
@@ -20,7 +20,7 @@ The software examples are released under MIT and the rest of the software is ava
 
 It is possible that the pictures in this manual differ from the latest revision of the board.
 
-The product described in this document is subject to continuous development and improvements. All particulars of the product and its use contained in this document are given by Anavi in good faith. However all warranties implied or expressed including but not limited to implied warranties of merchantability or fitness for purpose are excluded. This document is intended only to assist the reader in the use of the product. Anavi shall not be liable for any loss or damage arising from the use of any information in this document or any error or omission in such information or any incorrect use of the product.
+The product described in this document is subject to continuous development and improvements. All particulars of the product and its use contained in this document are given by ANAVI in good faith. However all warranties implied or expressed including but not limited to implied warranties of merchantability or fitness for purpose are excluded. This document is intended only to assist the reader in the use of the product. ANAVI shall not be liable for any loss or damage arising from the use of any information in this document or any error or omission in such information or any incorrect use of the product.
 
 This evaluation board/kit is intended for use for engineering development, demonstration, or evaluation purposes only and is not considered by ANAVI to be a finished end-product fit for general consumer use. People handling the product must have electronics training and observe good engineering practice standards. As such, the goods being provided are not intended to be complete in terms of required design-, marketing-, and/or manufacturing-related protective considerations, including product safety and environmental measures typically found in end products that incorporate such semiconductor components or circuit boards.
 
@@ -32,21 +32,22 @@ There is no warranty for the design materials and the components used to create 
 
 ## Introduction
 
-ANAVI Fume Extractor is an open source hardware, easy-to-use, Wi-Fi compatible development board for smart smoke absorber for makers. It is powered by ESP8266 and supports 5V 80mm fan, mini OLED display, 5V analog MQ gas sensor and up to 3 additional I2C sensor modules. 
+ANAVI Fume Extractor is a smart, open source, solder smoke absorber. It is powered by a Wi-Fi development board with an ESP8266, an 80 mm fan, and a replaceable filter. ANAVI Fume Extractor has dedicated slots for a mini OLED I²C display and a MQ-135 gas sensor module, as well as slots for up to three additional I²C sensor modules for measuring temperature, humidity, light, and barometric pressure. Furthermore, there are UART pins for easy flashing of custom firmware and an extra GPIO for connecting external peripherals.
 
-Dangerous fumes during soldering and air pollution is a very serious problem. Monitoring air quality and detecting toxic gases can improve one's quality of life. All these features make ANAVI Fume Extractor appropriate for developers, makers, students and open source enthusiasts who are interested in home automation and an environmentally friendly lifestyle.
+Soldering is fun, but soldering fumes are dangerous to your health. Stay safe and healthy by using a fume extractor. Existing products on the market are bulky, noisy, and lack smart features. The alternative is ANAVI Fume Extractor. Dangerous fumes during soldering and air pollution is a very serious problem. Monitoring air quality and detecting toxic gases can improve one's quality of life. All these features make ANAVI Fume Extractor appropriate for developers, makers, students and open source enthusiasts who are interested in home automation and an environmentally friendly lifestyle.
 
 ANAVI Fume Extractor is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Fume Extractor with your bare hands and a screwdriver.
 
 ## Features & Specifications
 
+* **Fan:** 80 mm, 5 V DC, 0.25 A with replaceable filter
 * **CPU:** Tensilica L106 32-bit processor (ESP8266)
 * **Connectivity:** Wi-Fi 802.11 b/g/n
 * **Gas sensor support:** MQ-135 for air quality or any other 5 V MQ analog gas sensor
-* **Peripherals:** 80x80mm 5V fan, mini OLED display, UART pins for flashing custom firmware, button, three slots for I²C sensors
-* **Compatibility:** Arduino IDE, PlatformIO, Home Assistant, OpenHAB MQTT, and any modern web browser
-* **Certification:** Open Source Hardware Association (OSHWA)
-* **Dimensions:** 75 mm x 40 mm
+* **Peripherals:** Mini OLED display, UART pins for flashing custom firmware, button, three slots for I²C sensors
+* **Compatibility:** Arduino IDE, PlatformIO, Home Assistant, OpenHAB, ThingSpeak, MQTT, and any modern web browser
+* **Certification:** Open Source Hardware Association (OSHWA) BG000060
+* **Dimensions:** 80x129x54 mm
 
 ## Target Market
 
@@ -58,13 +59,13 @@ ANAVI Fume Extractor is fully compliant with **Arduino IDE**, **PlatformIO**, th
 
 ## Board Version
 
-Revision 1.1 of ANAVI Fume Extractor was used while writing this document. It is possible that it is outdated so it is always recommended to check the latest sources from the GitHub page of the board.
+Revision 1.0 of ANAVI Fume Extractor was used while writing this document. It is possible that it is outdated so it is always recommended to check the latest sources from the GitHub page of the board.
 
 # CHAPTER 2: Getting Started
 
 ## Electrostatic Warning
 
-ANAVI Fume Extractor is shipped in a protective bag. It must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
+ANAVI Fume Extractor board is shipped in a protective bag. It must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
 
 ## Requirements
 
@@ -144,21 +145,70 @@ Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Fu
 
 ## Assembly
 
-You can assemble ANAVI Fume Extractor with your bare hands and a screw driver following the steps below:
+The following assembly guidelines are available:
 
-* Add sensors to your ANAVI Fume Extractor.
-* Optionally, you may also assemble the simple acrylic case by removing the protective film and mounting screws.
-* Use 5V power supply and plug an appropriate cable in the microUSB of ANAVI Fume Extractor to turn on the board.
+* [ANAVI Fume Extractor Assembly Guide (with images)](https://www.crowdsupply.com/anavi-technology/fume-extractor/updates/video-anavi-fume-extractor-assembly-guide)
+* [ANAVI Fume Extractor Video Assembly Guide](https://www.youtube.com/watch?v=jscFGFjlJsU)
+
+ANAVI Fume Extractor comes as a do-it-yourself kit. There are 3 types of kits: starter, advanced and developer. The difference is in the number of included sensor modules. The developer kit contains all supported peripherals.
+
+This tutorial explains the exact steps of how to assemble the ANAVI Fume Extractor developer kit. The whole process can take up to 30-40min. A screwdriver is required. It is highly recommended [to watch the video with the assembly guidelines before you start](https://www.youtube.com/watch?v=jscFGFjlJsU).
+
+### Step 1: Peel off the protective films
+
+Each ANAVI Fume Extractor kit contains 4 acrylic enclosures. Peel off the protective films from both sides of all of them. The acrylic enclosure will be clear and transparent once the film is peeled off.
+
+### Step 2: PCB
+
+Attach the ANAVI Fume Extractor printed circuit board to the bottom acrylic enclosure with 4 screws and 8 nuts. Add 4 nuts below and 4 nuts above the board.
+
+### Step 3: Mini OLED Display
+The kit includes 4 M2 screws and nuts as well as appropriate washers. Remove the protective film from the mini I2C OLED display. Carefully attach the display to the front acrylic case as shown in the video. The display is fragile. Don’t fasten the screws too tight!
+
+### Step 4: Fan Filter
+A couple of fan filters are included in each kit. Attach the 4 M4 screws to the front acrylic enclosure with 4 of the M4 nuts. Place one of the filters. Leave the other one as a replacement.
+
+For long-term maintenance over time the filter must be regularly replaced. There is a huge variety of 80mm fan filters on the market. It is up to you to decide whether to buy carbon or HEPA filters. Various distributors offer appropriate filters, for example Mouser has 80 mm, 45 PPI foam media filters.
+
+### Step 5: Fan
+
+Add the acrylic enclosure that separates the fan from the filter. On the side of the fan you will notice a label that indicates the direction of the air flow. Place the 80mm 5V DC fan so that the air will flow through the filter.
+
+Screw the 4 M4 20mm stand-offs to firmly fix the position of the fan.
+
+### Step 6 (optional): Light Sensor Module
+
+Owners of a developer kit should add the BH1750 light sensor module to the front acrylic enclosure and fix it with one M4 screw and a nut.
+
+### Step 7: Peripherals
+
+Connect peripherals, like the fan and the mini OLED display, to the printed circuit board. There are dedicated connectors for both of them. Pay attention to the labels for I2C on the top of the mini OLED display.
+
+### Step 8 (optional): Sensors
+
+Owners of advanced or developer kits should attach:
+
+* MQ-135 for indoor air quality
+* HTU21D I2C sensor module for temperature and humidity
+* BMP180 I2C sensor module for barometric pressure and temperature.
+
+### Step 9: Assemble all acrylic enclosures
+
+Finally, assemble together all acrylic enclosures by fastening 4 M4 nuts on the back of ANAVI Fume Extractor.
+
+On the right side of ANAVI Fume Extractor you will notice a jumper for the **WiFi** as well as a button to switch the filter on and off. By default the jumper for the **WiFi** is set to **OFF**. Move it to **ON** and power cycle the board if you want to connect ANAVI Fume Extractor to a MQTT broker and IoT platform such as the popular open source system Home Assistant.
 
 ## Powering ANAVI Fume Extractor
 
-ANAVI Fume Extractor has been tested using various 5V power supplies and USB to microUSB cables. It is recommended to use 5V power supply with 1A or higher current output. Make sure that you are using a 5V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
+To turn ANAVI Fume Extractor on, gently plug an appropriate cable and 5V power supply into the microUSB connector on the left side of the board. The microUSB connector is used only for providing power, no data is transferred. Power supply and microUSB cable are NOT included in any of the kits.
+
+It is recommended to use 5V power supply with 1A or higher current output. Make sure that you are using a 5V power supply from a trusted supplier. Cheap, untested power supplies can be risky and unreliable.
 
 ## Configure ANAVI Fume Extractor
 
 [Video tutorial for getting started with ANAVI Light Controller, same procedure for ANAVI Fume Extractor](https://www.youtube.com/watch?v=Y_81CuuGm0Y)
 
-Turn on ANAVI Fume Extractor by plugging an appropriate power supply. As soon as the board is turned on for the very first time it will create a temporary WiFi access point. Connect to it from your computer, smartphone or tablet.
+Set the WiFi jumper to **ON**. Turn on ANAVI Fume Extractor by plugging an appropriate power supply. As soon as the board is turned on for the very first time it will create a temporary WiFi access point. Connect to it from your computer, smartphone or tablet.
 
 The default software of ANAVI Fume Extractor has a captive portal which guides you through the configurations. As you see in the video you have to select your WiFi network and enter a password if it is not open.
 
@@ -407,6 +457,7 @@ Buy any of the available perks, get your hands on the ANAVI Fume Extractor, cont
 | Date              | Changes                     | Modified pages  | Author          |
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 16 November 2019  | Initial release             | All             | Leon Anavi      |
+| 6 November 2020   | Assembly guidelines         | All             | Leon Anavi      |
 
 ## ANAVI Fume Extractor Revision
 
