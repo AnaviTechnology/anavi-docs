@@ -391,17 +391,17 @@ sensor:
 
 The components of ANAVI Fume Extractor relies on ESP8266 (ESP-12 module) and utilizes the following pins:
 
-| Component           | Pins                            |  Arduino Pin ID |
-| ------------------- |:------------------------------- |-----------------|
-| I2C                 | 13, 14                          |                 |  
-| MQ gas sensor       | 2                               | 0 (analog)      |
-| Indication LED (D1) | 4                               | 16              |
-| Fan On/Off button   | 7                               | 13              |
-| Relay               | 6                               | 12              |
-| WiFi On/Off Jumper  | 5                               | 14              |
-| Reset button (SW1)  | 12                              | 0               |
-| Extra GPIO          | 11                              | 2               |
-| UART                | 15, 16                          |                 |
+| Component           | Pins                            |  Arduino Pin ID |         ESPHome          |
+| ------------------- |:------------------------------- |-----------------|--------------------------|
+| I2C                 | 13, 14                          |                 | GPIO4 (sda), GPIO5 (scl) |
+| MQ gas sensor       | 2                               | 0 (analog)      | A0                       |
+| Indication LED (D1) | 4                               | 16              | GPIO16                   |
+| Fan On/Off button   | 7                               | 13              | GPIO13                   |
+| Relay               | 6                               | 12              | GPIO12                   |
+| WiFi On/Off Jumper  | 5                               | 14              | GPIO4                    |
+| Reset button (SW1)  | 12                              | 0               | GPIO0                    |
+| Extra GPIO          | 11                              | 2               | GPIO2                    |
+| UART                | 15, 16                          |                 |                          |
 
 ## I2C
 
@@ -429,7 +429,7 @@ Yes, ANAVI Fume Extractor is an open source hardware project powered and created
 
 #### Is ANAVI Fume Extractor certified?
 
-ANAVI Fume Extractor is being reviewed by the Open Source Hardware Association.
+ANAVI Fume Extractor has been certified by [the Open Source Hardware Association under OSHWA UID BG000060](https://certification.oshwa.org/bg000060.html).
 
 #### Does ANAVI Fume Extractor use the ESP8266?
 
@@ -458,6 +458,7 @@ Buy any of the available perks, get your hands on the ANAVI Fume Extractor, cont
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 16 November 2019  | Initial release             | All             | Leon Anavi      |
 | 6 November 2020   | Assembly guidelines         | All             | Leon Anavi      |
+| 7 November 2020   | ESPHome notes and OSHWA UID | All             | Leon Anavi      |
 
 ## ANAVI Fume Extractor Revision
 
