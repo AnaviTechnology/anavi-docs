@@ -342,17 +342,17 @@ If your server does not listen on port 80, you can provide the port, for example
 {"file":"/anavi.bin", "server": "192.168.100.46", "port": 8080}
 ```
 
-Example for sending an update message using mosquitto_pub:
+Example for sending an update message using `mosquitto_pub`:
 
 ```
-mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/update -u [mqttuser] -P [mqttpass] -m "{\"file\":\"anavi.bin\", \"server\":\"192.168.100.46\", \"port\":8080}
+mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/update -u [user] -P [password] -m "{\"file\":\"anavi.bin\", \"server\":\"192.168.100.46\", \"port\":8080}"
 ```
-***Note: To ensure successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
+
+***Note 1: Replace `[mqttserver]` with the IP of the MQTT broker, `[user]` with the MQTT username and `[password]` with the MQTT user's password.**
+
+***Note 2: To ensure successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
 
 On receipt of this message, ANAVI Fume Extractor will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured.
-
-***Note: After the update, you may find that readings from the DHT22 sensor no longer work and temperature and humidity are shown as "0". In this case, please powercycle the device (unplug power until display turns off, then plug power in again)***
-
 
 # CHAPTER 4: Home Assistant
 
