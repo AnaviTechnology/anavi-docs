@@ -383,9 +383,21 @@ sensor:
       value_template: "{{value_json.humidity}}"
 ```
 
+# CHAPTER 5: MQTT
+
+[MQTT](https://mqtt.org/) is a lightweight machine-to-machine real-time messaging protocol. If the WiFi jumper is enabled on boot, the [default open source firmware of ANAVI Fume Extractor](https://github.com/AnaviTechnology/anavi-fume-extractor-sw) uses MQTT to report data from the sensors and to control the fan.
+
+After establishing a connection to the configured MQTT broker:
+
+* To turn **ON** the fan send MQTT message with  topic `workgroup/[deviceid]/fan` with payload `{"fan":true}`
+
+* To turn **OFF** the fan send MQTT message with  topic `workgroup/[deviceid]/fan` with payload `{"fan":false}` (or any other value that is not `true`)
+
+**NOTE**: Replace `[deviceid]` with the actual device ID with is printed during the initial configuration of the fume extractor as well as in the serial console output on boot. Please note you may need to replace `workgroup` if you have configured a different name during the initial setup.
+
 ---
 
-# CHAPTER 5: Schematics
+# CHAPTER 6: Schematics
 
 ## Pinout
 
@@ -409,7 +421,7 @@ The sensors that can be connected to ANAVI Fume Extractor communicate with a hos
 
 ---
 
-# CHAPTER 6: Frequently Asked Questions (FAQ)
+# CHAPTER 7: Frequently Asked Questions (FAQ)
 
 #### What power supply do I need?
 
@@ -450,7 +462,7 @@ Buy any of the available perks, get your hands on the ANAVI Fume Extractor, cont
 
 ---
 
-# CHAPTER 7: Revision History
+# CHAPTER 8: Revision History
 
 ## Document Revision
 
