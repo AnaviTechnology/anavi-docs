@@ -163,10 +163,14 @@ Each ANAVI Fume Extractor kit contains 4 acrylic enclosures. Peel off the protec
 Attach the ANAVI Fume Extractor printed circuit board to the bottom acrylic enclosure with 4 screws and 8 nuts. Add 4 nuts below and 4 nuts above the board.
 
 ### Step 3: Mini OLED Display
+
 The kit includes 4 M2 screws and nuts as well as appropriate washers. Remove the protective film from the mini I2C OLED display. Carefully attach the display to the front acrylic case as shown in the video. The display is fragile. Don’t fasten the screws too tight!
 
 ### Step 4: Fan Filter
-A couple of fan filters are included in each kit. Attach the 4 M4 screws to the front acrylic enclosure with 4 of the M4 nuts. Place one of the filters. Leave the other one as a replacement.
+
+A couple of fan filters are included in each kit. Attach the 4 M4 screws to the front acrylic enclosure with 4 of the M4 nuts. Pay attention to the alignment of the acrylics at the start of the process. The display is on the left and the gas sensor on the right of the front panel (when looking at it from the front).
+
+Place one of the filters. Leave the other one as a replacement.
 
 For long-term maintenance over time the filter must be regularly replaced. There is a huge variety of 80mm fan filters on the market. It is up to you to decide whether to buy carbon or HEPA filters. Various distributors offer appropriate filters, for example Mouser has 80 mm, 45 PPI foam media filters.
 
