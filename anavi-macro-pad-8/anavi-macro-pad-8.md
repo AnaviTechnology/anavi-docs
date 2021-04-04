@@ -192,7 +192,23 @@ The mini OLED display that can be connected to ANAVI Macro Pad 8 communicate wit
 
 ---
 
-# CHAPTER 5: Frequently Asked Questions (FAQ)
+# CHAPTER 5: Frequently Asked Questions (FAQ) and Troubleshooting
+
+* How to fix `The firmware is too large! 28866/28672 (194 bytes over)`?
+
+The easiest way to reduce the size of QMK firmware with your custom new keymap for ANAVI Macro Pad 8 it to cut some of the RGB Lighting animations and effects.
+
+For example, in your custom keymap you can create `config.h` in the keymap directory that overwrites the main `config.h` with a reduced number of supported RGB Lighting animations and effects:
+
+```
+#pragma once
+
+#undef RGBLIGHT_ANIMATIONS
+#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_EFFECT_CHRISTMAS
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_SNAKE
+```
 
 ---
 
@@ -204,6 +220,7 @@ The mini OLED display that can be connected to ANAVI Macro Pad 8 communicate wit
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 09 December 2020  | Initial manual release      | All             | Leon Anavi      |
 | 03 April 2021     | Assembly guidelines         | All             | Leon Anavi      |
+| 04 April 2021     | Troubleshooting             | All             | Leon Anavi      |
 
 ## ANAVI Macro Pad 8 Revision
 
