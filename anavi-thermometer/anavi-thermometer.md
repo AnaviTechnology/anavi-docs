@@ -115,7 +115,7 @@ Using 4 Dupont jumper wires connect HTU21 to one of the 3 I2C slots on ANAVI The
 
 #### Color & Gesture Recognition Sensor
 
-The official I2C sensor for RGB color and gesture detection on ANAVI Ligth pHAT is APDS-9960.
+The official I2C sensor for RGB color and gesture detection on ANAVI Thermometer is APDS-9960.
 
 Using 4 Dupont jumper wires connect APDS-9960 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
