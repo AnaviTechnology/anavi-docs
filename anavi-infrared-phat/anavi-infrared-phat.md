@@ -356,7 +356,7 @@ debuild -uc -us -b
 
 ```
 cd ~/lirc-src
-sudo apt install -y ./liblirc0_0.10.1-6.2~deb10u1_armhf.deb ./liblircclient0_0.10.1-6.2~deb10u1_armhf.deb ./lirc_0.10.1-6.2~deb10u1_armhf.deb
+sudo apt install -y ./liblirc0_0.10.1-6.3~deb10u1_armhf.deb ./liblircclient0_0.10.1-6.3~deb10u1_armhf.deb ./lirc_0.10.1-6.3~deb10u1_armhf.deb
 ```
 
 * Edit `/etc/lirc/lirc_options.conf` and make sure that driver and device are set as:
