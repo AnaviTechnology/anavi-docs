@@ -1,6 +1,6 @@
 # ANAVI Macro Pad 8
 
-**Convert Your Raspberry Pi to Powerful Remote Control**
+**Open source, programmable, eight-key keypad with backlighting, underlighting, and OLED screen**
 
 ---
 
