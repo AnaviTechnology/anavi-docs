@@ -34,11 +34,11 @@ ANAVI Macro Pad 8 is an open source, custom-programmable, mini 8-key keyboard/ke
 
 ANAVI Macro Pad 8 is an entirely open source project that combines open source hardware with free and open source software. It has been certified by [Open Source Hardware Association under UID BG000072](https://certification.oshwa.org/bg000072.html).
 
-Only free and open source software tools like KiCad, OpenSCAD, and Inkscape were used to design ANAVI Macro Pad 8. [Quantum Mechanical Keyboard (QMK)](https://qmk.fm/)  is the default open source firmware. Arduino sketches will be available as examples for people interested in explore embedded development with a mini keyboard. Source code and schematics are [available on GitHub](https://github.com/anavitechnology/). A comprehensive user's manual will be provided.
+Only free and open source software tools like KiCad, OpenSCAD, and Inkscape were used to design ANAVI Macro Pad 8. [Quantum Mechanical Keyboard (QMK)](https://qmk.fm/)  is the default open source firmware. Arduino sketches will be available as examples for people interested in explore embedded development with a mini keyboard. Source code and schematics are [available on GitHub](https://github.com/anavitechnology/).
 
 ## Features
 
-ANAVI Macro Pad 8 Raspberry Pi HAT includes:
+ANAVI Macro Pad 8 includes:
 
 * **Keyswitches:** Eight Cherry MX-style pads
    * Developer Kit includes eight Gateron red, linear, non-clicky mechanical switches and transparent keycaps with red LED backlighting
@@ -72,7 +72,7 @@ In order to setup ANAVI Macro Pad 8 the following items are required:
 * Computer
 * USB to microUSB cable
 
-Getting started with and assembled ANAVI Macro Pad 8 is easy. Just connect it to your Linux, Windows, or macOS computer, and use a browser to configure and load your kewswitch macro or shortcut settings.
+Getting started with and assembled ANAVI Macro Pad 8 is easy. Just connect it to your Linux, Windows, or macOS computer, and use a browser to configure and load your keyswitch macro or shortcut settings.
 
 ANAVI Macro Pad 8 relies on the Quantum Mechanical Keyboard (QMK) firmware, To configure and modify the keyboard layouts you can use QMK Configurator, an online graphical user interface that generates QMK firmware hex files directly in a web browser or use the source code. Press the RESET button on ANAVI Macro Pad 8 to enter flash mode and upload the new firmware.
 
@@ -174,6 +174,38 @@ Please note that a USB to microUSB cable is **not** included in any of the kits.
 
 Out of the box ANAVI Macro Pad 8 comes with [the popular open source firmware QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/anavi/macropad8). Several different keymaps are supported. For details how to build and flash QMK firmware on ANAVI Macro Pad 8 please have a look at the [README](https://github.com/qmk/qmk_firmware/blob/master/keyboards/anavi/macropad8/readme.md).
 
+## Compile QMK for ANAVI Macro Pad 8
+
+After installing QMK software on your computer, from the command line you can compile QMK firmware with the `default` keymap for ANAVI Macro Pad 8 using the following command:
+
+```
+qmk compile -kb anavi/macropad8 -km default
+```
+
+## Flash QMK on ANAVI Macro Pad 8
+
+Follow the steps below to flash the compiled QMK firmware to ANAVI Macro Pad 8:
+
+* Connect ANAVI Macro Pad 8 to your personal computer with USB to micro USB cable
+* Execute the following command in a terminal to flash the `default` keymap:
+
+```
+qmk flash -kb anavi/macropad8 -km default
+```
+
+* Press the **RESET** button on ANAVI Macro Pad 8 when asked:
+
+```
+Detecting USB port, reset your controller now.....
+```
+* Wait until the firmware flashes successfully:
+
+```
+avrdude done.  Thank you.
+```
+
+ANAVI Macro Pad 8 relies on Microchip ATmega32U4. It is an 8-bit microcontroller part of the AVR family. QMK uses `avrdude` as a utility to download, upload and manipulate the firmware of these microcontroller.
+
 ---
 
 # CHAPTER 4: Hardware Schematics
@@ -182,13 +214,16 @@ Out of the box ANAVI Macro Pad 8 comes with [the popular open source firmware QM
 
 ANAVI Macro Pad 8 utilize the following pins on ATmega32U4:
 
-| Component    | Pins                            |
-| ------------ |:------------------------------- |
-| I2C          |                                 |
+| Component           | Pins                                   |
+| ------------------- |:-------------------------------------- |
+| I2C                 | PD0, PD1                               |
+| Mechanical switches | PD4, PF6, PB5, PE6, PF5, PF7, PB4, PC6 |
+| 3mm LEDs (backlit)  | PD7                                    |
+| WS2812B LED strip   | PF4                                    |
 
 ## I2C
 
-The mini OLED display that can be connected to ANAVI Macro Pad 8 communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labelled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore ANAVI Macro Pad 8 includes two 4.7kohm resistors labelled as R13 and R14. If for one reason or another you need to disable the I2C pullup resistors remove R13 and R14.
+The mini OLED display that can be connected to ANAVI Macro Pad 8 communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labeled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore ANAVI Macro Pad 8 includes two 4.7kohm resistors labeled as R13 and R14. If for one reason or another you need to disable the I2C pullup resistors remove R13 and R14.
 
 ---
 
@@ -221,6 +256,7 @@ For example, in your custom keymap you can create `config.h` in the keymap direc
 | 09 December 2020  | Initial manual release      | All             | Leon Anavi      |
 | 03 April 2021     | Assembly guidelines         | All             | Leon Anavi      |
 | 04 April 2021     | Troubleshooting             | All             | Leon Anavi      |
+| 07 May 2021       | Add details                 | All             | Leon Anavi      |
 
 ## ANAVI Macro Pad 8 Revision
 
