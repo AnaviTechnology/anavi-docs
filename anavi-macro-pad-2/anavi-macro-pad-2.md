@@ -149,7 +149,7 @@ Finally add the silicon protective pads to the bottom. There are 8 pads. Add two
 
 Gently use a USB to microUSB cable to connect ANAVI Macro Pad 2 to a personal computer. Please be careful with the microUSB connector, because a harsh bending of the USB cable may damage the microUSB connector.
 
-ANAVI Macro Pad 2 relies on QMK firmware, [Micronucleus](https://github.com/micronucleus/micronucleus) and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
+ANAVI Macro Pad 2 relies on QMK firmware, [Micronucleus](https://github.com/micronucleus/micronucleus) bootloader and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
 
 Thanks to the QMK firmware, ANAVI Macro Pad 2 will be detected as human interface device and should work out of the box. Furthermore with QMK you have the freedom to fully customize each key.
 
