@@ -58,7 +58,7 @@ ANAVI Macro Pad 2 features:
 
 ## Target Market
 
-ANAVI Macro Pad 8 can be customized to fit multiple use cases across various industries: video or audio editing, video conferencing software, entertainment broadcasting, product and graphic design, gaming, engineering, programming, etc. It boosts your daily productivity by providing amazing level of control with gorgeous light effects on your fingertips!
+ANAVI Macro Pad 2 can be customized to fit multiple use cases across various industries: video conferencing software, video or audio editing, entertainment broadcasting, product and graphic design, gaming, engineering, programming, etc. It boosts your daily productivity by providing amazing level of control with gorgeous light effects on your fingertips!
 
 ## Board Version
 
@@ -77,7 +77,7 @@ In order to setup ANAVI Macro Pad 2 the following items are required:
 * Computer
 * USB to microUSB cable
 
-Getting started with and assembled ANAVI Macro Pad 2 is easy. Just connect it to your Linux, Windows, or macOS computer, and use a browser to configure and load your kewswitch macro or shortcut settings.
+Getting started with and assembled ANAVI Macro Pad 2 is easy. Just connect it to your Linux, Windows, or macOS computer, and use a browser to configure and load your keyswitch macro or shortcut settings.
 
 ANAVI Macro Pad 2 relies on the Quantum Mechanical Keyboard (QMK) firmware, To configure and modify the keyboard layouts you can use QMK Configurator, an online graphical user interface that generates QMK firmware hex files directly in a web browser or use the source code. Connect ANAVI Macro Pad 2 to a computer with USB to microUSB cable to enter flash mode and upload the new firmware.
 
@@ -149,7 +149,9 @@ Finally add the silicon protective pads to the bottom. There are 8 pads. Add two
 
 Gently use a USB to microUSB cable to connect ANAVI Macro Pad 2 to a personal computer. Please be careful with the microUSB connector, because a harsh bending of the USB cable may damage the microUSB connector.
 
-Thanks to the QMK firmware, ANAVI Macro Pad 8 will be detected as human interface device and should work out of the box. Furthermore with QMK you have the freedom to fully customize each key.
+ANAVI Macro Pad 2 relies on QMK firmware, [Micronucleus](https://github.com/micronucleus/micronucleus) and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
+
+Thanks to the QMK firmware, ANAVI Macro Pad 2 will be detected as human interface device and should work out of the box. Furthermore with QMK you have the freedom to fully customize each key.
 
 Please note that a USB to microUSB cable is **not** included in any of the kits. Reuse a cable from an old electronic device or purchase a cable according to your taste. Make sure that the cable supports both power and data transfer over USB.
 
@@ -200,7 +202,7 @@ micronucleus --run <firmware.hex>
 
 ## Pinout
 
-ANAVI Macro Pad 8 utilize the following pins on Microchip ATtiny85:
+ANAVI Macro Pad 2 utilize the following pins on Microchip ATtiny85:
 
 | Component           | Pins                            |
 | ------------------- |:------------------------------- |
