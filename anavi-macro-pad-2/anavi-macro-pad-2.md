@@ -45,7 +45,7 @@ ANAVI Macro Pad 2 runs thanks to [Microchip ATtiny85](https://www.microchip.com/
 
 ANAVI Macro Pad 2 is made in Plovdiv, Bulgaria, EU and packaged in a eco-friendly recyclable cardboard box.
 
-## Features
+## Features & Specifications
 
 ANAVI Macro Pad 2 features:
 
@@ -55,6 +55,8 @@ ANAVI Macro Pad 2 features:
 * **Firmware:** Quantum Mechanical Keyboard (QMK) open source firmware
 * **Compatibility:** Windows, MacOS, and GNU/Linux support
 * **Dimensions:** 40x38 mm (1.60x1.50 inches)
+
+Further technical specifications are available at [ANAVI Macro Pad 2 datasheet](https://github.com/AnaviTechnology/anavi-docs/blob/master/anavi-macro-pad-2/anavi-macro-pad-2-datasheet.pdf).
 
 ## Target Market
 
@@ -202,7 +204,7 @@ micronucleus --run <firmware.hex>
 
 ## Pinout
 
-ANAVI Macro Pad 2 utilize the following pins on Microchip ATtiny85:
+ANAVI Macro Pad 2 utilizes the following pins on Microchip ATtiny85:
 
 | Component           | Pins                            |
 | ------------------- |:------------------------------- |
@@ -220,9 +222,10 @@ ANAVI Macro Pad 2 utilize the following pins on Microchip ATtiny85:
 
 ## Document Revision
 
-| Date              | Changes                     | Modified pages  | Author          |
-| ----------------- |:---------------------------:| :---------------| :---------------|
-| 06 May 2021       | Initial manual release      | All             | Leon Anavi      |
+| Date              | Changes                     | Author          |
+| ----------------- |:---------------------------:| :---------------|
+| 06 May 2021       | Initial manual release      | Leon Anavi      |
+| 24 May 2021       | Add a link to the datasheet | Leon Anavi      |
 
 ## ANAVI Macro Pad 2 Revision
 
@@ -232,6 +235,6 @@ ANAVI Macro Pad 2 utilize the following pins on Microchip ATtiny85:
 
 ## See Also
 
-For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTech/), [Twitter](https://twitter.com/AnaviTech) or [email](mailto:info@anavi.technology).
+For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
 
 ---
