@@ -1,6 +1,8 @@
 ---
 fontfamily: dejavu
 header-includes:
+  - \exhyphenpenalty=10000
+  - \hyphenpenalty=10000
   - \hypersetup{colorlinks=false,
             allbordercolors={0 0 0},
             pdfborderstyle={/S/U/W 1}}
@@ -10,17 +12,19 @@ header-includes:
 
 ## DATASHEET
 
-![ANAVI Macro Pad 2](images/anavi-macro-pad-01.jpg?raw=true "ANAVI Macro Pad 2")
+![ANAVI Macro Pad 2](images/anavi-macro-pad-2-01.jpg?raw=true "ANAVI Macro Pad 2")
 
-ANAVI Macro Pad 2 is an open source, custom programmable, tiny 2% mechanical keyboard/keypad. Each of the two keys allows you to reprogram and use it as macro keypad or even dedicated shortcut keys.
+ANAVI Macro Pad 2 is a tiny open source, programmable two-key mechanical keypad with backlighting. Each of the two keys allows you to reprogram and use it as macro keypad or even dedicated shortcut keys.
 
 ANAVI Macro Pad 2 is certified by the Open Source Hardware Association under [UID
-BG000072](https://certification.oshwa.org/bg000072.html). Designed with [KiCad](https://kicad.org/), [OpenSCAD](https://openscad.org/) and [Inkscape](https://inkscape.org/). Made in Plovdiv, Bulgaria, EU.
+BG000077](https://certification.oshwa.org/bg000077.html). Designed with [KiCad](https://kicad.org/), [OpenSCAD](https://openscad.org/) and [Inkscape](https://inkscape.org/). Made in Plovdiv, Bulgaria, EU.
 
 ANAVI Macro Pad 2 can be customized for multiple use cases across various industries. It is the perfect fit for copy and paste as well as video conferencing applications. You can easily turn the camera or microphone on or off. Various keymaps are available, including for Zoom, Jitsi, Skype, Microsoft Teams, Google Meet, and Git.
 
 ANAVI Macro Pad 2 boosts your daily productivity by providing an amazing level
 of control with gorgeous light effects at your fingertips!
+
+\pagebreak
 
 ## Features & Specifications
 
@@ -31,9 +35,13 @@ of control with gorgeous light effects at your fingertips!
 * **Compatibility:** Windows, MacOS, and GNU/Linux support
 * **Dimensions:** 40x38 mm (1.60x1.50 inches)
 
-ANAVI Macro Pad 2 relies on QMK firmware, [Micronucleus](https://github.com/micronucleus/micronucleus) bootloader and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
+ANAVI Macro Pad 2 relies on [QMK firmware](https://github.com/qmk/qmk_firmware), [Micronucleus](https://github.com/micronucleus/micronucleus) bootloader and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Microchip’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
 
-![ANAVI Macro Pad 2](images/anavi-macro-pad-02.jpg?raw=true "ANAVI Macro Pad 2")
+![ANAVI Macro Pad 2](images/anavi-macro-pad-2-02.jpg?raw=true "ANAVI Macro Pad 2")
+
+ANAVI Macro Pad 2 is made in Plovdiv, Bulgaria, EU by [ANAVI Technology Ltd](https://anavi.technology/).
+
+\pagebreak
 
 ## Kit Configurations
 
@@ -48,13 +56,19 @@ ANAVI Macro Pad 2 is available in two do-it-yourself kits. USB to Micro USB cabl
 |**Acrylic enclosure**|Yes|Yes|
 |**Requires Soldering**|Yes|No|
 
-#### Developer Kit (CS-ANAVI-MP2-1)
+![ANAVI Macro Pad 2](images/anavi-macro-pad-2-03.jpg?raw=true "ANAVI Macro Pad 2")
+
+\pagebreak
+
+#### ANAVI Macro Pad 2 Developer Kit (CS-ANAVI-MP2-1)
 
 ![ANAVI Macro Pad 2 Developer Kit](images/anavi-macro-pad-developer-kit.jpg?raw=true "ANAVI Macro Pad 2 Developer Kit")
 
 The Developer Kit does **not** require any soldering. It features Gateron red mechanical switches and translucent keycaps with red backlighting. The Developer Kit is easy to get started with, and it is perfect even for newbies. Just pop the keycaps on, and you're ready to go.
 
-#### Maker Kit (CS-ANAVI-MP2-2)
+\pagebreak
+
+#### ANAVI Macro Pad 2 Maker Kit (CS-ANAVI-MP2-2)
 
 ![ANAVI Macro Pad 2 Maker Kit](images/anavi-macro-pad-maker-kit.jpg?raw=true "ANAVI Macro Pad 2 Maker Kit")
 
@@ -62,7 +76,7 @@ The Maker Kit is for advanced users only. It requires soldering, but provides yo
 
 ## Hardware Schematics
 
-ANAVI Macro Pad 2 [schematics are available at GitHub](https://github.com/AnaviTechnology/anavi-macro-pad-2) and it utilize the following pins on Microchip ATtiny85:
+ANAVI Macro Pad 2 [schematics are available at GitHub](https://github.com/AnaviTechnology/anavi-macro-pad-2). It utilizes the following pins on Microchip ATtiny85:
 
 | Component           | Pins                            |
 | ------------------- |:------------------------------- |
