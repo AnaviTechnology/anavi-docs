@@ -86,7 +86,7 @@ ANAVI Macro Pad 8 supports I2C mini OLED display. Plug the display before turing
 
 ### ANAVI Macro Pad 8 Maker Kit
 
-**NOTE:** The **maker** kit is for advanced users and requires soldering skills. If you have a developer kit chip this chapter.
+**NOTE:** The **maker** kit is for advanced users and requires soldering skills. If you have a developer kit skip this chapter.
 
 The maker kit provides the printed circuit board and an addressable LED strip. There are also some nice stickers. Other accessories have to be purchased separately. You can use any mechanical switches compatible with Cherry MX plate footprint and 3mm LEDs.
 
@@ -100,7 +100,7 @@ Please have [a look at the video](https://www.youtube.com/watch?v=AlH5sLEsoNc) a
 
 Any mechanical switches compatible with Cherry MX plate footprint are suitable for ANAVI Macro Pad 8. The developer kit comes with Gateron red mechanical switches. The maker kits allows you to choose another brand, type and color.
 
-Choosing the most appropriate switch for your needs is a matter of personal preference. There are many different brands and colors. For example, the blue mechanical switches are more noisy which could be sometimes fun but also annoying during daily work. The red switches are fast and not very noisy therefore they are often proffered by gamers.
+Choosing the most appropriate switch for your needs is a matter of personal preference. There are many different brands and colors. For example, the blue mechanical switches are more noisy which could be sometimes fun but also annoying during daily work. The red switches are fast and not very noisy therefore they are often preferred by gamers.
 
 There are two pins on each mechanical switch that must be soldered to the printed circuit board. That makes 16 pins in total for the 8 keys on ANAVI Macro Pad 8. The position of the each of the pins is very specific and you can easily recognize it. One of the pins for the signal coming from the Microchip ATmega32U4 microcontroller, the other pin is for ground.
 
@@ -118,9 +118,9 @@ Using scissors cut a little bit from both ends of the LED strip to make sure it 
 
 It is very important to properly set the direction of the WS2812B LED strip. On the LED strip you will notice small arrows indicating the direction. They should point from the microUSB connector towards the other end of the PCB as shown [in the video](https://www.youtube.com/watch?v=AlH5sLEsoNc).
 
-**NOTE:** It is very important to soldering the addressable WS2812B LED strip in the correct direction as shown [in the video](https://www.youtube.com/watch?v=AlH5sLEsoNc). A mistake can severely damage the keyboard.
+**NOTE:** It is very important to solder the addressable WS2812B LED strip in the correct direction as shown [in the video](https://www.youtube.com/watch?v=AlH5sLEsoNc). A mistake can severely damage the keyboard.
 
-Once you are ready with these 3 steps your ANAVI Macro Pad 8 should looks just like a developer kit having all accessories soldered. Therefore the next steps are the same as for both the developer and the maker kit.
+Once you are ready with these 3 steps your ANAVI Macro Pad 8 should look just like a developer kit having all accessories soldered. Therefore the next steps are the same as for both the developer and the maker kit.
 
 ### ANAVI Macro Pad 8 Developer Kit
 
@@ -128,7 +128,7 @@ Please have [a look at the video](https://www.youtube.com/watch?v=AlH5sLEsoNc) a
 
 * Stickers
 
-*This step is optional.* Each kit includes a set of stickers. Feel free to add them to the translucent keycaps included in ANAVI Macro Pad 8 developer kit. You can do it with your bare hand or eventually with the help of tweezers.
+*This step is optional.* Each kit includes a set of stickers. Feel free to add them to the translucent keycaps included in ANAVI Macro Pad 8 developer kit. You can do it with your bare hands or eventually with the help of tweezers.
 
 You can place a sticker on the top or on the side of the keycap. If you like retro electronics you may find some similarities in this approach to the famous keyboard of the best selling personal computer of the 20th century Commodore 64.
 
@@ -154,7 +154,7 @@ Add the rest of stand-offs on top of the ANAVI Macro Pad 8 to secure the printed
 
 * Mini OLED Display
 
-*This step is optional.* The default open source QMK firmware for ANAVI Macro Pad 8 support mini OLED display connected over the communication bus I2C.
+*This step is optional.* The default open source QMK firmware for ANAVI Macro Pad 8 supports mini OLED display connected over the communication bus I2C.
 
 By default. the mini display is in yellow-blue 0.96" I2C OLED. It comes with 4 jumper wires which might be useful for debugging purposes or if you plan to make a custom 3D printed case. However for the default acrylic enclosure the wires are not needed.
 
