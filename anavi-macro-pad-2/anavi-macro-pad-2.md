@@ -119,37 +119,47 @@ Once you are ready with these 2 steps your ANAVI Macro Pad 2 should looks just l
 
 ### ANAVI Macro Pad 2 Developer Kit
 
-Please have [a look at the video](https://www.youtube.com/watch?v=AlH5sLEsoNc) and follow the steps below to assemble ANAVI Macro Pad 2 **Developer** Kit. Although you can do it with your bare hands, simple tools like a screwdriver, tweezers and a keycap puller might be useful.
+[![ANAVI Macro Pad 2 Developer Kit Assembly Guide](https://img.youtube.com/vi/gZUdU3ZXAq8/0.jpg)](https://www.youtube.com/watch?v=gZUdU3ZXAq8)
 
-* Stickers
-
-*This step is optional.* Each kit includes a set of stickers. Feel free to add them to the translucent keycaps included in ANAVI Macro Pad 2 developer kit. You can do it with your bare hand or eventually with the help of tweezers.
-
-You can place a sticker on the top or on the side of the keycap. If you like retro electronics you may find some similarities in this approach to the famous keyboard of the best selling personal computer of the 20th century Commodore 64.
-
-ANAVI Macro Pad 2 is powered by the popular open source firmware QMK which allows you to create various layouts. You can make a keymap with 2 or more layouts. A sticker on the side of the keycap might be useful as a visual aid to indicate the additional function of the key.
-
-* Keycaps
-
-Place all keycaps on the 2 mechanical switches of ANAVI Macro Pad 2. You can easily do this with your bare hands. It takes just a few seconds.
-
-As you can see [in the video](https://www.youtube.com/watch?v=AlH5sLEsoNc), a keycap puller might be useful if you make a mistake and want to pull off a keycap and place it on another location.
+Please have [a look at the video](https://www.youtube.com/watch?v=gZUdU3ZXAq8) and follow the steps below to assemble ANAVI Macro Pad 2 **Developer** Kit. Although you can do it with your bare hands, simple tools like a screwdriver, tweezers and a keycap puller might be useful.
 
 * Peel Off Protective Films from the Acrylic Enclosure
 
 Peel off the protective films from both sides of the two laser cut transparent acrylic parts. The removal of the protective films is quite annoying but once you get rid of them, the acrylic enclosure will be crystal clear and fully transparent.
 
-* Assemble the Acrylic Enclosure
+* Assemble the Top Acrylic Enclosure
 
-Assemble the acrylic enclosures. In the cardboard box you also will find M2.5 screws, nuts and washers. Although you can assemble them with your bare hands a screw driver will be very handy.
+Start with the top acrylic enclosure. Please note the it is not symmetric and make sure the position is correct according to the place of the C1 10uF capacitor.
 
-Use the two longer screws for the two mounting holes near the microUSB connector. Use 6 nuts and a couple of washer to attach the top and the bottom acrylic enclosures to the printed circuit board. Use the shorter screw for the mounting whole between the two mechanical switches as it should hold only the bottom acrylic enclosure.
+The kit includes M2.5 screws, nuts and washers. Although you can assemble them with your bare hands a screw driver will be very handy.
 
-Finally add the silicon protective pads to the bottom. There are 8 pads. Add two of them them on top of each other to the 4 corners of the bottom acrylic plate.
+Use the two longer screws for the two mounting holes near the microUSB connector.
+
+* Assemble the Bottom Acrylic Enclosure
+
+Use 6 nuts and 3 washers to attach the bottom acrylic enclosure to the printed circuit board. Use the shorter screw for the mounting hole between the two mechanical switches as it should hold only the bottom acrylic enclosure. Place 3 washers between the bottom acrylic enclosure and the last 3 nuts.
+
+* Add Protective Pads
+
+Stick the silicon protective pads to the bottom. There are 8 pads. Add two of them on top of each other to the 4 corners of the bottom acrylic plate.
+
+* Stickers
+
+*This step is optional.* Each kit includes a set of stickers. Feel free to add them to the translucent keycaps. You can do it with your bare hands or eventually with the help of tweezers.
+
+You can place a sticker on the top or on the side of the keycap. If you like retro electronics you may find some similarities in this approach to the famous keyboard of the best selling personal computer of the 20th century Commodore 64.
+
+ANAVI Macro Pad 2 is powered by the popular open source firmware QMK which allows you to create various layouts. You can make a keymap with 2 or more layouts. A sticker on the side of the keycap might be useful as a visual aid to indicate the additional function of the key.
+
+* Add Keycaps
+
+Place the translucent keycaps on the 2 mechanical switches of ANAVI Macro Pad 2. You can easily do this with your bare hands. It takes just a few seconds.
+
+Please note that a keycap puller might be useful if you make a mistake and want to pull off a keycap and place it on another location.
 
 * Turn On ANAVI Macro Pad 2
 
-Gently use a USB to microUSB cable to connect ANAVI Macro Pad 2 to a personal computer. Please be careful with the microUSB connector, because a harsh bending of the USB cable may damage the microUSB connector.
+Gently plug USB to microUSB cable and connect ANAVI Macro Pad 2 to a personal computer. Please be careful with the microUSB connector, because a harsh bending of the USB cable may damage it.
 
 ANAVI Macro Pad 2 relies on QMK firmware, [Micronucleus](https://github.com/micronucleus/micronucleus) bootloader and [V-USB](https://www.obdev.at/products/vusb/index.html), an open source software-only implementation of a low-speed USB device for Atmel’s AVR® microcontrollers. There is 5 second boot delay during which the Microchip ATtiny85 microcontroller on ANAVI Macro Pad 2 can be reprogrammed.
 
