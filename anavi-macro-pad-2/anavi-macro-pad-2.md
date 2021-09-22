@@ -161,7 +161,9 @@ Please note that a USB to microUSB cable is **not** included in any of the kits.
 
 # CHAPTER 3: Software
 
-Out of the box ANAVI Macro Pad 2 comes with [the popular open source firmware QMK](https://github.com/qmk/qmk_firmware/tree/master/keyboards/anavi/macropad8). Several different keymaps are supported. For details how to build and flash QMK firmware on ANAVI Macro Pad 2 please have a look at the [README](https://github.com/qmk/qmk_firmware/blob/master/keyboards/anavi/macropad2/readme.md).
+Out of the box ANAVI Macro Pad 2 comes with [the popular open source firmware QMK](https://github.com/qmk/qmk_firmware/blob/0.13.19/keyboards/anavi/macropad2). Several different keymaps are supported. For details how to build and flash QMK firmware on ANAVI Macro Pad 2 please have a look at the [README](https://github.com/qmk/qmk_firmware/blob/0.13.19/keyboards/anavi/macropad2/readme.md).
+
+Please note that on [Fri Aug 6 2021 the support for all keyboards using Microchip ATtiny85, including ANAVI Macro Pad 2, was dropped from QMK](https://github.com/qmk/qmk_firmware/commit/0dafd83f72ba2ae79c2ca754a120b1de8b4dbfe8) due to the increased size of the firmware following the implementation of a features to [process combos earlier and overlapping combos](https://github.com/qmk/qmk_firmware/pull/8591). Therefore support for ANAVI Macro Pad 2 is available in older versions, for example QMK firmware version 0.13.19.
 
 ## Flashing
 
@@ -181,6 +183,15 @@ sudo udevadm trigger
 ```
 
 ### Instructions
+
+* [Setup QMK](https://beta.docs.qmk.fm/tutorial/newbs_getting_started)
+
+* Download QMK firmware version 0.13.19, for example:
+
+```bash
+git clone -b 0.13.19 https://github.com/qmk/qmk_firmware.git
+git submodule update --init
+```
 
 * Run one of the following commands:
 
@@ -222,10 +233,11 @@ ANAVI Macro Pad 2 utilizes the following pins on Microchip ATtiny85:
 
 ## Document Revision
 
-| Date              | Changes                     | Author          |
-| ----------------- |:---------------------------:| :---------------|
-| 06 May 2021       | Initial manual release      | Leon Anavi      |
-| 24 May 2021       | Add a link to the datasheet | Leon Anavi      |
+| Date              | Changes                         | Author          |
+| ----------------- |:-------------------------------:| :---------------|
+| 06 May 2021       | Initial manual release          | Leon Anavi      |
+| 24 May 2021       | Add a link to the datasheet     | Leon Anavi      |
+| 22 Sep 2021       | Update notes about QMK firmware | Leon Anavi      |
 
 ## ANAVI Macro Pad 2 Revision
 
