@@ -351,7 +351,7 @@ Be sure the back up the private.key file, and make sure nobody can get hold of i
 
 The temperature scale of the default open source firmware of ANAVI Thermometer can be configured at the initial setup of the device. By default it is set to Celsius. Manually type in **fahrenheit** to change it.
 
-After the initial setup the temperature scale can be still changed with a single MQTT message with topic **cmnd/<machine-id>/tempformat** (where **<machine-id>** must be replaced with the
+After the initial setup the temperature scale can be still changed with a single MQTT message with topic **cmnd/machine-id/tempformat** (where **machine-id** must be replaced with the
 unique value for your board) and a JSON payload:
 
 ```
