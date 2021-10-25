@@ -179,15 +179,18 @@ Please note that on [Fri Aug 6 2021 the support for all keyboards using Microchi
 
 ### Prerequisites
 
-* Install [Micronucleus](https://github.com/micronucleus/micronucleus), an open source ATTiny usb bootloader with a strong emphasis on bootloader compactness. Follow the [usage guidelines from the README](https://github.com/micronucleus/micronucleus#usage) as there are specific steps if you are using Windows 10. On GNU/Linux distributions Micronucleus can be installed as for an example:
+* Install [Micronucleus](https://github.com/micronucleus/micronucleus), an open source ATTiny usb bootloader with a strong emphasis on bootloader compactness. Follow the [usage guidelines from the README](https://github.com/micronucleus/micronucleus#usage) as there are specific steps if you are using Windows 10.
+
+On GNU/Linux distributions, for example Debian or Ubuntu, Micronucleus can be installed with the following commands:
 
 ```bash
+sudo apt-get install libusb-dev git
 git clone https://github.com/micronucleus/micronucleus.git
 cd micronucleus/commandline/
 sudo make install
 ```
 
-On GNU/Linux distributions, you will need proper privileges to access the MCU. You can either use `sudo` when flashing firmware, or place [these files](https://github.com/micronucleus/micronucleus/blob/master/commandline/49-micronucleus.rules) in /etc/udev/rules.d/. Once added run the following:
+On GNU/Linux distributions, you will need proper privileges to access the MCU. You can either use `sudo` when flashing firmware, or place [these files](https://github.com/micronucleus/micronucleus/blob/master/commandline/49-micronucleus.rules) in `/etc/udev/rules.d/`. Once added run the following:
 
 ```bash
 sudo udevadm control --reload-rules
