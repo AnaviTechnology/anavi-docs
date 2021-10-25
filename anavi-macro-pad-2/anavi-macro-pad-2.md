@@ -179,6 +179,8 @@ Please note that on [Fri Aug 6 2021 the support for all keyboards using Microchi
 
 ### Prerequisites
 
+* Install [Micronucleus](https://github.com/micronucleus/micronucleus), an open source ATTiny usb bootloader with a strong emphasis on bootloader compactness. Follow the [usage guidelines from the README](https://github.com/micronucleus/micronucleus#usage) as there are specific steps if you are using Windows 10. On GNU/Linux distributions Micronucleus can be installed as for an example:
+
 ```bash
 git clone https://github.com/micronucleus/micronucleus.git
 cd micronucleus/commandline/
@@ -194,23 +196,35 @@ sudo udevadm trigger
 
 ### Instructions
 
-* [Setup QMK](https://beta.docs.qmk.fm/tutorial/newbs_getting_started)
+* [Setup QMK](https://beta.docs.qmk.fm/tutorial/newbs_getting_started). Eventually for ANAVI Macro Pad 2 you may skip steps  "Test Your Build Environment" and "Configure Your Build Environment".
 
 * Download QMK firmware version 0.13.19, for example:
 
 ```bash
-git clone -b 0.13.19 https://github.com/qmk/qmk_firmware.git
+git clone -b 0.13.19 https://github.com/qmk/qmk_firmware.git qmk-01319
+cd qmk-01319
 git submodule update --init
 ```
 
-* Run one of the following commands:
+* Build QMK firmware for ANAVI Macro Pad 2 using the `default` keymap:
+
+```
+make anavi/macropad2:default
+```
+
+* Run one of the following commands to flash the firmware on ANAVI Macro Pad 2:
 
 ```bash
 make anavi/macropad2:default:flash
-
-# or directly with...
-micronucleus --run <firmware.hex>
 ```
+
+or alternatively with micronucleus:
+
+```bash
+micronucleus --run anavi_macropad2_default.hex
+```
+
+**NOTE**: If you want to build another QMK keymap for ANAVI Macro Pad 2 replace `default` with its name. All existing keymaps are in directory `keyboards/anavi/macropad2/keymaps/`.
 
 * Plug ANAVI Macro Pad 2 to the USB port and the flashing procedure should start
 
@@ -248,6 +262,7 @@ ANAVI Macro Pad 2 utilizes the following pins on Microchip ATtiny85:
 | 06 May 2021       | Initial manual release          | Leon Anavi      |
 | 24 May 2021       | Add a link to the datasheet     | Leon Anavi      |
 | 22 Sep 2021       | Update notes about QMK firmware | Leon Anavi      |
+| 25 Oct 2021       | Update QMK notes                | Leon Anavi      |
 
 ## ANAVI Macro Pad 2 Revision
 
