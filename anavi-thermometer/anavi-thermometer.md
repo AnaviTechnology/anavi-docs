@@ -34,7 +34,7 @@ There is no warranty for the design materials and the components used to create 
 
 ANAVI Thermometer is an open source hardware, Wi-Fi development board for measuring temperature that’s powered by an ESP8266 processor. It comes with a built-in DHT22/AM2302 temperature and humidity sensor and has slots for a mini OLED display, waterproof DS18B20 temperature sensor, and empty slots for up to three additional I2C sensor modules. All these features make ANAVI Thermometer appropriate for developers, makers, students and open source enthusiasts interested in home automation.
 
-ANAVI Thermometer is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Thermometer with your bare hands and a screwdriver.
+ANAVI Thermometer is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Thermometer with your bare hands and a screwdriver.
 
 ## Features & Specifications
 
