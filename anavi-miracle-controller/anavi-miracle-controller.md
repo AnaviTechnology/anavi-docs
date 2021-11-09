@@ -34,7 +34,7 @@ There is no warranty for the design materials and the components used to create 
 
 ANAVI Miracle Controller is an open source hardware Wi-Fi development board powered by the ESP8266 and designed to control two 5 V and 12 V addressable LED strips simultaneously. It supports popular LEDs including Neopixel, WS2811, WS2812B, TM1809, etc. It also has a dedicated slot for a mini OLED I²C display and slots for up to three additional I²C sensor modules. Furthermore, there are UART pins for easy flashing of custom software and an extra GPIO for connecting external peripherals. All these features make ANAVI Miracle Controller appropriate for developers, makers, students, and open source enthusiasts interested in home automation.
 
-ANAVI Miracle Controller is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Miracle Controller with your bare hands and a screwdriver.
+ANAVI Miracle Controller is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Miracle Controller with your bare hands and a screwdriver.
 
 ## Features & Specifications
 
