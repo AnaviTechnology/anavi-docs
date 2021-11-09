@@ -34,7 +34,7 @@ There is no warranty for the design materials and the components used to create 
 
 ANAVI Infrared pHAT is an open source hardware Raspberry Pi add-on board with IR receiver, transmitter, UART and 3 I2C slots for sensors. ANAVI Infrared pHAT was started as a hobby project by Leon Anavi in January 2017. The project allows you to convert your Raspberry Pi into a smart remote control using the open source software LIRC.
 
-ANAVI Infrared pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Infrared pHAT to your Raspberry Pi with your bare hands.
+ANAVI Infrared pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Infrared pHAT to your Raspberry Pi with your bare hands.
 
 Anavi is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided.
 

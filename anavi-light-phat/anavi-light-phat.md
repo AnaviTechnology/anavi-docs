@@ -34,7 +34,7 @@ There is no warranty for the design materials and the components used to create 
 
 ANAVI Light pHAT is an open source hardware Raspberry Pi add-on board for controlling RGB LED strip and collecting data from various sensors for light, temperature, humidity, color and gesture recognition as well as from PIR motion sensor.
 
-ANAVI Light pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Light pHAT to your Raspberry Pi with your bare hands and a screwdriver to attach 12V RGB LED strip.
+ANAVI Light pHAT is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Light pHAT to your Raspberry Pi with your bare hands and a screwdriver to attach 12V RGB LED strip.
 
 ANAVI Light pHAT is fully compatible with the Raspbian GNU/Linux distribution and open source sample applications are provided.
 
