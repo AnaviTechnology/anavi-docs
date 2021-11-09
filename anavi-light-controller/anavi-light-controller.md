@@ -36,7 +36,7 @@ ANAVI Light Controller is a certified open source hardware WiFi device for contr
 
 ANAVI Light Controller is fully compliant with the popular open source platform, Home Assistant. That means that when paired with Amazon Alexa, the device can be turned on and off with voice commands.
 
-ANAVI Light Controller is designed with the free and open source electronics design automation suite [KiCAD](http://kicad-pcb.org/). No soldering is required. You can assemble ANAVI Light Controller with your bare hands and a screwdriver to attach 12V RGB LED strip.
+ANAVI Light Controller is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Light Controller with your bare hands and a screwdriver to attach 12V RGB LED strip.
 
 ## Features & Specifications
 
