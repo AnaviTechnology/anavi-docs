@@ -4,15 +4,14 @@
 
 ---
 
-# DISCLAIMER
+## DISCLAIMER
 
 ANAVI, the ANAVI logo and combinations thereof, are registered trademarks of Leon Anavi. Other product names may be trademarks of others and the rights belong to their respective owners.
 
 The information in this document is provided in connection with Anavi products. No license, express or implied
 or otherwise, to any intellectual property right is granted by this document or in connection with the sale of Anavi products.
 
-This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
-this license, visit https://creativecommons.org/licenses/by-sa/4.0/.
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
 
 ANAVI Thermometer hardware design is licensed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
@@ -34,7 +33,7 @@ There is no warranty for the design materials and the components used to create 
 
 ANAVI Thermometer is an open source hardware, Wi-Fi development board for measuring temperature that’s powered by an ESP8266 processor. It comes with a built-in DHT22/AM2302 temperature and humidity sensor and has slots for a mini OLED display, waterproof DS18B20 temperature sensor, and empty slots for up to three additional I2C sensor modules. All these features make ANAVI Thermometer appropriate for developers, makers, students and open source enthusiasts interested in home automation.
 
-ANAVI Thermometer is designed with the free and open source electronics design automation suite [KiCAD](http://kicad.org/). No soldering is required. You can assemble ANAVI Thermometer with your bare hands and a screwdriver.
+ANAVI Thermometer is designed with the free and open source electronics design automation suite [KiCAD](https://www.kicad.org/). No soldering is required. You can assemble ANAVI Thermometer with your bare hands and a screwdriver.
 
 ## Features & Specifications
 
@@ -45,7 +44,7 @@ ANAVI Thermometer is designed with the free and open source electronics design a
 * **Compatibility**: Arduino IDE, PlatformIO, Home Assistant, MQTT, and any modern web browser
 * **Certification**: Open Source Hardware Association (OSHWA) BG000017
 * **Dimensions**: 75 mm x 40 mm
-* **Upgradable**: The software can be upgraded, either using an USB to UART module, or (if configured) over-the-air
+* **Upgradable**: The software can be upgraded, either using an USB to UART module, or (if configured) Over-the-Air
 
 ## Target Market
 
@@ -53,7 +52,7 @@ ANAVI Thermometer is a certified open source hardware development board for cust
 
 ## Board Version
 
-Revision 1.0 of ANAVI Thermometer was used while writing this document. It is possible that it is outdated so it is always recommended to check the latest sources from the GitHub page of the board.
+Revision 1.0 of ANAVI Thermometer was used while writing this document. It is possible that it is outdated so it is always recommended to [check the latest sources from the GitHub page of the board](https://github.com/AnaviTechnology/anavi-thermometer-sw).
 
 ---
 
@@ -73,72 +72,70 @@ It is recommended to use 1A (1000mA) or higher power supply.
 
 ## Supported Peripherals
 
-ANAVI Thermometer has a terminal block for attaching DS18B20 waterproof temperature sensor, I2C slot for mini OLED display as well as up to 3 slots I2C sensors.
+ANAVI Thermometer has a terminal block for attaching DS18B20 waterproof temperature sensor, I2C slot for mini OLED display as well as up to 3 slots for I2C sensors.
 
 ### Sensors
 
-ANAVI Thermometer has a built-in DHT22/AM2303 temperature and humidity sensor. Additionally, you can attach external DS18B20 waterproof temperature sensor module. The officially supported I2C add-on sensor modules are for:
+ANAVI Thermometer has a built-in DHT22/AM2303 temperature and humidity sensor. Additionally, you can attach external DS18B20 waterproof temperature sensor module. The officially supported I2C add-on sensor modules are:
 
 * Light (BH1750)
 * Temperature and humidity (HTU21D)
 * Color and gesture recognition (APDS-9960)
 * Temperature and barometric pressure (BMP180)
 
-You may also attach any other I2C sensors but you will have to take care of their software integration.
+You may also attach any other I2C sensors, but you will have to take care of their software integration.
 
 #### Light Sensor
 
 The official light I2C sensor for ANAVI Thermometer is BH1750.
 
-Using 4 Dupont jumper wires connect BH1750 to one of the 3 I2C slots on ANAVI Thermometer as follows:
+Using 4 Dupont jumper wires, connect BH1750 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
-| BH1750   | ANAVI Thermometer |
-| -------- |:-------------- |
-| VCC      | 3.3V           |
-| GND      | GND            |
-| SCL      | SCL            |
-| SDA      | SDA            |
-
+| BH1750 | ANAVI Thermometer |
+| ------ | :---------------- |
+| VCC    | 3.3V              |
+| GND    | GND               |
+| SCL    | SCL               |
+| SDA    | SDA               |
 
 #### I2C External Temperature & Humidity Sensor
 
-The official external temperature and humidity add-on sensor for ANAVI Thermometer is HTU21 (SHT21). This is I2C sensor capable of measuring both humidity and temperature.
+The official external temperature and humidity add-on sensor for ANAVI Thermometer is HTU21 (SHT21). This is an I2C sensor capable of measuring both humidity and temperature.
 
-Using 4 Dupont jumper wires connect HTU21 to one of the 3 I2C slots on ANAVI Thermometer as follows:
+Using 4 Dupont jumper wires, connect HTU21 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
-| HTU21    | ANAVI Thermometer |
-| -------- |:-------------- |
-| VIN      | 3.3V           |
-| GND      | GND            |
-| SCL      | SCL            |
-| SDA      | SDA            |
+| HTU21 | ANAVI Thermometer |
+| ----- | :---------------- |
+| VIN   | 3.3V              |
+| GND   | GND               |
+| SCL   | SCL               |
+| SDA   | SDA               |
 
 #### Color & Gesture Recognition Sensor
 
 The official I2C sensor for RGB color and gesture detection on ANAVI Thermometer is APDS-9960.
 
-Using 4 Dupont jumper wires connect APDS-9960 to one of the 3 I2C slots on ANAVI Thermometer as follows:
+Using 4 Dupont jumper wires, connect APDS-9960 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
-| APDS-9960  | ANAVI Thermometer |
-| ---------- |:-------------- |
-| VIN        | 3.3V           |
-| GND        | GND            |
-| SCL        | SCL            |
-| SDA        | SDA            |
+| APDS-9960 | ANAVI Thermometer |
+| --------- | :---------------- |
+| VIN       | 3.3V              |
+| GND       | GND               |
+| SCL       | SCL               |
+| SDA       | SDA               |
 
 #### Temperature & Barometric Pressure Sensor
 
-The official temperature and barometric pressure sensor for ANAVI Thermometer is BMP180. This is I2C sensor capable of measuring both temperature and barometric pressure.
+The official temperature and barometric pressure sensor for ANAVI Thermometer is BMP180. This is an I2C sensor capable of measuring both temperature and barometric pressure.
 
-Using 4 Dupont jumper wires connect BMP180 to one of the 3 I2C slots on ANAVI Thermometer as follows:
+Using 4 Dupont jumper wires, connect BMP180 to one of the 3 I2C slots on ANAVI Thermometer as follows:
 
-| BMP180   | ANAVI Thermometer |
-| -------- |:-------------- |
-| VIN      | 3.3V           |
-| GND      | GND            |
-| SCL      | SCL            |
-| SDA      | SDA            |
-
+| BMP180 | ANAVI Thermometer |
+| ------ | :---------------- |
+| VIN    | 3.3V              |
+| GND    | GND               |
+| SCL    | SCL               |
+| SDA    | SDA               |
 
 #### Waterproof Temperature DS18B20 Sensor
 
@@ -150,7 +147,7 @@ ANAVI Thermometer Advanced and Developer kits include a waterproof 1-wire DS18B2
 
 ## Assembly
 
-You can assemble ANAVI Thermometer with your bare hands and a screw driver following the steps below:
+You can assemble ANAVI Thermometer with your bare hands and a screwdriver, following the steps below:
 
 * Add sensors to your ANAVI Thermometer.
 * Optionally, you may also assemble the simple acrylic case by removing the protective film and mounting screws.
@@ -162,13 +159,13 @@ ANAVI Thermometer has been tested using various 5V power supplies and USB to mic
 
 ## Configure ANAVI Thermometer
 
-[Video tutorial for getting started with ANAVI Light Controller, same procedure for ANAVI Thermometer](https://www.youtube.com/watch?v=Y_81CuuGm0Y)
+[Video tutorial for getting started with ANAVI Light Controller (same procedure for ANAVI Thermometer)](https://www.youtube.com/watch?v=Y_81CuuGm0Y)
 
 Turn on ANAVI Thermometer by plugging an appropriate power supply. As soon as the board is turned on for the very first time it will create a temporary WiFi access point. Connect to it from your computer, smartphone or tablet.
 
-The default software of ANAVI Thermometer has a captive portal which guides you through the configurations. As you see in the video you have to select your WiFi network and enter a password if it is not open.
+The default software of ANAVI Thermometer has a captive portal which guides you through the configuration. As you see in the video you have to select your WiFi network and enter a password if it is not open.
 
-Our open source software relies on the machine to machine communication protocol MQTT to report data from the sensors. You can connect to your own MQTT broker or just leave the default configurations and connect to the public broker as shown in the video.
+Our open source software relies on the machine to machine communication protocol MQTT to report data from the sensors. You can connect to your own MQTT broker, or just leave the default configurations and connect to the public broker as shown in the video.
 
 Recent versions of the firmware support [Home Assistant MQTT Discovery](https://www.home-assistant.io/docs/mqtt/discovery/) which makes it very convenient to add ANAVI Thermometer to Home Assistant.  For this to work, you need to enter the sensor name (such as "Master Bedroom") that will be used for this Thermometer on the setup screen.  See Chapter 5 for more details.
 
@@ -196,7 +193,7 @@ By default ANAVI Thermometer comes with [this free and open source Arduino sketc
 
 ## USB to UART Module
 
-For uploading firmware to ANAVI Thermometer you need USB to UART module. All kits include CP2102 which out of the box on GNU/Linux distributions. Drivers for MS Windows and Mac OS X are [available at silabs.com](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+For uploading firmware to ANAVI Thermometer you need USB to UART module. All kits include CP2102 which out of the box on GNU/Linux distributions and usually also on macOS. Drivers for Windows and macOS are [available at silabs.com](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 
 ## Setting up the Arduino IDE
 
@@ -223,7 +220,7 @@ For uploading firmware to ANAVI Thermometer you need USB to UART module. All kit
 * Adafruit BMP085 Unified by Adafruit (version 1.0.0)
 * NTPClient by Fabrice Weinberg (version 3.1.0)
 
-Please double check [the list of dependencies at the README](https://github.com/AnaviTechnology/anavi-thermometer-sw#dependencies).
+Please double check [the list of dependencies in the README for the sketch](https://github.com/AnaviTechnology/anavi-thermometer-sw#dependencies).
 
 *Note: Issues might be experienced if using different versions of the libraries.*
 
@@ -247,7 +244,7 @@ Follow the steps below to compile and flash custom firmware on ANAVI Thermometer
 
 The output in Arduino IDE for successful flashing is:
 
-```
+```text
 Archiving built core (caching) in: /tmp/arduino_cache_954939/core/core_esp8266_esp8266_generic_CpuFrequency_80,FlashFreq_40,FlashMode_dio,UploadSpeed_115200,FlashSize_512K64,ResetMethod_ck,Debug_Disabled,DebugLevel_None_____1c2aa2b3da66da225b39c9bfab6531e5.a
 Sketch uses 224949 bytes (51%) of program storage space. Maximum is 434160 bytes.
 Global variables use 31756 bytes (38%) of dynamic memory, leaving 50164 bytes for local variables. Maximum is 81920 bytes.
@@ -257,13 +254,14 @@ Uploading 229104 bytes from /tmp/arduino_build_904122/anavi-blinking-led.ino.bin
 ................................................................                 [ 100% ]
 ```
 
-If you have flashed the blinking LED example, D1 on ANAVI Thermometer with start blinking.
+If you have flashed the blinking LED example, D1 on ANAVI Thermometer will start blinking.
 
 Please have a look at [the YouTube video that shows the exact steps for compiling and uploading an Arduino sketch to ANAVI Thermometer](https://www.youtube.com/watch?v=HMIkPuz0ZJs).
 
 **Note:** you have to be quick between step 5 and 6. Remember to press and **hold** RESET until the upload completes.
 
 # OTA Firmware Upgrade
+
 Recent versions of the official firmware also support OTA firmware updates by putting a firmare binary on a web server and then triggering the update via a MQTT message. This can be very convenient, as you do not have to connect the device to your computer.
 
 ## Check support
@@ -274,7 +272,7 @@ If you are unsure if your current firmware supports OTA update, you can first ch
 
 To do this, send a MQTT message to the topic "cmnd/[deviceId]/line1" with message body "test", for example using mosquitto_pub:
 
-```
+```shell
 mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/line1 -u [mqttuser] -P [mqttpass] -m "test"
 ```
 
@@ -284,40 +282,43 @@ If not (after double checking that you used the correct topic and deviceId), ple
 (To reset the line again to the default display, just send an empty message to the same topic).
 
 ## Enabling OTA upgrades
+
 For security reasons, OTA upgrades are disabled by default. There are two ways to enable them: either enter an IP address or domain name on the captive portal screen (see Chapter 2), or edit the official source code and define OTA_SERVER as explained in the comment. (You can even do both, if you want the Thermometer to accept upgrades from two sources.)
 
 The web server can be located anywhere, but for improved security it is best if it is located on your local network, and no untrusted persons should be able to edit any files at all on the server. Don't host your firmware images on a shared server!
 
 ## Build binary firmware image
 
-Using the arduino build setting above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A .bin file will be created in the same folder as the .ino file.
+Using the Arduino build settings above, instead of clicking Upload (Ctrl+U), use Menu Sketch -> Export compiled binary (CTRL+ALT+S). A `.bin` file will be created in the same folder as the `.ino` file.
 Copy this file to the HTTP webserver you specified when you enabled OTA upgrades.
 
 ## Trigger update
+
 The devices listens to MQTT messages in topic "cmnd/[deviceid]/update" and expects messages to be in the format
 
-```
+```json
 {"file":"/[filePath]", "server": "[server IP or DNS name]"}
 ```
 
 For example, if you put the file at http://192.168.100.46/anavi.bin:
 
-```
+```json
 {"file":"/anavi.bin", "server": "192.168.100.46"}
 ```
 
 If your server does not listen on port 80, you can provide the port, for example for  http://192.168.100.46:8080/anavi.bin:
 
-```
+```json
 {"file":"/anavi.bin", "server": "192.168.100.46", "port": 8080}
 ```
 
 Example for sending an update message using mosquitto_pub:
 
-```
+```shell
 mosquitto_pub -h [mqttserver] -p 1883 -t cmnd/b5cfb5cfb5cfb5cfb5cfb5cfb5cfb5cf/update -u [mqttuser] -P [mqttpass] -m "{\"file\":\"anavi.bin\", \"server\":\"192.168.100.46\", \"port\":8080}
 ```
-***Note: To ensure successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
+
+***Note: to ensure a successful update, please specify the file with leading slash ('/'), use an HTTP web server, not HTTPS, and -- when run from the command line -- escape quote characters***
 
 On receipt of this message, ANAVI Thermometer will download the file from the specified server, update the firmware and restart. As with the normal firmware update, your saved settings such as WiFi and MQTT server settings should remain as configured.
 
@@ -325,25 +326,25 @@ On receipt of this message, ANAVI Thermometer will download the file from the sp
 
 ## Using signed builds
 
-If you do OTA upgrades, and especially if you do so over the Internet, you are strongly encouraged to use [Signed Updates](https://arduino-esp8266.readthedocs.io/en/2.5.0/ota_updates/readme.html#advanced-security-signed-updates). Follow the link to see all the details.
+If you do OTA upgrades, and especially if you do so over the Internet, you are strongly encouraged to use [Signed Updates](https://arduino-esp8266.readthedocs.io/en/3.0.2/ota_updates/readme.html#advanced-security-signed-updates). Follow the link to see all the details.
 
-If you are running the Arduino IDE on Linux or Mac it is very easy to enable automatic signing.  Just run these commands in the sketch directory:
+If you are running the Arduino IDE on Linux or macOS it is very easy to enable automatic signing.  Just run these commands in the sketch directory:
 
-```
+```shell
 openssl genrsa -out private.key 2048
 openssl rsa -in private.key -outform PEM -pubout -out public.key
 ```
 
-Once this is done, builds will be automatically signed.  In addition to the .bin file, a .bin.signed file will also be created.  You should see messages similar to these when you compile your sketch:
+Once this is done, builds will be automatically signed.  In addition to the `.bin` file, a `.bin.signed` file will also be created.  You should see messages similar to these when you compile your sketch:
 
-```
+```text
 Enabling binary signing
 Signed binary: /tmp/arduino_build_710055/sketch_apr03a.ino.bin.signed
 ```
 
-The exact file name will change depending on your installation. Use the signed binary instead of the .bin file. Once you have upgraded your ANAVI Thermometer using a signed build, OTA upgrades will reject any attempt to use an unsigned build, a build signed using the wrong key, or a build that has been tampered with. (If necessary, you can still load an unsigned firmware using the USB to UART module, and then you will be able to use unsigned builds for OTA upgrades as well.)
+The exact file name will change depending on your installation. Use the signed binary instead of the `.bin` file. Once you have upgraded your ANAVI Thermometer using a signed build, OTA upgrades will reject any attempt to use an unsigned build, a build signed using the wrong key, or a build that has been tampered with. (If necessary, you can still load an unsigned firmware using the USB to UART module, and then you will be able to use unsigned builds for OTA upgrades as well.)
 
-Be sure the back up the private.key file, and make sure nobody can get hold of it.
+Be sure the back up the `private.key` file, and make sure nobody can get hold of it.
 
 ---
 
@@ -354,7 +355,7 @@ The temperature scale of the default open source firmware of ANAVI Thermometer c
 After the initial setup the temperature scale can be still changed with a single MQTT message with topic **cmnd/machine-id/tempformat** (where **machine-id** must be replaced with the
 unique value for your board) and a JSON payload:
 
-```
+```json
 { "scale": "fahrenheit" }
 ```
 
@@ -362,15 +363,14 @@ To switch back to Celsius, send the same message and just edit the JSON payload 
 
 For example, if using the mosquitto_pub application from a command-line terminal and machine id 11111111111111111111111111111111:
 
-```
-mosquitto_pub -h iot.eclipse.org -d -p 1883 -t
-"cmnd/11111111111111111111111111111111/tempformat" -m '{ "scale":
-"fahrenheit" }'
+```shell
+mosquitto_pub -h mqtt.eclipseprojects.io -d -p 1883 -t
+"cmnd/11111111111111111111111111111111/tempformat" -m '{ "scale": "fahrenheit" }'
 ```
 
 # CHAPTER 5: Home Automation Platforms
 
-This chapter provide guidelines how to connect ANAVI Thermometer to popular home automation platforms like Home Assistant, OpenHab 2, Thinkspeak, etc.
+This chapter provides guidelines on how to connect ANAVI Thermometer to popular home automation platforms: Home Assistant and OpenHAB.
 
 ## Home Assistant
 
@@ -380,14 +380,14 @@ ANAVI Thermometer can be easily integrated in Home Assistant using the component
 
 * Configure MQTT broker:
 
-```
+```yaml
 mqtt:
   broker: 127.0.0.1
 ```
 
 * Register the MQTT sensor:
 
-```
+```yaml
 sensor:
     - platform: mqtt
       name: "Temperature"
@@ -403,7 +403,7 @@ sensor:
 
 MQTT Discovery can simplify this process.  To use this, specify this in **configuration.yaml**:
 
-```
+```yaml
 mqtt:
   broker: 127.0.0.1
   discovery: true
@@ -414,19 +414,19 @@ Also, supply a **Sensor name for Home Assistant** on the captive portal page of 
 
 The other sensors do not yet support MQTT Discovery.
 
-## OpenHAB 2
+## OpenHAB
 
-[OpenHAB](https://www.openhab.org/) is a popular free and open source home automation software. Major version 2 of OpenHAB is significantly different for version 1. It is written in the JAVA programming language using the Eclipse Smart Home framework. Version 2.4 of OpenHAB adds several [new MQTT features](https://www.openhab.org/blog/2018-12-16-mqtt-arrives-in-the-modern-openhab-2-x-architecture.html). [This YouTube video explains the exact steps how to integrate ANAVI Thermometer in OpenHAB 2](https://www.youtube.com/watch?v=tjuXcqKG1Kc).
+[OpenHAB](https://www.openhab.org/) is a popular free and open source home automation software. Major version 2 of OpenHAB is significantly different for version 1. It is written in the JAVA programming language using the Eclipse Smart Home framework. Version 2.4 of OpenHAB adds several [new MQTT features](https://www.openhab.org/blog/2018-12-16-mqtt-arrives-in-the-modern-openhab-2-x-architecture.html). [This YouTube video explains the exact steps how to integrate ANAVI Thermometer in OpenHAB](https://www.youtube.com/watch?v=tjuXcqKG1Kc).
 
-Follow the steps below to integrate ANAVI Thermometer in OpenHAB 2:
+Follow the steps below to integrate ANAVI Thermometer in OpenHAB:
 
 ### OpenHAB Step 1: Install MQTT Binding
 
-Open the **Paper UI** web interface of OpenHAB 2. Go to **Add-ons > Binding**. Find **MQTT Binding** and click **Install**
+Open the **Paper UI** web interface of OpenHAB. Go to **Add-ons > Binding**. Find **MQTT Binding** and click **Install**
 
 ### OpenHAB Step 2: Configure MQTT Broker
 
-Again in Paper UI of OpenHAB 2, go to **Configuration > Things**. Click the button to add a new thing. Select **MQTT Thing Binding**. After that click **ADD MANUALLY**. Click **MQTT Broker**. Enter the domain or the IP address of the MQTT broker, the port and any other needed credentials.
+Again in Paper UI of OpenHAB, go to **Configuration > Things**. Click the button to add a new thing. Select **MQTT Thing Binding**. After that click **ADD MANUALLY**. Click **MQTT Broker**. Enter the domain or the IP address of the MQTT broker, the port and any other needed credentials.
 
 After adding the MQTT Broker to OpenHAB go to **Configuration > Things** and verify that the broker appears as online. If it is not online double check the configuration and try again.
 
@@ -436,11 +436,11 @@ Go to **Add-ons > Transformations**. Find **JavaScript Transformation** and clic
 
 ### OpenHAB Step 4: Download JavaScript Files
 
-Download [**temperature.js** and **humidity.js** from GitHub](https://github.com/AnaviTechnology/anavi-examples/tree/master/openhab2/transform) and deploy both files in directory **$OPENHAB_CONF/transform**.
+Download [`temperature.js` and `humidity.js` from GitHub](https://github.com/AnaviTechnology/anavi-examples/tree/master/openhab2/transform) and deploy both files in directory **$OPENHAB_CONF/transform**.
 
 For example, on Raspberry Pi with OpenHABian variable **$OPENHAB_CONF** is set to **/etc/openhab2** so the whole path is **/etc/openhab2/transform**:
 
-```
+```shell
 cd $OPENHAB_CONF/transform
 wget https://raw.githubusercontent.com/AnaviTechnology/anavi-examples/master/openhab2/transform/temperature.js
 wget https://raw.githubusercontent.com/AnaviTechnology/anavi-examples/master/openhab2/transform/humidity.js
@@ -472,16 +472,16 @@ If everything works fine you will see the temperature and the humidity reported 
 
 ## Pinout
 
-The components of ANAVI Thermometer relies on ESP8266 (ESP-12 module) and utilizes the following pins:
+The components of ANAVI Thermometer rely on the ESP8266 (ESP-12 module) and utilize the following pins:
 
-| Component            | Pins                           |  Arduino Pin ID |
-| -------------------- |:------------------------------ |-----------------|
-| I2C                  | 13, 14                         |                 |
-| DHT22/AM2302         | 11                             | 2               |
-| DS18B20              | 6                              | 12              |
-| Indication LED (D1)  | 7                              | 16              |
-| Reset button (RESET) | 12                             | 0               |
-| UART                 | 15, 16                         |                 |
+| Component            | Pins   | Arduino Pin ID |
+| -------------------- | :----- | -------------- |
+| I2C                  | 13, 14 |                |
+| DHT22/AM2302         | 11     | 2              |
+| DS18B20              | 6      | 12             |
+| Indication LED (D1)  | 7      | 16             |
+| Reset button (RESET) | 12     | 0              |
+| UART                 | 15, 16 |                |
 
 ## I2C
 
@@ -493,11 +493,11 @@ The sensors that can be connected to ANAVI Thermometer communicate with a host m
 
 #### What power supply do I need?
 
-You need a standard 5V power supply with microUSB connector.
+You need a standard 5V power supply with a microUSB connector.
 
 #### Why isn't a power supply included?
 
-We were unable to source power supplies with universal plugs for the US/EU/UK at an acceptable. Nowadays, 5V power supplies with a microUSB connector are a commodity item because of most smartphone and tables, so you should be able to easily find a suitable unit online or at your local electronics store.
+Nowadays, 5V power supplies with a microUSB connector are a commodity item because of smartphone and tablets, so you should be able to easily find a suitable unit online or at your local electronics store.
 
 #### Can I remotely control ANAVI Thermometer from a web browser on my smartphone, tablet, or laptop?
 
@@ -527,23 +527,22 @@ Yes, ANAVI Thermometer is compatible with Arduino IDE. You can easily upload you
 
 Buy any of the available perks, get your hands on the ANAVI Thermometer, contribute to our GitHub repositories, and become part of our open source community!
 
-
 ---
 
 # CHAPTER 8: Revision History
 
 ## Document Revision
 
-| Date              | Changes                     | Modified pages  | Author          |
-| ----------------- |:---------------------------:| :---------------| :---------------|
-| 24 January 2019   | Initial release             | All             | Leon Anavi      |
-| 6 August 2019     | Celsius vs Fahrenheit       | All             | Leon Anavi      |
+| Date            |        Changes        | Modified pages | Author     |
+| --------------- | :-------------------: | :------------- | :--------- |
+| 24 January 2019 |    Initial release    | All            | Leon Anavi |
+| 6 August 2019   | Celsius vs Fahrenheit | All            | Leon Anavi |
 
 ## ANAVI Thermometer Revision
 
-| Revision| Notable changes                                              |
-| ------- |:-------------------------------------------------------------|
-| 1.0     | Stable product                                               |
+| Revision | Notable changes |
+| -------- | :-------------- |
+| 1.0      | Stable product  |
 
 ## See Also
 
