@@ -199,7 +199,7 @@ sudo udevadm trigger
 
 ### Instructions
 
-* [Setup QMK](https://beta.docs.qmk.fm/tutorial/newbs_getting_started). Eventually for ANAVI Macro Pad 2 you may skip steps  "Test Your Build Environment" and "Configure Your Build Environment".
+* [Setup QMK](https://docs.qmk.fm/#/newbs_getting_started).
 
 * Download QMK firmware version 0.13.19, for example:
 
