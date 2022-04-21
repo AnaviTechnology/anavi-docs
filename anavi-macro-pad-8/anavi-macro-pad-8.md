@@ -245,6 +245,26 @@ For example, in your custom keymap you can create `config.h` in the keymap direc
 #define RGBLIGHT_EFFECT_SNAKE
 ```
 
+* How to fix `avrdude` if it not responding properly on GNU/Linux distributions?
+
+On some GNU/Linux distributions, for example Ubuntu 18.04.4 LTS, the following errors might appear when uploading from with avrdude through QMK CLI or Arduno IDE:
+
+```
+avrdude: error: programmer did not respond to command: set addr
+```
+or
+```
+avrdude: Expected signature for ATmega32U4 is 1E 95 87
+```
+
+This is frequently caused by ModemManager, a DBus-activated daemon which controls mobile broadband (2G/3G/4G) devices and connections. The solution is to stop `modemmanager` systemd service:
+
+```
+systemctl stop ModemManager
+```
+
+This affects all devices with Microchip ATmega32U4, including Arduino Leonardo. For more details have a look at [this GitHub issue](https://github.com/arduino/Arduino/issues/7690).
+
 ---
 
 # CHAPTER 6: Revision History
