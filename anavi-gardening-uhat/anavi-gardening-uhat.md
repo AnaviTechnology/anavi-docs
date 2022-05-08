@@ -261,7 +261,7 @@ Open a terminal and execute the follow the steps by step instructions to install
 
 ```
 sudo apt update
-sudo apt install -y git git-core vim python-dev python-rpi.gpio  wiringpi i2c-tools
+sudo apt install -y git vim libi2c-dev python3 i2c-tools
 ```
 
 * Download the examples for ANAVI Gardening uHAT
@@ -301,6 +301,8 @@ cat /sys/bus/w1/devices/*/w1_slave
 
 #### Temperature Sensor (BMP180)
 
+##### Python
+
 Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with ANAVI Gardening uHAT:
 
 * Connect BMP180 to any of the I2C slots on ANAVI Gardening uHAT using male to female Duport jumper wire.
@@ -311,21 +313,34 @@ Follow the steps below to use the BMP180 I2C temperature and barometric pressure
 sudo i2cdetect -y 1
 ```
 
-* Type in the following commands to build and run the sample application that display temperature and barometric pressure:
+The address of BMP180 I2C sensor is 77, for example:
 
 ```
-cd ~/anavi-examples/sensors/BMP180/c/
-make
-./BMP180
+pi@raspberrypi:~ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- 77
 ```
 
-* Verify that the output is similar to (the exact values depend on the atmospheric condition):
+* Run the Python3 script and verify that the output is similar to (the exact values depend on the atmospheric condition):
 
 ```
-pi@raspberrypi:~/anavi-examples/sensors/BMP180/c $ ./BMP180
-BMP180 Sensor Module
-Temperature	28.6 C
-Pressure	991.57 hPa
+cd ~/anavi-examples/sensors/BMP180/python/
+python3 BMP180.py
+```
+
+For example:
+```
+pi@raspberrypi:~ $ cd ~/anavi-examples/sensors/BMP180/python/
+pi@raspberrypi:~/anavi-examples/sensors/BMP180/python $ python3 BMP180.py
+Temperature: 21.99C
+Pressure: 1002hPa
 ```
 
 #### Humidity Sensor (HTU21D)
@@ -340,6 +355,23 @@ Follow the steps below to use the HTU21D I2C temperature and humidity sensor wit
 sudo i2cdetect -y 1
 ```
 
+The address of HTU21D I2C sensor is 40, for example:
+
+```
+pi@raspberrypi:~ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
+
+##### C
+
 * Type in the following commands to build and run the sample application that display temperature and humidity:
 
 ```
@@ -353,8 +385,26 @@ make
 ```
 pi@raspberrypi:~/anavi-examples/sensors/HTU21D/c $ ./HTU21D
 HTU21D Sensor Module
-25.64C
-118.99%rh
+22.90C
+62.89%rh
+```
+
+##### Python
+
+* Run the Python3 script and verify that the output is similar to (the exact values depend on the atmospheric condition):
+
+```
+cd ~/anavi-examples/sensors/HTU21D/python/
+python3 htu21d.py
+```
+
+For example:
+
+```
+pi@raspberrypi:~ $ cd ~/anavi-examples/sensors/HTU21D/python/
+pi@raspberrypi:~/anavi-examples/sensors/HTU21D/python $ python3 htu21d.py
+Temperature: 22.77C
+Humidity: 63.0%
 ```
 
 #### BH1750 Light Sensor Module
@@ -369,6 +419,24 @@ Follow the steps below to use the BH1750 I2C light sensor with ANAVI Gardening u
 sudo i2cdetect -y 1
 ```
 
+
+The address of BH1750 I2C sensor is 23, for example:
+
+```
+pi@raspberrypi:~ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- 23 -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
+
+##### C
+
 * Type in the following commands to build and run the sample application that display luminous emittance:
 
 ```
@@ -382,7 +450,24 @@ make
 ```
 pi@raspberrypi:~/anavi-examples/sensors/BH1750/c $ ./BH1750
 BH1750 Sensor Module
-Light: 418 Lux
+Light: 392 Lux
+```
+
+##### Python
+
+* Run the Python3 script and verify that the output is similar to (the exact values depend on the atmospheric condition):
+
+```
+cd ~/anavi-examples/sensors/BH1750/python/
+python3 bh1750.py
+```
+
+For example:
+
+```
+pi@raspberrypi:~ $ cd ~/anavi-examples/sensors/BH1750/python/
+pi@raspberrypi:~/anavi-examples/sensors/BH1750/python $ python3 bh1750.py
+Light: 399 Lux
 ```
 
 ## Device Tree Overlays
@@ -464,12 +549,14 @@ Yes, the official ANAVI Gardening uHAT software is free and open source. The exa
 | Date              | Changes                     | Modified pages  | Author          |
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 08 February 2022  | Initial manual release      | All             | Leon Anavi      |
+| 08 May      2022  | Update examples             | All             | Leon Anavi      |
 
 ## ANAVI Gardening uHAT Revision
 
 | Revision| Notable changes                                              |
 | ------- |:-------------------------------------------------------------|
 | 1.0     | First version                                                |
+| 1.3     | Switched to capacitive soil-moisture sensors                 |
 
 ## See Also
 
