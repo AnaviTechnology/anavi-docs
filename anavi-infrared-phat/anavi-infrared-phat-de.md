@@ -667,6 +667,6 @@ Ja, die offizielle ANAVI Infrarot pHAT Software ist frei und open source. Die Be
 
 ## Lesen sie auch
 
-Für weitere Informationen besuchen sie [anavi.technology](http://anavi.technology/) und unsere [GitHub-Repositories](https://github.com/AnaviTechnology). Wenn sie fragen oder Unklarheiten haben, kontaktieren sie uns auf [Facebook](https://www.facebook.com/AnaviTech/), [Twitter](https://twitter.com/AnaviTech) oder per [email](mailto:info@anavi.technology).
+Für weitere Informationen besuchen sie [anavi.technology](http://anavi.technology/) und unsere [GitHub-Repositories](https://github.com/AnaviTechnology). Wenn sie fragen oder Unklarheiten haben, kontaktieren sie uns auf [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) oder per [email](mailto:info@anavi.technology).
 
 ---
