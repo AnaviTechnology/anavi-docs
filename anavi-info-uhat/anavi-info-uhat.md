@@ -184,7 +184,13 @@ sudo apt update
 * Install additional applications, libraries and other tools needed by ANAVI Info uHAT
 
 ```
-sudo apt install -y git i2c-tools vim
+sudo apt install -y git i2c-tools vim python-dev python-pip libfreetype6-dev libjpeg8-dev libsdl1.2-dev
+```
+
+* Install Python 3 libraries needed for controlling the mini I2C OLED display:
+
+```
+pip install --upgrade luma.oled
 ```
 
 ### Enable I2C
