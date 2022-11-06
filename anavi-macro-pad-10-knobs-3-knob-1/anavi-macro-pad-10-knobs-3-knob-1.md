@@ -87,24 +87,24 @@ Revision 1.1 of ANAVI Macro Pad 10 and revisions 1.0 of ANAVI Knobs 3 and ANAVI 
 
 ## Electrostatic Warning
 
-ANAVI Macro Pad 10, ANAVI Knobs 3 and ANAVI Knob 1 are shipped in protectiv bags. The board must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
+ANAVI Macro Pad 10, ANAVI Knobs 3 and ANAVI Knob 1 are shipped in protective bags. The board must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
 
 ## Requirements
 
-In order to setup ANAVI Macro Pad 10 the following items are required:
+In order to setup ANAVI Macro Pad 10, ANAVI Knobs 3 or ANAVI Knob 1 the following items are required:
 
-* Computer
+* Personal Computer with MS Windows, Mac OS or GNU/Linux distribution
 * USB to USB-C cable
 
-Getting started with and assembled ANAVI Macro Pad 10 is easy. Just connect it to your Linux, Windows, or macOS computer, and use a browser to configure and load your keyswitch macro or shortcut settings.
+Getting started with and assembled ANAVI Macro Pad 10, ANAVI Knobs 3 or ANAVI Knob 1 is easy. Just connect it to your GNU/Linux, Windows, or macOS computer, and use a browser to configure and load your keyswitch macro or shortcut settings.
 
-ANAVI Macro Pad 10 relies on the Quantum Mechanical Keyboard (QMK) firmware, To configure and modify the keyboard layouts you can use QMK Configurator, an online graphical user interface that generates QMK firmware hex files directly in a web browser or use the source code. Press the RESET button on ANAVI Macro Pad 8 to enter flash mode and upload the new firmware.
+By default ANAVI Macro Pad 10, ANAVI Knobs 3 or ANAVI Knob 1 come with the open source [KMK firmware: Clackety Keyboards Powered by CircuitPython](http://kmkfw.io/). Furthermore they also support the open source the [Quantum Mechanical Keyboard (QMK) firmware](https://docs.qmk.fm/#/), To configure and modify the keyboard layouts you can use QMK Configurator, an online graphical user interface that generates QMK firmware hex files directly in a web browser or use the source code. Press the RESET button on ANAVI Macro Pad 8 to enter flash mode and upload the new firmware.
 
-Furthermore, ANAVI Macro Pad 10, ANAVI Knobs 3 and ANAVI Knob 1 are powered by [Seeed Studio XIAO RP2040](https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html) with Raspberry Pi RP2040 MCU.
+ANAVI Macro Pad 10, ANAVI Knobs 3 and ANAVI Knob 1 are powered by [Seeed Studio XIAO RP2040](https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html) with Raspberry Pi RP2040 MCU.
 
 ## Supported Peripherals
 
-ANAVI Knobs 3 and ANAVI Knob 1 support I2C mini OLED display. Plug the display before turning on the board.
+ANAVI Knobs 3 and ANAVI Knob 1 support I2C peripheral devices such as a mini OLED display. Configure the firmware to use the peripherals. Plug the display before turning on the board.
 
 ## Assembly
 
@@ -120,12 +120,6 @@ You can place a sticker on the top or on the side of the keycap. If you like ret
 
 ANAVI Macro Pad 10 is powered by the popular open source firmware QMK which allows you to create various layouts. You can make a keymap with 2 or more layouts. A sticker on the side of the keycap might be useful as a visual aid to indicate the additional function of the key.
 
-* Keycaps
-
-Place all keycaps on the 8 mechanical switches of ANAVI Macro Pad 10. You can easily do this with your bare hands. It takes just a few seconds.
-
-As you can see [in the video](https://www.youtube.com/watch?v=AlH5sLEsoNc), a keycap puller might be useful if you make a mistake and want to pull off a keycap and place it on another location.
-
 * Peel Off Protective Films from the Acrylic Enclosure
 
 Peel off the protective films from both sides of the two laser cut transparent acrylic parts. The removal of the protective films is quite annoying but once you get rid of them, the acrylic enclosure will be crystal clear and fully transparent.
@@ -137,6 +131,12 @@ Assemble the acrylic enclosures. In the cardboard box you also will find M3 blac
 First place 4 of the stand-offs with screws to the bottom acrylic part. After that, place ANAVI Macro Pad 10 on top of them. The printed circuit board has 4 mounting holes for this purpose.
 
 Add the rest of stand-offs on top of the ANAVI Macro Pad 10 to secure the printed circuit board to the bottom part as shown in the video. Place the top acrylic part and fasten it with the 4 M3 nuts. Finally add the silicon protective pads to the screws on the bottom.
+
+* Keycaps
+
+Place all keycaps on the mechanical switches of ANAVI Macro Pad 10. You can easily do this with your bare hands. It takes just a few seconds.
+
+A keycap puller might be useful if you make a mistake and want to pull off a keycap and place it on another location.
 
 * Mini OLED Display
 
