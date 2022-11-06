@@ -38,18 +38,42 @@ ANAVI Knob 1 is a tiny input device with a single rotary encoder with a clickabl
 
 ## Features
 
-ANAVI Macro Pad 10 includes:
+### ANAVI Macro Pad 10
 
-* **Keyswitches:** Eight Cherry MX-style pads
-   * Developer Kit includes eight Gateron red, linear, non-clicky mechanical switches and transparent keycaps with red LED backlighting
-* **Peripherals:**
-   * S2812B addressable LED strip for bottom-lighting
-   * Optional 0.96" mini OLED display
-* **MCU:** [Microchip ATmega32U4](https://www.mouser.bg/ProductDetail/Microchip-Technology-Atmel/ATMEGA32U4-AU?qs=SSucg2PyLi7mKWjHIsNJ3w==)
-* **Connectivity:** Micro USB
-* **Firmware:** Quantum Mechanical Keyboard (QMK) open source firmware and Arduino sketches
-* **Compatibility:** Windows, macOS, and Linux support
-* **Dimensions:** 135 x 47 mm (5.32 x 1.86 inches)
+A kit with ANAVI Macro Pad 10 includes:
+
+* **Inputs**: Rotary encoder with clickable switch and nine hot-swappable Cherry MX-style switches
+* **Keys**: Nine Gateron red, linear, non-clicky mechanical switches and transparent keycaps with yellow LED backlighting
+* **Peripherals:** RGB LED on top, WS2812B addressable LED strip for bottom-lighting
+* **MCU**: Raspberry Pi RP2040
+* **Connectivity**: USB-C
+* **Firmware**: KMK firmware
+* **Compatibility**: Windows, macOS, and Linux support
+* **Dimensions**: 73.0 x 91.0 mm (2.87 x 3.58 inches)
+
+### ANAVI Knobs 3
+
+A kit with ANAVI Knobs 3 includes:
+
+* **Inputs**: Three rotary encoders with clickable switches
+* **Peripherals:** RGB LED, I²C slot
+* **MCU**: Raspberry Pi RP2040
+* **Connectivity**: USB-C
+* **Firmware**: KMK firmware
+* **Compatibility**: Windows, macOS, and Linux support
+* **Dimensions**: 35.0 x 90.0 mm (1.38 x 3.54 inches)
+
+### ANAVI Knob 1
+
+A kit with ANAVI Knob 1 includes:
+
+* **Inputs**: Rotary encoder with clickable switch
+* **Peripherals:** RGB LED, I²C slot
+* **MCU**: Raspberry Pi RP2040
+* **Connectivity**: USB-C
+* **Firmware**: KMK firmware
+* **Compatibility**: Windows, macOS, and Linux support
+* **Dimensions**: 35.0 x 49.0 mm (1.38 x 1.93 inches)
 
 ## Target Market
 
