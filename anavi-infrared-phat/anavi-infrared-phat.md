@@ -378,7 +378,7 @@ dtoverlay=gpio-ir-tx,gpio_pin=17
 * Reboot Raspberry Pi:
 
 ```
-sudo shutdown -r 0
+sudo reboot
 ```
 
 ## Using IR Receiver
