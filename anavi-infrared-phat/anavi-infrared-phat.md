@@ -325,38 +325,13 @@ In 2019 lirc_rpi, the Linux kernel module provided with Raspbian before, was rep
 
 ## Setting up LIRC
 
-Perform the steps below to build LIRC from source, to patch it and to enable the infrared receiver and transmitter on ANAVI Infrared pHAT:
+Perform the steps below to install LIRC, to enable the infrared receiver and transmitter on ANAVI Infrared pHAT:
 
-* Install dependencies
+* Install LIRC:
 
 ```
-sudo su -c "grep '^deb ' /etc/apt/sources.list | sed 's/^deb/deb-src/g' > /etc/apt/sources.list.d/deb-src.list"
 sudo apt update
-sudo apt install -y vim devscripts dh-exec doxygen expect libasound2-dev libftdi1-dev libsystemd-dev libudev-dev libusb-1.0-0-dev libusb-dev man2html-base portaudio19-dev socat xsltproc python3-yaml dh-python libx11-dev python3-dev python3-setuptools
-```
-
-* Download LIRC source code
-
-```
-mkdir ~/lirc-src
-cd ~/lirc-src
-apt source lirc
-```
-
-* Apply a patch to fix LIRC for Raspberry Pi
-
-```
-wget https://raw.githubusercontent.com/neuralassembly/raspi/master/lirc-gpio-ir-0.10.patch
-patch -p0 -i lirc-gpio-ir-0.10.patch
-cd lirc-0.10.1
-debuild -uc -us -b
-```
-
-* Install LIRC (built on the previous step)
-
-```
-cd ~/lirc-src
-sudo apt install -y ./liblirc0_0.10.1-6.3~deb10u1_armhf.deb ./liblircclient0_0.10.1-6.3~deb10u1_armhf.deb ./lirc_0.10.1-6.3~deb10u1_armhf.deb
+sudo apt install -y lirc
 ```
 
 * Edit `/etc/lirc/lirc_options.conf` and make sure that driver and device are set as:
