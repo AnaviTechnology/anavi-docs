@@ -158,18 +158,18 @@ ANAVI Infrared pHAT is Raspberry Pi HAT therefore it is powered through Raspberr
 
 ## Installation
 
-In order to work correctly, ANAVI Infrared pHAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started. After booting microSD card with **Raspbian**, open a terminal and follow the steps below:
+In order to work correctly, ANAVI Infrared pHAT requires an up-to-date kernel, I2C to be enabled, and a few libraries to get started. After booting microSD card with **Raspberry Pi OS** (previously known as Raspbian), open a terminal and follow the steps below:
 
 * Ensure your APT package list is up-to-date:
 
 ```
-sudo apt-get update
+sudo apt update
 ```
 
 * Install additional applications, libraries and other tools needed by ANAVI Infrared pHAT
 
 ```
-sudo apt-get install -y git i2c-tools vim
+sudo apt install -y git i2c-tools vim
 ```
 
 ### Enable I2C
@@ -208,15 +208,15 @@ The recommended USB to UART serial modules for ANAVI Infrared pHAT are any with 
 
 ## Examples
 
-Sample applications written in Python and the C programming language are provided for ANAVI Infrared pHAT under MIT license in GitHub. All examples have been tested on **Raspbian**.
+Sample applications written in Python and the C programming language are provided for ANAVI Infrared pHAT under MIT license in GitHub. All examples have been tested on **Raspberry Pi OS** (previously known as Raspbian).
 
 Open a terminal and execute the follow the steps by step instructions to install all dependencies and to get the source code:
 
 * Install dependencies:
 
 ```
-sudo apt-get update
-sudo apt-get install -y git git-core vim python-dev python-rpi.gpio  wiringpi i2c-tools
+sudo apt update
+sudo apt install -y git vim libi2c-dev python3 i2c-tools
 ```
 
 * Download the examples for ANAVI Infrared pHAT
