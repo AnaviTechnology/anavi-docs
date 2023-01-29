@@ -122,15 +122,21 @@ ANAVI Macro Pad 10 is powered by the popular open source firmware QMK which allo
 
 * Peel Off Protective Films from the Acrylic Enclosure
 
-Peel off the protective films from both sides of the two laser cut transparent acrylic parts. The removal of the protective films is quite annoying but once you get rid of them, the acrylic enclosure will be crystal clear and fully transparent.
+Peel off the protective films from both sides of the three laser cut transparent acrylic parts. The removal of the protective films is quite annoying but once you get rid of them, the acrylic enclosure will be crystal clear and fully transparent.
 
 * Assemble the Acrylic Enclosure
 
-Assemble the acrylic enclosures. In the cardboard box you also will find M3 black plastic screws, nuts and standoffs. Although you can assemble them with your bare hands a screw driver might be handy.
+Assemble the acrylic enclosures. In the cardboard box you also will find four M3 screws and eight M3 nuts. Although you can assemble them with your bare hands a screw driver might be handy.
 
-First place 4 of the stand-offs with screws to the bottom acrylic part. After that, place ANAVI Macro Pad 10 on top of them. The printed circuit board has 4 mounting holes for this purpose.
+First place 4 screws up through the solid acrylic bottom plate. Fasten the screws to the bottom plate with 4 M3 nuts.
 
-Add the rest of stand-offs on top of the ANAVI Macro Pad 10 to secure the printed circuit board to the bottom part as shown in the video. Place the top acrylic part and fasten it with the 4 M3 nuts. Finally add the silicon protective pads to the screws on the bottom.
+Next, place the ANAVI Macro Pad 10 PCB on top of of the bottom plate with the XIAO-RP2040 and knob facing away from the bottom plate passing the screws through the 4 mounting holes in the PCB.
+
+Add the U-shaped acrylic spacer plate on top of the PCB with the cutout leaving room for the USB port on the XIAO-RP2040.
+
+Place the top acrylic part and gently fasten it with the 4 M3 nuts.
+
+Finally add the foam protective pads to the screws on the bottom.
 
 * Keycaps
 
@@ -148,15 +154,17 @@ Peel off the protected film and place the mini OLED display as shown in the vide
 
 * Turn On ANAVI Macro Pad 10
 
-Gently use a USB to USB-C cable to connect ANAVI Macro Pad 10 to a personal computer. Please be careful with the microUSB connector, because a harsh bending of the USB cable may damage the microUSB connector.
+Gently use a USB to USB-C cable to connect ANAVI Macro Pad 10 to a personal computer. Please be careful with the USB-C connector, because a harsh bending of the USB cable may damage the USB-C connector.
 
-Thanks to the QMK firmware, ANAVI Macro Pad 10 will be detected as human interface device and should work out of the box. Furthermore with QMK you have the freedom to fully customize each key.
+Thanks to the KMK firmware, ANAVI Macro Pad 10 will be detected as human interface device and should work out of the box. Furthermore with KMK you have the freedom to fully customize each key.
 
-Please note that a USB to microUSB cable is **not** included in any of the kits. Reuse a cable from an old electronic device or purchase a cable according to your taste. Make sure that the cable supports both power and data transfer over USB.
+Please note that a USB to USB-C cable is **not** included in any of the kits. Re-use a cable from an old electronic device or purchase a cable according to your taste. Make sure that the cable supports both power and data transfer over USB.
 
 ---
 
 # CHAPTER 3: Software
+
+*This step is optional and is provided in case you want to use QMK firmware.*
 
 Out of the box ANAVI Macro Pad 10, ANAVI Knobs 3 and ANAVI Knob 1 all come with [the popular open source firmware KMK](https://github.com/KMKfw/kmk_firmware). Alternatively, [QMK firmware](https://qmk.fm/) is also supported. Several different keymaps are available.
 
