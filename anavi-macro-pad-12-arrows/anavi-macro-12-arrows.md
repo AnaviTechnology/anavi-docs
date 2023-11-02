@@ -1,6 +1,6 @@
 # ANAVI Macro Pad 12 and ANAVI Arrows
 
-**Small, fully programmable, open source mechanical keyboards**
+**Compact, open-source, hot-swappable mechanical keyboards featuring back-lighting, under-lighting and an OLED display**
 
 ---
 
@@ -156,6 +156,31 @@ Please note that a USB to USB-C cable is **not** included in any of the kits. Re
 
 # CHAPTER 3: Software
 
+Out of the box ANAVI Macro Pad 12 and ANAVI Arrows come with the open source firmware KMK written in CircuitPython.
+
+## KMK firmware
+
+[![Watch the video](https://img.youtube.com/vi/clngc4eI7y8/maxresdefault.jpg)](https://youtu.be/clngc4eI7y8)
+
+[KMK](http://kmkfw.io/) is a free and open source firmware for mechanical keyboards written in CircuitPython.
+
+[CircuitPython](https://circuitpython.org/) is an open-source programming language that runs on microcontrollers used in various embedded applications, including mechanical keyboards like ANAVI Macro Pad 12 and ANAVI Arrows. It is derived from the Python programming language and tailored to the needs of constrained embedded devices with a microcontroller. One of the key advantages of CircuitPython is its simplicity and ease of use, especially for beginners who lack extensive programming experience.
+
+The KMK source code can be accessed on [GitHub](https://github.com/KMKfw/kmk_firmware), where it is released under the GPLv3 license. The development of KMK started in 2018. KMK source code employs the Python code formatter known as Black and utilizes single quotes in its coding style.
+
+KMK is designed to be compatible with microcontrollers that have a minimum of 256KB of flash storage, support HID over USB and/or Bluetooth, and can run CircuitPython version 7.0 or newer. With its impressive hardware capabilities, the Raspberry Pi RP2040 microcontroller is a perfect fit for CircuitPython and KMK. ANAVI Macro Pad 12 and ANAVI Arrows are designed around [Seeed Studio’s XIAO module with RP2040](https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html).
+
+KMK provides numerous amazing key features, including:
+
+* **Key Mapping:** Customize key assignments to suit individual preferences
+* **Macros:** Create and assign macros for automating tasks or executing commands
+* **Layers:** Define multiple virtual layers for accessing different functions or modes
+* **LED Control:** Customize backlighting and LED behavior
+* **Rotary Encoder:** Rotary encoders for various functions like volume control or scrolling.
+* **Mini OLED Display:** Compatibility with mini OLED displays, allowing users to display custom information or visuals on their keyboards.
+
+## QMK firmware
+
 *This step is optional and is provided in case you want to use QMK firmware.*
 
 Out of the box ANAVI Macro Pad 12 and ANAVI Arrows all come with [the popular open source firmware KMK](https://github.com/KMKfw/kmk_firmware). Alternatively, [QMK firmware](https://qmk.fm/) is also supported. Several different keymaps are available.
@@ -165,12 +190,12 @@ Out of the box ANAVI Macro Pad 12 and ANAVI Arrows all come with [the popular op
 After installing QMK software on your computer, from the command line you can compile QMK firmware with the `default` keymap for ANAVI Macro Pad 12 or ANAVI Arrows using the following command:
 
 ```
-qmk compile -kb anavi/macropad10 -km default
+qmk compile -kb anavi/macropad12 -km default
 ```
 
-## Flash QMK on ANAVI Macro Pad 12 and ANAVI Arrows
+## Flash QMK on ANAVI Macro Pad 12
 
-Follow the steps below to flash the compiled QMK firmware to ANAVI Macro Pad 12 or ANAVI Arrows:
+Follow the steps below to flash the compiled QMK firmware to ANAVI Macro Pad 12:
 
 * Connect ANAVI Macro Pad 12 or ANAVI Arrows to your personal computer with USB to USB-C cable and upload the firmware
 
@@ -182,24 +207,27 @@ Follow the steps below to flash the compiled QMK firmware to ANAVI Macro Pad 12 
 
 ### ANAVI Macro Pad 12
 
-ANAVI Macro Pad 12 utilizes the following pins on Raspberry Pi RP2040:
+ANAVI Macro Pad 12 utilizes the following pins on [Seeed Studio XIAO RP2040](https://wiki.seeedstudio.com/XIAO-RP2040/):
 
 | Component           | Pins                                   |
 | ------------------- |:-------------------------------------- |
-| I2C                 | PD0, PD1                               |
-| Mechanical switches | PD4, PF6, PB5, PE6, PF5, PF7, PB4, PC6 |
-| LEDs (backlit)      | PD7                                    |
-| WS2812B LED strip   | PF4                                    |
+| I2C                 | D4 (SDA), D5 (SCL)                     |
+| Mechanical switches | D1, D2, D3, D6, D7, D8, D9             |
+| LEDs (backlit)      | D0                                     |
+| WS2812B LED strip   | D10                                    |
 
 
 ### ANAVI Arrows
 
-ANAVI Arrows utilizes the following pins on Raspberry Pi RP2040:
+ANAVI Arrows utilizes the following pins on [Seeed Studio XIAO RP2040](https://wiki.seeedstudio.com/XIAO-RP2040/):
 
 | Component           | Pins                                   |
 | ------------------- |:-------------------------------------- |
-| I2C                 | PD0, PD1                               |
-| Rotary Encoders     | PD4, PF6, PB5, PE6, PF5, PF7, PB4, PC6 |
+| I2C                 | D4 (SDA), D5 (SCL)                     |
+| Mechanical switches | D1, D2, D3, D6                         |
+| Rotary encoder      | D7, D8, D9                             |
+| LEDs (backlit)      | D0                                     |
+| WS2812B LED strip   | D10                                    |
 
 ## I2C
 
@@ -207,32 +235,14 @@ A mini OLED display that can be connected to ANAVI Macro Pad 12 or ANAVI Arrows 
 
 ---
 
-# CHAPTER 5: Frequently Asked Questions (FAQ) and Troubleshooting
-
-* How to fix `The firmware is too large! 28866/28672 (194 bytes over)`?
-
-The easiest way to reduce the size of QMK firmware with your custom new keymap for ANAVI Macro Pad 12 or ANAVI Arrows is to cut some of the RGB lighting animations and effects.
-
-For example, in your custom keymap you can create `config.h` in the keymap directory that overwrites the main `config.h` with a reduced number of supported RGB lighting animations and effects:
-
-```
-#pragma once
-
-#undef RGBLIGHT_ANIMATIONS
-#define RGBLIGHT_EFFECT_BREATHING
-#define RGBLIGHT_EFFECT_CHRISTMAS
-#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_EFFECT_SNAKE
-```
----
-
-# CHAPTER 6: Revision History
+# CHAPTER 5: Revision History
 
 ## Document Revision
 
 | Date              | Changes                     | Modified pages  | Author             |
 | ----------------- |:---------------------------:| :---------------| :------------------|
 | 05 June 2023      | Initial manual release      | All             | Desislava Angelova |
+| 03 November 2023  | KMK, QMK and schematics     | All             | Leon Anavi |
 
 ## ANAVI Macro Pad 12 Revision
 
@@ -249,6 +259,6 @@ For example, in your custom keymap you can create `config.h` in the keymap direc
 
 ## See Also
 
-For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
+For more information please visit [anavi.technology](https://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
 
 ---
