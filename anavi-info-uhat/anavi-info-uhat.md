@@ -195,7 +195,7 @@ sudo apt update
 * Install additional applications, libraries and other tools needed by ANAVI Info uHAT
 
 ```
-sudo apt install -y git i2c-tools vim python3-dev python3-pip libfreetype6-dev libsdl1.2-dev
+sudo apt install -y libi2c-dev git i2c-tools vim python3-dev python3-pip libfreetype6-dev libsdl1.2-dev
 ```
 
 * Install Python 3 libraries needed for controlling the mini I2C OLED display:
@@ -258,6 +258,7 @@ cd ~
 git clone https://github.com/AnaviTechnology/anavi-examples.git
 cd anavi-examples
 ```
+
 ### Display
 
 Enabling **I2C** is a prerequisite for utilizing the 0.96" OLED I2C display (SSD1306) on ANAVI Info uHAT. Follow the steps below to use the display:
@@ -297,6 +298,39 @@ sadika@rpi-sadika:~/anavi-examples/peripherals/OLED-SSD1306/python$ python3 OLED
 * The IP address and "Hello, World!" will be shown on the display.
 
 * Press Ctrl+C to terminate the Python3 script and clear the display.
+
+##### C
+
+Follow the steps below to use the open source [C library libssd1306](https://github.com/stealthylabs/libssd1306) with Raspberry Pi, ANAVI Info uHAT and 0.96" OLED I2C display (SSD1306):
+
+* Install additional dependencies:
+
+```
+sudo apt update
+sudo apt install -y libfreetype6-dev fonts-freefont-ttf ttf-bitstream-vera autoconf automake libtool autotools-dev build-essential pkg-config
+```
+
+* Clone the source code:
+
+```
+cd ~
+git clone https://github.com/stealthylabs/libssd1306.git
+```
+
+* Build the examples:
+
+```
+cd ~/libssd1306
+./autogen.sh
+./configure
+make
+```
+
+* Run the example to show "ABCDeF" with various simple animations on the mini OLED display:
+
+```
+./examples/test_i2c_128x32
+```
 
 ### Sensors
 
