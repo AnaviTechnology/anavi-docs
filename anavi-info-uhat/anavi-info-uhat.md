@@ -101,7 +101,18 @@ Additionally you may attach USB mouse, keyboard, HDMI monitor or addition periph
 
 ## Supported Peripherals
 
-ANAVI Info uHAT Raspberry Pi HAT has an MCP3002 analog-to-digital converter (ADC) and two connectors for capacitive soil moisture sensors. Up to 2 I2C sensors can be also easily attached to the pHAT.
+ANAVI Info uHAT supports up to four I2C devices, along with the inclusion of a UART connector for extra flexibility.
+
+### Display
+
+ANAVI Info uHAT features a vibrant yellow-blue 0.96" OLED I2C display (SSD1306) with a crisp resolution of 128x64 pixels. Simply connect the display to the designated slot on the ANAVI Info uHAT as outlined below:
+
+| SSD1306  | ANAVI Info uHAT |
+| -------- |:--------------- |
+| GND      | GND             |
+| VCC      | 3.3V            |
+| SCL      | SCL             |
+| SDA      | SDA             |
 
 ### Sensors
 
