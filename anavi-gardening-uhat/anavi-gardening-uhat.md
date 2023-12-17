@@ -261,7 +261,7 @@ Open a terminal and execute the follow the steps by step instructions to install
 
 ```
 sudo apt update
-sudo apt install -y git vim libi2c-dev python3 i2c-tools
+sudo apt install -y git vim libi2c-dev python3 python3-dev python3-pip python3-smbus i2c-tools
 ```
 
 * Download the examples for ANAVI Gardening uHAT

@@ -195,7 +195,7 @@ sudo apt update
 * Install additional applications, libraries and other tools needed by ANAVI Info uHAT
 
 ```
-sudo apt install -y libi2c-dev git i2c-tools vim python3-dev python3-pip libfreetype6-dev libsdl1.2-dev
+sudo apt install -y libi2c-dev git i2c-tools vim python3-dev python3-pip python3-smbus libfreetype6-dev libsdl1.2-dev
 ```
 
 * Install Python 3 libraries needed for controlling the mini I2C OLED display:
@@ -292,7 +292,7 @@ pi@raspberrypi:~ $ sudo i2cdetect -y 1
 
 ```
 cd ~/anavi-examples/peripherals/OLED-SSD1306/python/
-sadika@rpi-sadika:~/anavi-examples/peripherals/OLED-SSD1306/python$ python3 OLED-SSD1306.py
+python3 OLED-SSD1306.py
 ```
 
 * The IP address and "Hello, World!" will be shown on the display.
