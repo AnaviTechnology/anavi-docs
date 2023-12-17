@@ -332,6 +332,46 @@ make
 ./examples/test_i2c_128x32
 ```
 
+#### C++
+
+Follow the steps below to use the open source [C++ library libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI) with Raspberry Pi, ANAVI Info uHAT and 0.96" OLED I2C display (SSD1306):
+
+* Download and install bcm2835 library:
+
+```
+cd ~
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.73.tar.gz
+tar zxvf bcm2835-1.73.tar.gz
+cd bcm2835-1.73
+./configure
+make
+sudo make check
+sudo make install
+```
+
+* Download the source code of SSD1306_OLED_RPI C++ library:
+
+```
+cd ~
+git clone -b makefile-fix https://github.com/leon-anavi/SSD1306_OLED_RPI.git
+```
+
+* Build and install SSD1306_OLED_RPI C++ library:
+
+```
+cd ~/SSD1306_OLED_RPI
+make
+sudo make install
+```
+
+* Run examples:
+
+```
+cd ~/SSD1306_OLED_RPI/examples/
+make
+make run
+```
+
 ### Sensors
 
 It is mandatory to enable **I2C** to use all of the sensors supported by ANAVI Info uHAT.
