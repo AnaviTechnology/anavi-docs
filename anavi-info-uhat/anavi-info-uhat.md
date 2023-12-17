@@ -258,6 +258,45 @@ cd ~
 git clone https://github.com/AnaviTechnology/anavi-examples.git
 cd anavi-examples
 ```
+### Display
+
+Enabling **I2C** is a prerequisite for utilizing the 0.96" OLED I2C display (SSD1306) on ANAVI Info uHAT. Follow the steps below to use the display:
+
+* Connect OLED I2C display (SSD1306) to the dedicated display slot on ANAVI Info uHAT.
+
+* Type in the following command and verify that the address of the sensor is listed:
+
+```
+sudo i2cdetect -y 1
+```
+
+The address of OLED I2C display (SSD1306) sensor is **3c**, for example:
+
+```
+pi@raspberrypi:~ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- 3c -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- --
+```
+
+#### Python
+
+* Run the Python3 script to show information on the OLED display:
+
+```
+cd ~/anavi-examples/peripherals/OLED-SSD1306/python/
+sadika@rpi-sadika:~/anavi-examples/peripherals/OLED-SSD1306/python$ python3 OLED-SSD1306.py
+```
+
+* The IP address and "Hello, World!" will be shown on the display.
+
+* Press Ctrl+C to terminate the Python3 script and clear the display.
 
 ### Sensors
 
