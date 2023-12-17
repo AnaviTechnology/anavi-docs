@@ -103,7 +103,7 @@ Additionally you may attach USB mouse, keyboard, HDMI monitor or addition periph
 
 ## Supported Peripherals
 
-ANAVI Gardening uHAT Raspberry Pi HAT has an MCP3002 analog-to-digital converter (ADC) and two connectors for capacitive soil moisture sensors. Up to 2 I2C sensors can be also easily attached to the pHAT.
+ANAVI Gardening uHAT for Raspberry Pi features an MCP3002 analog-to-digital converter (ADC), dual connectors for capacitive soil moisture sensors, and supports up to 2 I2C sensors, one 1-wire sensor, and a UART header for added versatility.
 
 ### Sensors
 
