@@ -353,7 +353,7 @@ sudo make install
 
 ```
 cd ~
-git clone -b makefile-fix https://github.com/leon-anavi/SSD1306_OLED_RPI.git
+git clone -b 1.5 https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI.git
 ```
 
 * Build and install SSD1306_OLED_RPI C++ library:
@@ -371,6 +371,8 @@ cd ~/SSD1306_OLED_RPI/examples/
 make
 make run
 ```
+
+NOTE: The SSD1306_OLED_RPI library switches on and off the I2C at the end of each operation. You may need to [edit the source code and restart the I2C bus](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI/issues/3#issuecomment-1864618175).
 
 ### Sensors
 
