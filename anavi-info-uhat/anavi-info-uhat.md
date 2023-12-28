@@ -334,6 +334,11 @@ make
 
 #### C++
 
+Various approaches exist for utilizing the SSD1306 mini OLED display in Linux with the C++ programming language. This user manual covers a couple of different open source options to guide you through the process:
+
+* [ssd1306_linux](https://github.com/armlabs/ssd1306_linux)
+* [libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI)
+
 ##### ssd1306_linux
 
 Follow the steps below to compile and use [ssd1306_linux](https://github.com/armlabs/ssd1306_linux), SSD1306 OLED I2C driver working in Linux thanks to [libi2c](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/).
