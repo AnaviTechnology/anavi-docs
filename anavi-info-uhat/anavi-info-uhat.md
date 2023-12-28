@@ -334,6 +334,48 @@ make
 
 #### C++
 
+##### ssd1306_linux
+
+Follow the steps below to compile and use [ssd1306_linux](https://github.com/armlabs/ssd1306_linux), SSD1306 OLED I2C driver working in Linux thanks to [libi2c](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/).
+
+* Download the source code of `ssd1306_linux` from GitHub:
+
+```
+git clone https://github.com/armlabs/ssd1306_linux.git
+```
+
+* Build `ssd1306_linux`:
+
+```
+cd ssd1306_linux
+make
+```
+
+* Initialize the mini OLED display with resolution 128x64px using `ssd1306_linux`:
+
+```
+./ssd1306_bin -n 1 -I 128x64
+```
+
+* Execute the following commands to show **Hello World** on the mini OLED display using `ssd1306_linux`:
+
+```
+./ssd1306_bin -n 1 -c
+./ssd1306_bin -n 1 -r 0
+./ssd1306_bin -n 1 -x 1 -y 1
+./ssd1306_bin -n 1 -l "Hello World"
+```
+
+* Clear the mini OLED display:
+
+```
+./ssd1306_bin -n 1 -c
+```
+
+##### libssd1306
+
+The [C++ library libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI) relies on the bcm2835 library and operates directly on SPI/I2C devices, bypassing the need for Linux device drivers. However, if relevant Linux drivers are loaded or activated, using libssd1306 may result in unexpected behavior in other software.
+
 Follow the steps below to use the open source [C++ library libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI) with Raspberry Pi, ANAVI Info uHAT and 0.96" OLED I2C display (SSD1306):
 
 * Download and install bcm2835 library:
