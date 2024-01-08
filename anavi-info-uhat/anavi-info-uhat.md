@@ -301,47 +301,14 @@ python3 OLED-SSD1306.py
 
 ##### C
 
-Follow the steps below to use the open source [C library libssd1306](https://github.com/stealthylabs/libssd1306) with Raspberry Pi, ANAVI Info uHAT and 0.96" OLED I2C display (SSD1306):
+Various approaches exist for utilizing the SSD1306 mini OLED display in Linux with the C programming language. This user manual covers a couple of different open source options to guide you through the process:
 
-* Install additional dependencies:
-
-```
-sudo apt update
-sudo apt install -y libfreetype6-dev fonts-freefont-ttf ttf-bitstream-vera autoconf automake libtool autotools-dev build-essential pkg-config
-```
-
-* Clone the source code:
-
-```
-cd ~
-git clone https://github.com/stealthylabs/libssd1306.git
-```
-
-* Build the examples:
-
-```
-cd ~/libssd1306
-./autogen.sh
-./configure
-make
-```
-
-* Run the example to show "ABCDeF" with various simple animations on the mini OLED display:
-
-```
-./examples/test_i2c_128x32
-```
-
-#### C++
-
-Various approaches exist for utilizing the SSD1306 mini OLED display in Linux with the C++ programming language. This user manual covers a couple of different open source options to guide you through the process:
-
-* [ssd1306_linux](https://github.com/armlabs/ssd1306_linux)
-* [libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI)
+* [ssd1306_linux](https://github.com/armlabs/ssd1306_linux) (recommended)
+* [libssd1306](https://github.com/stealthylabs/libssd1306)
 
 ##### ssd1306_linux
 
-Follow the steps below to compile and use [ssd1306_linux](https://github.com/armlabs/ssd1306_linux), SSD1306 OLED I2C driver working in Linux thanks to [libi2c](https://git.kernel.org/pub/scm/utils/i2c-tools/i2c-tools.git/).
+Follow the steps below to compile and use [ssd1306_linux](https://github.com/armlabs/ssd1306_linux), SSD1306 OLED I2C driver working in Linux user space:
 
 * Download the source code of `ssd1306_linux` from GitHub:
 
@@ -378,6 +345,39 @@ make
 ```
 
 ##### libssd1306
+
+Follow the steps below to use the open source [C library libssd1306](https://github.com/stealthylabs/libssd1306) with Raspberry Pi, ANAVI Info uHAT and 0.96" OLED I2C display (SSD1306):
+
+* Install additional dependencies:
+
+```
+sudo apt update
+sudo apt install -y libfreetype6-dev fonts-freefont-ttf ttf-bitstream-vera autoconf automake libtool autotools-dev build-essential pkg-config
+```
+
+* Clone the source code:
+
+```
+cd ~
+git clone https://github.com/stealthylabs/libssd1306.git
+```
+
+* Build the examples:
+
+```
+cd ~/libssd1306
+./autogen.sh
+./configure
+make
+```
+
+* Run the example to show "ABCDeF" with various simple animations on the mini OLED display:
+
+```
+./examples/test_i2c_128x32
+```
+
+#### C++
 
 The [C++ library libssd1306](https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI) relies on the bcm2835 library and operates directly on SPI/I2C devices, bypassing the need for Linux device drivers. However, if relevant Linux drivers are loaded or activated, using libssd1306 may result in unexpected behavior in other software.
 
