@@ -48,13 +48,18 @@ ANAVI Play pHAT Raspberry Pi HAT includes:
 
 ANAVI Play pHAT is compatible with the following Raspberry Pi versions and models:
 
-* [Raspberry Pi 3 Model B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
-* [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-* [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
-* [Raspberry Pi 0](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
-* [Raspberry Pi 0 W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)
-* [Raspberry Pi Model B+](https://www.raspberrypi.org/products/model-b-plus/)
-* [Raspberry Pi Model A+](https://www.raspberrypi.org/products/model-a-plus/)
+* [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)
+* [Raspberry Pi 400](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+* [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+* [Raspberry Pi 3 Model A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
+* [Raspberry Pi 3 Model B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
+* [Raspberry Pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
+* [Raspberry Pi 2 Model B](https://www.raspberrypi.com/products/raspberry-pi-2-model-b/)
+* [Raspberry Pi Zero](https://www.raspberrypi.com/products/raspberry-pi-zero/)
+* [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)
+* [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+* [Raspberry Pi Model B+](https://www.raspberrypi.com/products/raspberry-pi-1-model-b-plus/)
+* [Raspberry Pi Model A+](https://www.raspberrypi.com/products/raspberry-pi-1-model-a-plus/)
 
 ANAVI Play pHAT is **NOT** compatible with the earlier 26-pin models of Raspberry Pi 1 Model B & A's.
 
