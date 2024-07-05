@@ -175,6 +175,8 @@ Out of the box ANAVI Macro Pad 2 comes with [the popular open source firmware QM
 
 Please note that on [Fri Aug 6 2021 the support for all keyboards using Microchip ATtiny85, including ANAVI Macro Pad 2, was dropped from QMK](https://github.com/qmk/qmk_firmware/commit/0dafd83f72ba2ae79c2ca754a120b1de8b4dbfe8) due to the increased size of the firmware following the implementation of a features to [process combos earlier and overlapping combos](https://github.com/qmk/qmk_firmware/pull/8591). Therefore support for ANAVI Macro Pad 2 is available in older versions, for example QMK firmware version 0.13.19.
 
+The steps in this chapter may vary across different operating systems and versions of Linux distributions. If you are using [Ubuntu 24.04](#ubuntu-2404-lts), please follow [the exact steps provided for this version](#ubuntu-2404-lts).
+
 ## Flashing
 
 ### Prerequisites
@@ -238,6 +240,60 @@ micronucleus --run anavi_macropad2_default.hex
 
 ---
 
+## Ubuntu 24.04 LTS
+
+Ubuntu 24.04 LTS (Long-Term Support), released in April 2024, is a version of the popular Linux distribution by Canonical Ltd. As an LTS release, it offers five years of support, including security patches and updates until April 2029, ensuring stability and reliability for both desktop and server environments.
+
+**NOTE:** Ubuntu has adopted the Python standards defined in PEP-668. These changes prevent pip packages from being installed globally by default. For simplicity, this tutorial provides a straightforward fix for the "externally-managed" error when installing QMK. Generally, using virtual environments is the recommended approach.
+
+Follow the steps below to set up QMK for ANAVI Macro Pad 2 on Ubuntu 24.04 LTS:
+
+* Install dependencies:
+
+```
+sudo apt-get install -y libusb-dev git
+```
+
+* Download, build and install micronucleus:
+
+```
+git clone https://github.com/micronucleus/micronucleus.git
+cd micronucleus/commandline/
+sudo make install
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
+
+* Setup QMK
+
+```
+sudo apt install -y python3-pip
+sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
+python3 -m pip install --user qmk
+```
+
+**NOTE**: Instead of removing EXTERNALLY-MANAGED consider the [other options](https://www.makeuseof.com/fix-pip-error-externally-managed-environment-linux/).
+
+* Install QMK 0.13.19 (version that works with ANAVI Macro Pad 2):
+
+```
+cd ~
+~/.local/bin/qmk setup -b 0.13.19
+```
+
+* Build QMK with default keymap for ANAVI Macro Pad 2:
+
+```
+cd ~/qmk_firmware/
+make anavi/macropad2:default
+```
+
+* Flash firmware on ANAVI Macro Pad 2:
+
+```
+micronucleus --run anavi_macropad2_default.hex
+```
+
 # CHAPTER 4: Hardware Schematics
 
 ## Pinout
@@ -266,6 +322,7 @@ ANAVI Macro Pad 2 utilizes the following pins on Microchip ATtiny85:
 | 24 May 2021       | Add a link to the datasheet     | Leon Anavi      |
 | 22 Sep 2021       | Update notes about QMK firmware | Leon Anavi      |
 | 25 Oct 2021       | Update QMK notes                | Leon Anavi      |
+| 05 Jul 2024       | Ubuntu 24.04 LTS exact steps    | Leon Anavi      |
 
 ## ANAVI Macro Pad 2 Revision
 
