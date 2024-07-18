@@ -238,11 +238,57 @@ It is mandatory to enable **I2C** to use any of the sensors supported by ANAVI I
 
 #### Temperature Sensor (BMP180)
 
+##### Python
+
 Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with ANAVI Infrared pHAT:
 
-* Connect BMP180 to any of the I2C slots on ANAVI Infrared pHAT using male to female Duport jumper wire.
+* Connect the BMP180 to any I2C slot on the ANAVI Infrared pHAT using male-to-female DuPont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+*  Enter the following command and check if the sensor's address appears:
+
+```
+sudo i2cdetect -y 1
+```
+
+The address of BMP180 I2C sensor is 77, for example:
+
+```
+pi@raspberrypi:~ $ sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:                         -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- 77
+```
+
+* Run the Python3 script and ensure the output is similar to this (exact values will vary based on atmospheric conditions):
+
+```
+cd ~/anavi-examples/sensors/BMP180/python/
+python3 BMP180.py
+```
+
+For example:
+```
+pi@raspberrypi:~ $ cd ~/anavi-examples/sensors/BMP180/python/
+pi@raspberrypi:~/anavi-examples/sensors/BMP180/python $ python3 BMP180.py
+Temperature: 21.99C
+Pressure: 1002hPa
+```
+
+##### C (DEPRECATED EXAMPLE)
+
+**NOTE:** This C example for BMP180 is deprecated because it relies on the wiringpi library, which is no longer actively maintained and is incompatible with newer versions of the Raspberry Pi OS.
+
+Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with ANAVI Infrared pHAT:
+
+* Connect the BMP180 sensor module to any I2C slot on the ANAVI Infrared pHAT using male-to-female DuPont jumper wires.
+
+* Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -269,9 +315,9 @@ Pressure	991.57 hPa
 
 Follow the steps below to use the HTU21D I2C temperature and humidity sensor with ANAVI Infrared pHAT:
 
-* Connect HTU21D to any of the I2C slots on ANAVI Infrared pHAT using male to female Duport jumper wire.
+* Connect the HTU21D sensor module to any I2C slot on the ANAVI Infrared pHAT using male-to-female DuPont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+* Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -298,9 +344,9 @@ HTU21D Sensor Module
 
 Follow the steps below to use the BH1750 I2C light sensor with ANAVI Infrared pHAT:
 
-* Connect BH1750 to any of the I2C slots on ANAVI Infrared pHAT using male to female Dupont jumper wires.
+* Connect the BH1750 sensor module to any I2C slot on the ANAVI Infrared pHAT using male-to-female DuPont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+* Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -642,12 +688,14 @@ Yes, the official ANAVI Infrared pHAT software is free and open source. The exam
 | 16 September 2017 | Update for Raspbian Stretch | All             | Leon Anavi      |
 | 08 July 2019      | Update for Raspbian Buster  | All             | Leon Anavi      |
 | 09 December 2022  | Update for LIRC 0.10.1-6.3  | All             | Leon Anavi      |
+| 18 July 2024      | Add BMP180 Python example   | All             | Leon Anavi      |
 
-## ANAVI Infrared pHAT Revision
+## ANAVI Infrared pHAT Revisions
 
 | Revision| Notable changes                                              |
 | ------- |:-------------------------------------------------------------|
 | 1.0     | First version                                                |
+| 1.1     | Added a current limiting resistor R8                         |
 
 ## See Also
 
