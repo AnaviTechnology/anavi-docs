@@ -34,9 +34,11 @@ ANAVI Info uHAT is a low-cost, open source Raspberry Pi add-on board with mini O
 
 ANAVI Info uHAT supports multiple sensors for temperature, humidity, barometric pressure, and light. Getting started is easy: just plug it into a Raspberry Pi with your bare hands and follow the instructions in the user manual. No soldering is necessary, and no tools are required.
 
+A Raspberry Pi HAT (Hardware Attached on Top) is a standardized add-on board designed to fit the 40-pin GPIO header of Raspberry Pi models, providing various functionalities such as sensors, motors, and communication modules. HATs feature EEPROM for automatic configuration and drivers, making them easy to use and often stackable for expanded capabilities. A uHAT (Micro Hardware Attached on Top) such as ANAVI Info uHAT follows the same concept but is smaller, designed for compact Raspberry Pi models like the Pi Zero, offering similar plug-and-play hardware extensions in a more compact form factor.
+
 ## Features
 
-ANAVI Info uHAT Raspberry Pi HAT includes:
+ANAVI Info uHAT add-on board for Raspberry Pi includes:
 
 * Replaceable 0.96" yellow-blue I²C OLED display
 * Slots for up to 3 plug-and-play I²C sensors
@@ -50,6 +52,7 @@ ANAVI Info uHAT Raspberry Pi HAT includes:
 
 ANAVI Info uHAT is compatible with the following Raspberry Pi versions and models:
 
+* [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)
 * [Raspberry Pi 400](https://www.raspberrypi.com/products/raspberry-pi-400/)
 * [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 * [Raspberry Pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/)
@@ -431,9 +434,9 @@ It is mandatory to enable **I2C** to use all of the sensors supported by ANAVI I
 
 Follow the steps below to use the BMP180 I2C temperature and barometric pressure sensor with ANAVI Info uHAT:
 
-* Connect BMP180 to any of the I2C slots on ANAVI Info uHAT using male to female Duport jumper wire.
+* Connect the BMP180 to any I2C slot on the ANAVI Info uHAT using male-to-female DuPont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+*  Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -454,7 +457,7 @@ pi@raspberrypi:~ $ sudo i2cdetect -y 1
 70: -- -- -- -- -- -- -- 77
 ```
 
-* Run the Python3 script and verify that the output is similar to (the exact values depend on the atmospheric condition):
+* Run the Python3 script and ensure the output is similar to this (exact values will vary based on atmospheric conditions):
 
 ```
 cd ~/anavi-examples/sensors/BMP180/python/
@@ -473,9 +476,9 @@ Pressure: 1002hPa
 
 Follow the steps below to use the HTU21D I2C temperature and humidity sensor with ANAVI Info uHAT:
 
-* Connect HTU21D to any of the I2C slots on ANAVI Info uHAT using male to female Duport jumper wire.
+* Connect the BMP180 to any I2C slot on the ANAVI Info uHAT using male-to-female DuPont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+* Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -539,7 +542,7 @@ Follow the steps below to use the BH1750 I2C light sensor with ANAVI Info uHAT:
 
 * Connect BH1750 to any of the I2C slots on ANAVI Info uHAT using male to female Dupont jumper wires.
 
-* Type in the following command and verify that the address of the sensor is listed:
+* Enter the following command and check if the sensor's address appears:
 
 ```
 sudo i2cdetect -y 1
@@ -677,6 +680,7 @@ Yes, the official ANAVI Info uHAT software is free and open source. The examples
 | Date              | Changes                     | Modified pages  | Author          |
 | ----------------- |:---------------------------:| :---------------| :---------------|
 | 08 May 2022       | Initial manual release      | All             | Leon Anavi      |
+| 18 July 2024      | Minor improvements          | All             | Leon Anavi      |
 
 ## ANAVI Info uHAT Revision
 
