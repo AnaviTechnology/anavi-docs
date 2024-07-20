@@ -50,7 +50,7 @@ Revision 1.0 of ANAVI Handle was used while writing this document. It is possibl
 
 ## Electrostatic Warning
 
-ANAVI Handle is shipped as DIY kit. All parts are in protective bags. The board must **NOT** be exposed to high electrostatic potentials. A grounding strap or similar protective device should be worn when handling the board. Avoid touching the component pins or any other metallic element.
+ANAVI Handle is shipped as a do-it-yourself (DIY) kit, with all parts enclosed in protective bags. To prevent damage, ensure the board is **NOT** exposed to high electrostatic potentials. Always wear a grounding strap or a similar protective device when handling the board, and avoid touching the component pins or any other metallic elements.
 
 ## Requirements
 
@@ -151,19 +151,26 @@ ANAVI Handle utilizes the following pins on [Seeed Studio XIAO RP2040](https://w
 
 ---
 
-# CHAPTER 5: Revision History
+# CHAPTER 5: Frequently Asked Questions (FAQ)
+
+* Does the ANAVI Handle work with the Wii Classic Controller?
+
+The hardware connector on ANAVI Handle is compatible with the Wii Classic Controller. Currently, the [open-source firmware written in CircuitPython](https://github.com/AnaviTechnology/anavi-handle-sw) supports only Nunchuk-compatible controllers. However, it can be extended to support the Classic Controller using [libraries from Adafruit](https://github.com/adafruit/Adafruit_CircuitPython_Wii_Classic).
+
+# CHAPTER 6: Revision History
 
 ## Document Revision
 
 | Date              | Changes                     | Modified pages  | Author             |
 | ----------------- |:---------------------------:| :---------------| :------------------|
-| 24 May 2024      | Initial manual release      | All              | Leon Anavi          |
+| 24 May 2024       | Initial manual release      | All             | Leon Anavi         |
+| 20 July 2024      | Frequently Asked Questions  | All             | Leon Anavi         |
 
 ## ANAVI Handle
 
 | Revision| Notable changes                                              |
 | ------- |:-------------------------------------------------------------|
-| 1.0    | Stable version                                               |
+| 1.0     | Stable version                                               |
 
 ## See Also
 
