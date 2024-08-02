@@ -64,7 +64,7 @@ In order to setup ANAVI Dev Mic the following items are required:
 * Personal Computer with MS Windows, Mac OS or GNU/Linux distribution
 * USB-C cable
 
-Getting started with ANAVI Dev Mic is easy. Just connected it to the computer. By default the device comes pre-installed with [open source firmware](https://github.com/AnaviTechnology/anavi-handle-sw) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
+Getting started with ANAVI Dev Mic is easy. Just connected it to the computer. By default the device comes pre-installed with [open source firmware](https://github.com/AnaviTechnology/microphone-library-for-pico/tree/anavi_dev_mic) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
 
 ## Assembly
 
@@ -103,7 +103,7 @@ Please note that a USB to USB-C cable is **not** included in any of the kits. Re
 
 # CHAPTER 3: Software
 
-Out of the box ANAVI Dev Mic comes with [open source firmware](https://github.com/AnaviTechnology/anavi-handle-sw) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
+Out of the box ANAVI Dev Mic comes with [open source firmware](https://github.com/AnaviTechnology/microphone-library-for-pico/tree/anavi_dev_mic) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
 Follow these steps to build the firmware from source and flash it onto your ANAVI Dev Mic:
 
 * Set up the [Raspberry Pi RP2040 and Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
