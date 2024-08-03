@@ -157,6 +157,10 @@ ANAVI Handle utilizes the following pins on [Seeed Studio XIAO RP2040](https://w
 
 The hardware connector on ANAVI Handle is compatible with the Wii Classic Controller. Currently, the [open-source firmware written in CircuitPython](https://github.com/AnaviTechnology/anavi-handle-sw) supports only Nunchuk-compatible controllers. However, it can be extended to support the Classic Controller using [libraries from Adafruit](https://github.com/adafruit/Adafruit_CircuitPython_Wii_Classic).
 
+* Does the ANAVI Handle support the gyroscope in the Nunchuck controller?
+
+Yes, with the ANAVI Handle and the [Adafruit CircuitPython Nunchuk library](https://docs.circuitpython.org/projects/nunchuk/en/latest/index.html), you can read acceleration values from the gyroscope inside the controller. Here is a [simple example of how to do it](https://github.com/adafruit/Adafruit_CircuitPython_Nunchuk/blob/main/examples/nunchuk_simpletest.py).
+
 # CHAPTER 6: Revision History
 
 ## Document Revision
@@ -165,6 +169,8 @@ The hardware connector on ANAVI Handle is compatible with the Wii Classic Contro
 | ----------------- |:---------------------------:| :---------------| :------------------|
 | 24 May 2024       | Initial manual release      | All             | Leon Anavi         |
 | 20 July 2024      | Frequently Asked Questions  | All             | Leon Anavi         |
+| 03 August 2024    | gyroscope and acceleration  | FAQ             | Leon Anavi         |
+
 
 ## ANAVI Handle
 
