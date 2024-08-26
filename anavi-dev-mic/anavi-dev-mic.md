@@ -81,7 +81,7 @@ ANAVI Dev Mic is available as a DIY kit, which includes:
 
 ![ANAVI Dev Mic Kit](images/anavi-dev-mic-components.jpg)
 
-Follow the steps below to assemble the kit.
+Please follow [the video](https://youtu.be/65bSOuASYaw?si=hii2ADXjtzrV7aNe) and the steps below to assemble the kit.
 
 ### Step 1: Peel Off Protective Film
 
