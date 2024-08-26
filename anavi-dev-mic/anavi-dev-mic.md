@@ -75,27 +75,31 @@ ANAVI Dev Mic is available as a DIY kit, which includes:
 * Four 10mm M2.5 screws
 * Eight M2.5 nuts
 
+![ANAVI Dev Mic Kit](images/anavi-dev-mic-components.jpg)
+
 Follow the steps below to assemble the kit.
 
 ### Step 1: Peel Off Protective Film
 
-The acrylic enclosure consists of two laser-cut parts, each covered with protective film on both sides. Carefully remove the film from all surfaces to reveal the crystal-clear acrylic.
+![ANAVI Dev Mic step 1](images/anavi-dev-mic-step1.jpg)
 
-### Step 2: Align Acrylic Enclosure
+The acrylic enclosures are made from laser-cut parts, each covered with a protective film on both sides. Carefully peel off the film from all surfaces to reveal the crystal-clear acrylic underneath.
 
-Take the top part of the acrylic enclosure, which is larger. Insert a screw into each of the four mounting holes and secure them with nuts.
+### Step 2: Attach Top Acrylic Enclosure
 
-### Step 3: Printed Circuit Board
+![ANAVI Dev Mic step 2](images/anavi-dev-mic-step2.jpg)
 
-The ANAVI Dev Mic features a gold-plated printed circuit board (PCB) with a black solder mask and four mounting holes, one in each corner. Align the PCB with the four screws beneath the nuts securing the top part of the acrylic enclosure. Ensure the microphone hole is properly positioned.
+Locate the printed circuit board (PCB) and the top part of the acrylic enclosure, which has a circular opening for the microphone. Align the acrylic enclosure with the white silkscreen circle on the black PCB. Insert a screw into each of the four mounting holes and secure them with the provided nuts.
 
-### Step 4: Affix the Enclosure  
+### Step 3: Install Bottom Acrylic Enclosure
 
-Secure the bottom part of the acrylic enclosure by fastening it tightly with four nuts.
+![ANAVI Dev Mic step 3](images/anavi-dev-mic-step3.jpg)
 
-### Step 5: Connect
+Place the bottom acrylic enclosure over the side of the PCB where the XIAO RP2040 module is located. Fasten the bottom enclosure securely by tightening it with the remaining four nuts.
 
-Connect your ANAVI Dev Mic to a computer and start using your new microphone.
+### Step 4: Connect and Enjoy
+
+Once you have completed these simple steps, your new microphone is ready to use. Just connect ANAVI Dev Mic to your computer using a USB-C cable and you’re all set!
 
 Please note that a USB to USB-C cable is **not** included in any of the kits. Re-use a cable from an old electronic device or purchase a cable according to your taste. Make sure that the cable supports both power and data transfer over USB.
 
