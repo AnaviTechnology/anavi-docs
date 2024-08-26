@@ -2,6 +2,8 @@
 
 **Maker friendly open source USB-C computer microphone with AI and ML in mind**
 
+![ANAVI Dev Mic](images/anavi-dev-mic.jpg)
+
 ---
 
 # DISCLAIMER
@@ -46,6 +48,8 @@ ANAVI Dev Mic boasts a compact design with a black, gold-plated printed circuit 
 - **Sample Rate**: 16 kHz
 - **Compatibility**: Windows, macOS, and Linux support
 - **Dimensions**: 35.0 x 34.5 mm (1.38 x 1.36 inches)
+
+![ANAVI Dev Mic](images/anavi-dev-mic-coin.jpg)
 
 ## Board Version
 
@@ -164,6 +168,7 @@ The sample rate is 16 kHz.
 | Date              | Changes                     | Modified pages  | Author             |
 | ----------------- |:---------------------------:| :---------------| :------------------|
 | 21 July 2024      | Initial manual release      | All             | Leon Anavi         |
+| 27 August 2024    | Add images                  | All             | Leon Anavi         |
 
 
 ## ANAVI Dev Mic
