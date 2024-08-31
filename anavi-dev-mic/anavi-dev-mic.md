@@ -111,6 +111,8 @@ Please note that a USB to USB-C cable is **not** included in any of the kits. Re
 
 # CHAPTER 3: Software
 
+## Open Source Firmware
+
 Out of the box ANAVI Dev Mic comes with [open source firmware](https://github.com/AnaviTechnology/microphone-library-for-pico/tree/anavi_dev_mic) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
 Follow these steps to build the firmware from source and flash it onto your ANAVI Dev Mic:
 
@@ -136,6 +138,39 @@ Follow the steps below to flash the firmware:
 * Long press the **BOOT** button (marked **B** on the board).
 * While holding the button, connect the Seeed Studio XIAO PR2040 to your computer. A disk drive will appear on your computer.
 * Copy `build/examples/anavi_dev_mic/anavi_dev_mic.uf2` file to the ANAVI Dev Mic while it is in BOOT mode.
+
+## Speech-to-Text Recognition
+
+Follow the steps below to do offline speech-to-text recognition using ANAVI Dev Mic in Python3 with [SpeechRecognition library](https://pypi.org/project/SpeechRecognition/) and OpenAI's [Whisper ASR system](https://github.com/openai/whisper) on a Linux computer, for example Raspberry Pi:
+
+* Launch Raspberry Pi OS and open a terminal.
+* Create a Python3 virtual environment:
+```
+python -m venv test
+cd test
+source bin/activate
+```
+* Update your system and install necessary dependencies:
+```
+sudo apt update
+sudo apt install portaudio19-dev
+```
+* Install the required Python libraries:
+```
+pip install SpeechRecognition pyaudio openai-whisper
+```
+* Download the source code from GitHub:
+```
+git clone https://github.com/AnaviTechnology/anavi-examples.git
+```
+* Run the script:
+```
+cd anavi-examples/speech-to-text
+python3 stt.py
+```
+* Follow the onscreen instructions to start speaking when the script is listening.
+
+The script is tailored for the ANAVI Dev Mic and will automatically select it from the available microphones. If the ANAVI Dev Mic isn't found, an error will be reported. A [video demonstration](https://youtu.be/XzCWIGtRq4g) featuring the Raspberry Pi 5 running Raspberry Pi OS, which is based on the Debian Linux distribution, is [available on YouTube](https://youtu.be/XzCWIGtRq4g).
 
 ---
 
