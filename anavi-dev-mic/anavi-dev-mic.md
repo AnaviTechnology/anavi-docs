@@ -116,7 +116,21 @@ Please note that a USB to USB-C cable is **not** included in any of the kits. Re
 Out of the box ANAVI Dev Mic comes with [open source firmware](https://github.com/AnaviTechnology/microphone-library-for-pico/tree/anavi_dev_mic) written in [the C programming language using Raspberry Pi Pico Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
 Follow these steps to build the firmware from source and flash it onto your ANAVI Dev Mic:
 
-* Set up the [Raspberry Pi RP2040 and Pico C/C++ SDK](https://datasheets.raspberrypi.org/pico/getting-started-with-pico.pdf).
+* Download the Raspberry Pi Pico C/C++ SDK:
+
+```
+cd ~
+git clone https://github.com/raspberrypi/pico-sdk.git
+cd pico-sdk
+git submodule update --init
+```
+
+* Install Raspberry Pi Pico C/C++ SDK dependencies:
+
+```
+sudo apt update
+sudo apt install cmake gcc-arm-none-eabi build-essential
+```
 
 * Set the PICO_SDK_PATH:
 
@@ -124,9 +138,17 @@ Follow these steps to build the firmware from source and flash it onto your ANAV
 export PICO_SDK_PATH=/path/to/pico-sdk
 ```
 
-Create the build directory, run CMake, and make:
+* Download the firmware for ANAVI Dev Mic based on "Microphone library for Pico":
 
 ```
+cd ~
+git clone -b anavi_dev_mic https://github.com/AnaviTechnology/microphone-library-for-pico.git
+```
+
+* Create the build directory, run CMake, and make:
+
+```
+cd microphone-library-for-pico
 mkdir build
 cd build
 cmake .. -DPICO_BOARD=pico
