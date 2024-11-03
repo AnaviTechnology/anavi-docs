@@ -62,6 +62,16 @@ In order to setup ANAVI Handle the following items are required:
 
 Getting started with ANAVI Handle is easy. By default the device comes pre-installed with [open source firmware](https://github.com/AnaviTechnology/anavi-handle-sw) written in [CircuitPython](https://circuitpython.org/).
 
+## Hardware
+
+
+The ANAVI Dev Mic is a user-friendly, easy-to-assemble kit that includes:
+
+* Printed circuit board (PCB)
+* Acrylic enclosure with two laser-cut acrylic parts (top and bottom)
+* Four DIN8975 M2.5 x 10mm (height) screws
+* Eight DIN934 M2.5 nuts
+
 ## Assembly
 
 ### Step 1: Peel Off Protective Film
