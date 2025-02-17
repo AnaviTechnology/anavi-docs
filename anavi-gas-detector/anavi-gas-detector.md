@@ -229,7 +229,7 @@ Follow the steps below to compile and flash custom firmware on ANAVI Gas Detecto
 
 5. In Arudino IDE click Upload (Ctrl+U)
 
-6. Press and **hold** the RESET button on ANAVI Gas Detector. Plug the 5V power supply in the jack of ANAVI Gas Detector (without releasing the RESET button).
+6. Press and **hold** the RESET button on ANAVI Gas Detector. Connect the 5V power supply to the microUSB port of the ANAVI Gas Detector while keeping the RESET button pressed.
 
 7. In Arduino IDE verify that the upload has been started. Hold RESET until the upload completes.
 
