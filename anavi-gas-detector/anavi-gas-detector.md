@@ -339,7 +339,7 @@ sensor:
 
 ## Pinout
 
-The components of ANAVI Gas Detector relies on ESP8266 (ESP-12 module) and utilizes the following pins:
+The ANAVI Gas Detector is built around the ESP8266 by Espressif Systems (specifically, the Ai-Thinker ESP-12 module) and utilizes the following pins:
 
 | Component           | Pins                            |  Arduino Pin ID |
 | ------------------- |:------------------------------- |-----------------|
@@ -355,7 +355,7 @@ The components of ANAVI Gas Detector relies on ESP8266 (ESP-12 module) and utili
 
 ## I2C
 
-The sensors that can be connected to ANAVI Gas Detector communicate with a host microcontroller via a communications standard called **I2C** (Inter-Integrated-Circut). I2C uses two wires, labelled SDA (Serial Data) and SCL (Serial Clock). To function properly, I2C requires a pullup resistor on each of those lines therefore ANAVI Gas Detector includes two 4.7kohm resistors labelled as R2 and R3. If for one reason or another you need to disable the I2C pullup resistors remove R2 and R3.
+The digital sensors compatible with the ANAVI Gas Detector communicate with the host microcontroller using the **I2C** (Inter-Integrated Circuit) protocol. I2C operates over two lines: SDA (Serial Data) and SCL (Serial Clock). For proper functionality, both lines require pull-up resistors. To ensure this, the ANAVI Gas Detector includes two 4.7kΩ resistors, labeled R2 and R3. If you need to disable the I2C pull-up resistors for any reason, simply remove R2 and R3.
 
 ---
 
@@ -404,9 +404,10 @@ Buy any of the available perks, get your hands on the ANAVI Gas Detector, contri
 
 ## Document Revision
 
-| Date              | Changes                     | Modified pages  | Author          |
-| ----------------- |:---------------------------:| :---------------| :---------------|
-| 27 July 2019      | Initial        release      | All             | Leon Anavi      |
+| Date              | Changes                     | Modified Chapters  | Author          |
+| ----------------- |:---------------------------:| :------------------| :---------------|
+| 27 July 2019      | Initial release             | All                | Leon Anavi      |
+| 17 February 2025  | Minor improvements          | Firmware & I2C     | Leon Anavi      |
 
 ## ANAVI Gas Detector Revision
 
@@ -416,6 +417,6 @@ Buy any of the available perks, get your hands on the ANAVI Gas Detector, contri
 
 ## See Also
 
-For more information please visit [anavi.technology](http://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
+For more information please visit [anavi.technology](https://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
 
 ---
