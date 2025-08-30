@@ -1,6 +1,6 @@
 # ANAVI TPM 2.0
 
-***A hardware security add-on board for Raspberry Pi computers*
+**An open source hardware security add-on board for Raspberry Pi single-board computers**
 
 ---
 
@@ -100,7 +100,7 @@ You can assemble ANAVI TPM 2.0 and mount it on your Raspberry Pi with your bare 
 
 ## Powering ANAVI TPM 2.0
 
-ANAVI TPM 2.0 is Raspberry Pi HAT therefore it is powered through Raspberry Pi. It is recommended to use the [official Raspberry Pi Power Supply](https://www.raspberrypi.org/products/universal-power-supply/) or another 2.5A USB power supply from reputable retailer.
+ANAVI TPM 2.0 is a Raspberry Pi add-on board therefore it is powered through the Raspberry Pi single board computer. It is recommended to use the [official Raspberry Pi Power Supply](https://www.raspberrypi.org/products/universal-power-supply/).
 
 ---
 
