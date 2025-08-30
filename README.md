@@ -1,6 +1,6 @@
 # anavi-docs
 
-Documents for ANAVI products
+This repository contains user manuals and documentation for ANAVI open-source hardware products. It includes resources for Raspberry Pi add-on boards, Internet of Things (IoT) devices, and a variety of input peripherals such as keyboards, keypads, joysticks and microphones.
 
 # License
 
@@ -16,6 +16,6 @@ Attribution — You must give appropriate credit, provide a link to the license,
 
 You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation. No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
 
-You will have to provide a link to the original creator of the project http://www.anavi.technology on any documentation or website.
+You will have to provide a link to the original creator of the project https://www.anavi.technology on any documentation or website.
 
-Credit can be attributed through a link to the creator website: http://www.anavi.technology
+Credit can be attributed through a link to the creator website: https://www.anavi.technology
