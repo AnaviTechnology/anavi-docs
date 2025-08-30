@@ -114,7 +114,7 @@ ANAVI TPM 2.0 is compatible with the `tpm-slb9670.dtbo` device tree binary overl
 
 ## Pinout
 
-The components of ANAVI TPM 2.0 utilize the following pins on Raspberry Pi:
+ANAVI TPM 2.0 is a compact two-layer PCB. Its Bill of Materials (BoM) contains just 8 components: one SLB 9672 chip, four capacitors, and three resistors. On the Raspberry Pi, the ANAVI TPM 2.0 makes use of the following pins:
 
 | Component    | Pins                            |
 | ------------ |:------------------------------- |
@@ -142,6 +142,7 @@ Although ANAVI TPM 2.0 features Infineon Optical™ SLB 9672, the SPI communicat
 | Date              | Changes                     | Author         |
 | ----------------- |:---------------------------:|:---------------|
 | 04 August 2025    | Initial manual release      | Leon Anavi     |
+| 30 August 2025    | Added more details          | Leon Anavi     |
 
 ## ANAVI TPM 2.0 Revisions
 
