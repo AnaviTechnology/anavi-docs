@@ -32,7 +32,7 @@ There is no warranty for the design materials and the components used to create 
 
 ## Introduction
 
-ANAVI Gas Detector is an open source, easy-to-use, Wi-Fi compatible development board for monitoring air quality and detecting dangerous gases. It supports popular analog MQ gas sensor modules such as MQ-135, MQ-2, MQ-3, etc. Furthermore, it comes with slots for mini OLED display and up to three additional I²C sensor modules, including the precise digital sensor HTU21D for measuring temperature and humidity.
+ANAVI Gas Detector is an open source, easy-to-use, Wi-Fi compatible development board for monitoring air quality and detecting dangerous gases. It supports popular analog MQ gas sensor modules such as MQ-135, MQ-2, MQ-3, MQ-7, MQ-9 etc. Furthermore, it comes with slots for mini OLED display and up to three additional I²C sensor modules, including the precise digital sensor HTU21D for measuring temperature and humidity.
 
 Air pollution is a very serious problem. Monitoring air quality and detecting toxic gases can improve one's quality of life. All these features make ANAVI Gas Detector appropriate for developers, makers, students and open source enthusiasts who are interested in home automation and an environmentally friendly lifestyle.
 
@@ -76,7 +76,7 @@ It is recommended to use 1A (1000mA) or higher power supply.
 
 ## Supported Peripherals
 
-ANAVI Gas Detector has a slot for analog 5V MQ sensor module (MQ-135, MQ-2, MQ-3, MQ-7, etc.), I2C slot for mini OLED display as well as up to 3 slots I2C sensors.
+ANAVI Gas Detector has a slot for analog 5V MQ sensor module (MQ-135, MQ-2, MQ-3, MQ-7, MQ-9, etc.), I2C slot for mini OLED display as well as up to 3 slots I2C sensors.
 
 ### Sensors
 
