@@ -145,7 +145,7 @@ sudo nano /boot/firmware/config.txt
 
 ```
 sudo reboot
-``
+```
 
 * Install TPM tools:
 
