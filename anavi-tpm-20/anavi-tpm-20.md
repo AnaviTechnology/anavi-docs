@@ -181,10 +181,10 @@ crw-rw---- 1 tss root 10, 224 Feb 15 09:04 /dev/tpm0
 crw-rw---- 1 tss tss 510, 65536 Feb 15 09:04 /dev/tpmrm0
 ```
 
-* Test TPM random number generation:
+* Test TPM random number generation and convert the output data to hex format without a leading "0x":
 
 ```
-sudo tpm2_getrandom 8
+sudo tpm2_getrandom 8 --hex
 ```
 
 ### Install Cryptsetup
