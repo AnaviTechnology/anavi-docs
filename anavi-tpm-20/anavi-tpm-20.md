@@ -54,6 +54,7 @@ ANAVI TPM 2.0 for Raspberry Pi is fully compatible with the Raspberry Pi OS.
 ANAVI TPM 2.0 is compatible with the following Raspberry Pi versions and models:
 
 * [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)
+* [Raspberry Pi 500](https://www.raspberrypi.com/products/raspberry-pi-500/)
 * [Raspberry Pi 400](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 * [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 * [Raspberry Pi 3 Model A+](https://www.raspberrypi.com/products/raspberry-pi-3-model-a-plus/)
@@ -122,7 +123,7 @@ This guide walks you through setting up an encrypted data partition on Raspberry
 
 * Boot the microSD card again on the Raspberry Pi:
 
-* Enable SPI usign `raspi-config`:
+* Enable SPI using `raspi-config`:
 
 ```
 sudo raspi-config nonint do_spi 0
