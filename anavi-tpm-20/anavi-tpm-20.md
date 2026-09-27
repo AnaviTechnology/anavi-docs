@@ -47,7 +47,8 @@ ANAVI TPM 2.0 for Raspberry Pi is fully compatible with the Raspberry Pi OS.
 **Interface**: Serial Peripheral Interface (SPI)
 **Compact**: Only uses 10 header pins (2x5 pins: 17 to 26), leaving other GPIO pins free
 **Secure mounting**: Small hole included for physical attachment
-**Dimensions**: 18.4 x 12.9 mm (0.72 x 0.51 in)
+**PCB Dimensions**: 18.4 x 12.9 mm (0.72 x 0.51 in)
+**Connector Height**: 8.5 mm (±0.15 mm)
 
 ## Supported Raspberry Pi Versions and Models
 
@@ -322,6 +323,10 @@ ANAVI TPM 2.0 is a compact two-layer PCB. Its Bill of Materials (BoM) contains j
 
 Although ANAVI TPM 2.0 features Infineon Optical™ SLB 9672, the SPI communication is compatible with the previous generation Infineon Optical™ SLB 9670 and the `tpm-slb9670.dtbo` device tree binary overlay, which is [included in the official Raspberry Pi Linux kernel](https://github.com/raspberrypi/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/tpm-slb9670-overlay.dts).
 
+#### What is the height of the 2x5-pin connector?
+
+ANAVI TPM 2.0 add-on board uses a 2x5-pin connector with a height of 8.5 mm (±0.15 mm).
+
 ---
 
 # Revision History
@@ -332,6 +337,7 @@ Although ANAVI TPM 2.0 features Infineon Optical™ SLB 9672, the SPI communicat
 | ----------------- |:---------------------------:|:---------------|
 | 04 August 2025    | Initial manual release      | Leon Anavi     |
 | 30 August 2025    | Added more details          | Leon Anavi     |
+| 27 September 2026 | Connector height            | Leon Anavi     |
 
 ## ANAVI TPM 2.0 Revisions
 
