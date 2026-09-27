@@ -112,7 +112,7 @@ ANAVI TPM 2.0 is compatible with the `tpm-slb9670.dtbo` device tree binary overl
 
 ## Encrypted Data Partition
 
-This guide walks you through setting up an encrypted data partition on Raspberry Pi OS Trixie and binding it to TPM 2.0 for automatic unlocking.
+This guide walks you through setting up an encrypted data partition on Raspberry Pi OS Trixie and binding it to TPM 2.0 for automatic unlocking. A [step-by-step video tutorial](https://youtu.be/y-U8dJO_Op4?si=_8_MFlciocTCFPdA) is also available, providing a visual walkthrough of the same process and complementing the instructions in this guide.
 
 ### Enable SPI and TPM Kernel Support
 
