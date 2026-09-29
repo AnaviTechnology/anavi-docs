@@ -171,6 +171,21 @@ The hardware connector on ANAVI Handle is compatible with the Wii Classic Contro
 
 Yes, with the ANAVI Handle and the [Adafruit CircuitPython Nunchuk library](https://docs.circuitpython.org/projects/nunchuk/en/latest/index.html), you can read acceleration values from the gyroscope inside the controller. Here is a [simple example of how to do it](https://github.com/adafruit/Adafruit_CircuitPython_Nunchuk/blob/main/examples/nunchuk_simpletest.py).
 
+* How to fix the "Power Surge on the USB port" error when connecting ANAVI Handle on Windows?
+
+The default open-source firmware is written in CircuitPython and may have a peak power consumption during boot. This can trigger the Windows-specific "Power Surge on the USB port" error, which may prevent the board from working properly. To resolve it, disable USB power-saving in Windows:
+
+1. Open Device Manager.
+2. Expand Universal Serial Bus controllers.
+3. Find USB Root Hub or Generic USB Hub.
+4. Right-click it and select Properties.
+5. Open the Power Management tab.
+6. Uncheck Allow the computer to turn off this device to save power.
+7. Restart Windows.
+8. Reconnect the ANAVI Handle.
+
+It is recommended to repeat steps 3-6 for each relevant USB Root Hub or Generic USB Hub listed under Universal Serial Bus controllers.
+
 # CHAPTER 6: Revision History
 
 ## Document Revision
@@ -179,8 +194,8 @@ Yes, with the ANAVI Handle and the [Adafruit CircuitPython Nunchuk library](http
 | ----------------- |:---------------------------:| :---------------| :------------------|
 | 24 May 2024       | Initial manual release      | All             | Leon Anavi         |
 | 20 July 2024      | Frequently Asked Questions  | All             | Leon Anavi         |
-| 03 August 2024    | gyroscope and acceleration  | FAQ             | Leon Anavi         |
-
+| 03 August 2024    | Gyroscope and acceleration  | FAQ             | Leon Anavi         |
+| 30 September 2026 | Power Surge on the USB port | FAQ             | Leon Anavi         |
 
 ## ANAVI Handle
 
@@ -190,6 +205,6 @@ Yes, with the ANAVI Handle and the [Adafruit CircuitPython Nunchuk library](http
 
 ## See Also
 
-For more information please visit [anavi.technology](https://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [Twitter](https://twitter.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
+For more information please visit [anavi.technology](https://anavi.technology/) and our [GitHub repositories](https://github.com/AnaviTechnology). If you have any questions or enquiries please contact us through [Facebook](https://www.facebook.com/AnaviTechnology/), [X](https://x.com/AnaviTechnology) or [email](mailto:info@anavi.technology).
 
 ---
