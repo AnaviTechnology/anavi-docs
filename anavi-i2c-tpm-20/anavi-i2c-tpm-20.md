@@ -318,7 +318,7 @@ ANAVI I2C TPM 2.0 is a compact two-layer PCB. Its Bill of Materials (BoM) contai
 
 #### Which device tree binary overlay should be used with ANAVI I2C TPM 2.0?
 
-Although ANAVI I2C TPM 2.0 features Infineon Optical™ SLB 9673, the I2C communication is compatible with the  `tpm-slb9673.dtbo` device tree binary overlay, which is [included in the official Raspberry Pi Linux kernel](https://github.com/raspberrypi/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/tpm-slb9673-overlay.dts).
+Because ANAVI I2C TPM 2.0 features Infineon Optical™ SLB 9673, the I2C communication is compatible with the `tpm-slb9673.dtbo` device tree binary overlay, which is [included in the official Raspberry Pi Linux kernel](https://github.com/raspberrypi/linux/blob/rpi-6.12.y/arch/arm/boot/dts/overlays/tpm-slb9673-overlay.dts).
 
 #### Can I disable the RST pin?
 
